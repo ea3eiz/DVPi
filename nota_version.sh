@@ -1,6 +1,9 @@
 #!/bin/bash
-actualizacion=$(awk "NR==1" /home/pi/.config/autostart/actualizacion)
+# path usuario
+usuario=$(awk "NR==1" /home/pi/.config/autostart/usuario)
 SCRIPTS_version=$(awk "NR==1" /home/pi/.config/autostart/version)
+actualizacion=$(awk "NR==1" /home/pi/.config/autostart/actualizacion)
+
 #Colores
 ROJO="\033[1;31m"
 VERDE="\033[1;32m"
@@ -19,7 +22,7 @@ echo "\33[1;36m   Gracias por descargar la imagen de ${AMARILLO}ADER $SCRIPTS_ve
 
 echo "${BLANCO}"
 info=$(cat /etc/os-release > /home/pi/.local/info.txt)
-info=$(awk "NR==1" /home/pi/.local/info.txt)
+info=$(awk "NR==1" $usuario/.local/info.txt)
 echo "   $info"
 echo -n "${AMARILLO}"
 
