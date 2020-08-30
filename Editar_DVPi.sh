@@ -44,9 +44,27 @@ echo -n "${CIAN}   5)${GRIS} Modificar Address     - ${AMARILLO}"
 address_BM=$(awk "NR==70" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$address_BM"
 
+
+
+echo -n "${CIAN}   a)${GRIS} Modificar Puerto      - ${AMARILLO}"
+port_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
+echo "$port_BM"
+
+
+
 echo -n "${CIAN}   6)${GRIS} Modificar Password    - ${AMARILLO}"
-pas_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
+pas_BM=$(awk "NR==74" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$pas_BM"
+
+
+
+
+
+
+
+
+
+
 
 echo -n "${CIAN}   7)${GRIS} Modificar Options     - ${AMARILLO}"
 options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
@@ -133,15 +151,35 @@ do
                       break;;
 esac
 done;;
+
+
+a) echo ""
+while true
+do
+                      echo "   Valor actual del Puerto: ${AMARILLO}${port_BM#*=}\33[1;37m"
+                      read -p '   Introduce Puerto: ' port
+                      actualizar=S 
+                      case $actualizar in
+                      [sS]* ) echo ""
+                      sed -i "71c Port=$port" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                      break;;
+                      [nN]* ) echo ""
+                      break;;
+esac
+done;;
+
+
+
+
 6) echo ""
 while true
 do
                       echo "   Valor actual del Password: ${AMARILLO}${pas_BM#*=}\33[1;37m"
-                      read -p '   Introduce Password Personal de Brandmeister = ' pasbm
+                      read -p '   Introduce Password: ' pasbm
                       actualizar=S 
                       case $actualizar in
                       [sS]* ) echo ""
-                      sed -i "71c Password=$pasbm" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                      sed -i "74c Password=$pasbm" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                       break;;
                       [nN]* ) echo ""
                       break;;
