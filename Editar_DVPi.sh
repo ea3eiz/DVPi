@@ -23,32 +23,32 @@ echo "  ************************************************************************
 echo "                  Script Modificar $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
 echo "  ***************************************************************************"
 
-echo -n "${CIAN}   1)${GRIS} Modificar Indicativo            - ${AMARILLO}"
+echo -n "${CIAN}   1)${GRIS} Modificar Indicativo  - ${AMARILLO}"
 indicativo=$(awk "NR==2" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$indicativo"
 
-echo -n "${CIAN}   2)${GRIS} Modificar Id                    - ${AMARILLO}"
-id=$(awk "NR==2" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
+echo -n "${CIAN}   2)${GRIS} Modificar Id          - ${AMARILLO}"
+id=$(awk "NR==3" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$id"
 
-echo -n "${CIAN}  14)${GRIS} Modificar Location              - ${AMARILLO}"
+echo -n "${CIAN}  14)${GRIS} Modificar Location    - ${AMARILLO}"
 contenido_location=$(awk "NR==14" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$contenido_location"
 
-echo -n "${CIAN}  16)${GRIS} Modificar URL                   - ${AMARILLO}"
+echo -n "${CIAN}  16)${GRIS} Modificar URL         - ${AMARILLO}"
 contenido_url=$(awk "NR==35" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$contenido_url"
 
 
-echo -n "${CIAN}  70)${GRIS} Modificar Address  - ${AMARILLO}"
+echo -n "${CIAN}  70)${GRIS} Modificar Address     - ${AMARILLO}"
 address_BM=$(awk "NR==70" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$address_BM"
 
-echo -n "${CIAN}  71)${GRIS} Modificar Password - ${AMARILLO}"
+echo -n "${CIAN}  71)${GRIS} Modificar Password    - ${AMARILLO}"
 pas_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$pas_BM"
 
-echo -n "${CIAN}  77)${GRIS} Modificar Options - ${AMARILLO}"
+echo -n "${CIAN}  77)${GRIS} Modificar Options     - ${AMARILLO}"
 options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$options_BM"
 
