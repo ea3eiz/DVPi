@@ -88,7 +88,20 @@ do
                           break;;
 esac
 done;;
-
+3) echo ""
+while true
+do
+                          echo "Valor de la Ciudad: ${AMARILLO}${contenido_location#*=}\33[1;37m"
+                          read -p 'Introduce tu Ciudad ' loc1
+                          actualizar=S 
+                          case $actualizar in
+			                    [sS]* ) echo ""
+                          sed -i "14c Location=$loc1" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+			                    break;;
+			                    [nN]* ) echo ""
+			                    break;;
+esac
+done;;
 4) echo ""
 while true
 do
@@ -98,7 +111,7 @@ do
                           case $actualizar in
 			                    [sS]* ) echo ""
 			                    ur1=`echo "$ur1" | tr -d '[[:space:]]'`
-                          sed -i "16c URL=$ur1" /home/pi/DMRGateway/DMRGateway.ini
+                          sed -i "16c URL=$ur1" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -128,7 +141,7 @@ do
                       actualizar=S 
                       case $actualizar in
                       [sS]* ) echo ""
-                      sed -i "71c Password=$pasbm" /home/pi/DMRGateway/DMRGateway.ini
+                      sed -i "71c Password=$pasbm" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                       break;;
                       [nN]* ) echo ""
                       break;;
