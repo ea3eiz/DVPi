@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=lxterminal
-Exec=sh -c "cd /home/pi/V105;lxterminal --geometry=80x25 -e sudo sh Editor_general.sh"
+Exec=sh -c "cd /home/pi/DVPi;lxterminal --geometry=80x25 -e sudo sh Editor_general.sh"
 Icon=/home/pi/DVPi/ICONO_CONFIGURACION_GENERAL.png
 Type=Application
 StartupNotify=false
