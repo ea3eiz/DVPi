@@ -98,7 +98,7 @@ do
                           case $actualizar in
 			                    [sS]* ) echo ""
 			                    ur1=`echo "$ur1" | tr -d '[[:space:]]'`
-                          sed -i "35c URL=$ur1" /home/pi/DMRGateway/DMRGateway.ini
+                          sed -i "16c URL=$ur1" /home/pi/DMRGateway/DMRGateway.ini
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -114,7 +114,7 @@ do
                       [sS]* ) echo ""
                       master=`echo "$master" | tr -d '[[:space:]]'`
                       master=`echo "$master" | tr [:upper:] [:lower:]`
-                      sed -i "59c Address=$master" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                      sed -i "70c Address=$master" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                       break;;
                       [nN]* ) echo ""
                       break;;
@@ -128,7 +128,7 @@ do
                       actualizar=S 
                       case $actualizar in
                       [sS]* ) echo ""
-                      sed -i "78c Password=$pasbm" /home/pi/DMRGateway/DMRGateway.ini
+                      sed -i "71c Password=$pasbm" /home/pi/DMRGateway/DMRGateway.ini
                       break;;
                       [nN]* ) echo ""
                       break;;
