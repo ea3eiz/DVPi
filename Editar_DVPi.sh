@@ -121,7 +121,7 @@ done;;
 while true
 do
                       echo "   Valor actual del Master: ${AMARILLO}${address_BM#*=}\33[1;37m"
-                      read -p '   Brandmeister Spain = master.spain-dmr.es: ' master
+                      read -p '   Brandmeister=master.spain-dmr.es / DMR+=212.237.3.141:  ' master
                       actualizar=S 
                       case $actualizar in
                       [sS]* ) echo ""
