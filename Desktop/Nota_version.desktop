@@ -1,8 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=lxterminal
-Exec=sh -c "cd /home/pi/DVPI;lxterminal --geometry=88x35 -e sh nota_version.sh"
-Icon=/home/pi/DVPI/ICONO_NOTA_VERSION.png
+Exec=sh -c "cd /home/pi/DVPi;lxterminal --geometry=88x35 -e sh nota_version.sh"
+Icon=/home/pi/DVPi/ICONO_NOTA_VERSION.png
 Type=Application
 StartupNotify=false
 Categories=GTK;Utility;TerminalEmulator;
