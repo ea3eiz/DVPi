@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=lxterminal
-Exec=sh -c "cd /home/pi/DVPi;lxterminal --geometry=80x20 -e sudo sh  actualiza_imagen.sh"
+Exec=sh -c "cd /home/pi/DVPi;lxterminal --geometry=80x20 -e sudo sh  Actualizar_imagen.sh"
 Icon=/home/pi/DVPi/ICONO_ACTUALIZAR_IMAGEN.png
 Type=Application
 StartupNotify=false

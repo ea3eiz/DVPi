@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Terminal=true
-Exec=sh -c "cd  /home/pi/DVPi; lxterminal --geometry=78x34 -e sh menu_extra.sh"
+Exec=sh -c "cd  /home/pi/DVPi; lxterminal --geometry=78x34 -e sh Menu_extra.sh"
 Icon=/home/pi/DVPi/ICONO_MENU_EXTRA.png
 Type=Application
 Categories=GTK;Utility;TerminalEmulator;
