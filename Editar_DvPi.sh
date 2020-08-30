@@ -3,8 +3,12 @@ while true
 do
 clear
 
+
+# path usuario
+usuario=$(awk "NR==1" /home/pi/.config/autostart/usuario)
+SCRIPTS_version=$(awk "NR==1" $usuario/.config/autostart/version)
 #Editor DMRGateway Brabdmeister
-DIRECTORIO="DMRGateway"
+DIRECTORIO="DVPi"
 
 #Colores
 ROJO="\033[1;31m"
@@ -18,237 +22,36 @@ echo "${VERDE}"
 echo "  ***************************************************************************"
 echo "                  Script Modificar $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
 echo "  ***************************************************************************"
-echo "${MARRON}"
-echo "  Modificar Fichero MMDVMHost/MMDVMDMRGateway.ini"
-echo "  ==============================================="
 
 echo -n "${CIAN}   1)${GRIS} Modificar Indicativo            - ${AMARILLO}"
-indicativo=$(awk "NR==2" /home/pi/MMDVMHost/MMDVMDMRGateway.ini)
+indicativo=$(awk "NR==2" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$indicativo"
 
 echo -n "${CIAN}   2)${GRIS} Modificar Id                    - ${AMARILLO}"
-id=$(awk "NR==3" /home/pi/MMDVMHost/MMDVMDMRGateway.ini)
+id=$(awk "NR==2" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$id"
 
-echo -n "${CIAN}   3)${GRIS} Modificar RXFrequency           - ${AMARILLO}"
-contenido_rxf=$(awk "NR==13" /home/pi/MMDVMHost/MMDVMDMRGateway.ini)
-echo "$contenido_rxf"
-
-echo -n "${CIAN}   4)${GRIS} Modificar TXFrequency           - ${AMARILLO}"
-contenido_txf=$(awk "NR==14" /home/pi/MMDVMHost/MMDVMDMRGateway.ini)
-echo "$contenido_txf"
-
-echo -n "${CIAN}   5)${GRIS} Modificar Port modem            - ${AMARILLO}"
-mode=`grep -n -m 1 "^Port=" /home/pi/MMDVMHost/MMDVMDMRGateway.ini`
-buscar=":"
-caracteres=`expr index $mode $buscar`
-caracteres_linea=`expr $caracteres - 1`
-numero_linea_port=`expr substr $mode 1 $caracteres_linea`
-mode=$(awk "NR==$numero_linea_port" /home/pi/MMDVMHost/MMDVMDMRGateway.ini)
-echo "$mode"
-
-echo -n "\33[1;36m   6)\33[0m Timeout                         - \33[1;33m"
-timeo=`grep -n -m 1 '\<Timeout\>' /home/pi/MMDVMHost/MMDVMDMRGateway.ini`
-timeo1=`expr substr $timeo 3 30`
-echo "$timeo1"
-
-echo -n "\33[1;36m   7)\33[0m Modificar Duplex                - \33[1;33m"
-dup=`grep -n -m 1 '\<Duplex\>' //home/pi/MMDVMHost/MMDVMDMRGateway.ini`
-dup1=`expr substr $dup 3 30`
-echo "$dup1"
-
-var1=`grep -n "\[DMR Network\]" /home/pi/MMDVMHost/MMDVMDMRGateway.ini` # devuelve ejem: 138:Enable=1
-var2=`echo "$var1" | tr -d '[[:space:]]'`
-buscar=":"
-largo_linea=`expr index $var2 $buscar` #comprueba el largo incluyendo los dos puntos (:)
-largo_linea=`expr $largo_linea - 1` #comprueba el largo quitando los dos puntos (:)
-numero_linea=`expr substr $var2 1 $largo_linea` # recoge el numero de linea (138)
-numero_linea=`expr $numero_linea + 5` # y le suma uno qudando coomo: (143)
-letra=p
-numero_linea_p=$numero_linea$letra #crea 143p
-echo -n "\33[1;36m   8)\33[0m Local port                      - ${AMARILLO}"
-presentar_valor= sed -n $numero_linea_p  /home/pi/MMDVMHost/MMDVMDMRGateway.ini; #presenta el valor en pantalla
-
-echo "${CIAN}   9)${BLANCO} Abrir fichero MMDVMDMRGateway.ini para hacer modificaciones\33[1;33m"
-
-echo "${MARRON}"
-echo "  Modificar Fichero DMRGateway/DMRGateway.ini"
-echo "  ==========================================="
-echo -n "${CIAN}  10)${GRIS} Modificar Location              - ${AMARILLO}"
-contenido_location=$(awk "NR==33" /home/pi/DMRGateway/DMRGateway.ini)
+echo -n "${CIAN}  14)${GRIS} Modificar Location              - ${AMARILLO}"
+contenido_location=$(awk "NR==14" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$contenido_location"
 
-echo -n "${CIAN}  11)${GRIS} Modificar URL                   - ${AMARILLO}"
-contenido_url=$(awk "NR==35" /home/pi/DMRGateway/DMRGateway.ini)
+echo -n "${CIAN}  16)${GRIS} Modificar URL                   - ${AMARILLO}"
+contenido_url=$(awk "NR==35" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$contenido_url"
 
-echo -n "${CIAN}  12)${GRIS} Modificar XLX Startup           - ${AMARILLO}"
-Startup=$(awk "NR==47" /home/pi/DMRGateway/DMRGateway.ini)
-echo "$Startup"
 
-echo -n "${CIAN}  13)${GRIS} Modificar XLX Module            - ${AMARILLO}"
-Module=$(awk "NR==53" /home/pi/DMRGateway/DMRGateway.ini)
-echo "$Module"
-
-echo -n "${CIAN}  14)${GRIS} Modificar Address Brandmeister  - ${AMARILLO}"
-address_BM=$(awk "NR==59" /home/pi/DMRGateway/DMRGateway.ini)
+echo -n "${CIAN}  70)${GRIS} Modificar Address  - ${AMARILLO}"
+address_BM=$(awk "NR==70" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$address_BM"
 
-echo -n "${CIAN}  15)${GRIS} Modificar Password Brandmeister - ${AMARILLO}"
-pas_BM=$(awk "NR==78" /home/pi/DMRGateway/DMRGateway.ini)
+echo -n "${CIAN}  71)${GRIS} Modificar Password - ${AMARILLO}"
+pas_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$pas_BM"
 
-echo -n "${CIAN}  16)${GRIS} Modificar Address DMR+          - ${AMARILLO}"
-address_PLUS=$(awk "NR==86" /home/pi/DMRGateway/DMRGateway.ini)
-echo "$address_PLUS"
+echo -n "${CIAN}  77)${GRIS} Modificar Options - ${AMARILLO}"
+options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
+echo "$options_BM"
 
-echo -n "${CIAN}  17)${GRIS} Modificar Talk Group DMR+       - ${AMARILLO}"
-Talk_Group=$(awk "NR==90" /home/pi/DMRGateway/DMRGateway.ini)
-longitud_telk_group=${#Talk_Group}
-  if [ $longitud_telk_group -ge 25 ]
-then
-      TG=`expr substr $Talk_Group 18 6`
-elif [ $longitud_telk_group -ge 24 ]
-then
-      TG=`expr substr $Talk_Group 18 5`
-elif [ $longitud_telk_group -ge 23 ]
-then
-      TG=`expr substr $Talk_Group 18 4` 
-elif [ $longitud_telk_group -ge 22 ]
-then
-      TG=`expr substr $Talk_Group 18 3`  
-elif [ $longitud_telk_group -ge 21 ]
-then
-      TG=`expr substr $Talk_Group 18 2`        
-
-elif [ $longitud_telk_group -ge 20 ]
-then
-      TG=`expr substr $Talk_Group 18 1`       
-else
-      echo ""
-fi
-echo "TGRewrite0=$TG"
-
-echo -n "${CIAN}  18)${GRIS} Modificar Address HBLink        - ${AMARILLO}"
-address_HBLink=$(awk "NR==118" /home/pi/DMRGateway/DMRGateway.ini)
-echo "$address_HBLink"
-
-echo -n "${CIAN}  19)${GRIS} Modificar Password HBLink       - ${AMARILLO}"
-password_HBLink=$(awk "NR==123" /home/pi/DMRGateway/DMRGateway.ini)
-echo "$password_HBLink"
-
-echo -n "${CIAN}  20)${GRIS} Modificar Talk Group HBLINK     - ${AMARILLO}"
-talk_group_hblink=$(awk "NR==122" /home/pi/DMRGateway/DMRGateway.ini)
-longitud_talk_group_hblink=${#talk_group_hblink}
-  if [ $longitud_talk_group_hblink -ge 26 ]
-then
-      TG2=`expr substr $talk_group_hblink 19 6`
-elif [ $longitud_talk_group_hblink -ge 25 ]
-then
-      TG2=`expr substr $talk_group_hblink 19 5`
-elif [ $longitud_talk_group_hblink -ge 24 ]
-then
-      TG2=`expr substr $talk_group_hblink 19 4` 
-elif [ $longitud_talk_group_hblink -ge 23 ]
-then
-      TG2=`expr substr $talk_group_hblink 19 3`  
-elif [ $longitud_talk_group_hblink -ge 22 ]
-then
-      TG2=`expr substr $talk_group_hblink 19 2`        
-
-elif [ $longitud_talk_group_hblink -ge 21 ]
-then
-      TG2=`expr substr $talk_group_hblink 19 1`       
-else
-      echo ""
-fi
-echo "TGRewrite0=$TG2"
-
-echo -n "${CIAN}  21)${GRIS} Modificar Address TGIF          - ${AMARILLO}"
-master_tgif=$(awk "NR==109" /home/pi/DMRGateway/DMRGateway.ini)
-echo "$master_tgif"
-
-echo -n "${CIAN}  22)${GRIS} Modificar Password TGIF         - ${AMARILLO}"
-password_TGIF=$(awk "NR==110" /home/pi/DMRGateway/DMRGateway.ini)
-echo "$password_TGIF"
-
-echo -n "${CIAN}  23)${GRIS} Modificar Talk Group TGIF       - ${AMARILLO}"
-talk_group_tgif=$(awk "NR==107" /home/pi/DMRGateway/DMRGateway.ini)
-longitud_talk_group_tgif=${#talk_group_tgif}
-  if [ $longitud_talk_group_tgif -ge 26 ]
-then
-      TG1=`expr substr $talk_group_tgif 19 6`
-elif [ $longitud_talk_group_tgif -ge 25 ]
-then
-      TG1=`expr substr $talk_group_tgif 19 5`
-elif [ $longitud_talk_group_tgif -ge 24 ]
-then
-      TG1=`expr substr $talk_group_tgif 19 4` 
-elif [ $longitud_talk_group_tgif -ge 23 ]
-then
-      TG1=`expr substr $talk_group_tgif 19 3`  
-elif [ $longitud_talk_group_tgif -ge 22 ]
-then
-      TG1=`expr substr $talk_group_tgif 19 2`        
-
-elif [ $longitud_talk_group_tgif -ge 21 ]
-then
-      TG1=`expr substr $talk_group_tgif 19 1`       
-else
-      echo ""
-fi
-echo "TGRewrite0=$TG1"
-
-echo ""
-
-echo -n "${CIAN}  24)${MARRON} TGIF Enabled                    - ${VERDE}"
-enabled_tgif=$(awk "NR==105" /home/pi/DMRGateway/DMRGateway.ini)
-if  [ $enabled_tgif = "Enabled=1" ]
-then
-echo "${VERDE}$enabled_tgif"
-else
-echo "${ROJO}$enabled_tgif"
-fi
-
-echo -n "${CIAN}  25)${MARRON} XLX Enabled                     - ${VERDE}"
-enabled_xlx=$(awk "NR==38" /home/pi/DMRGateway/DMRGateway.ini)
-if  [ $enabled_xlx = "Enabled=1" ]
-then
-echo "${VERDE}$enabled_xlx"
-else
-echo "${ROJO}$enabled_xlx"
-fi
-
-echo -n "${CIAN}  26)${MARRON} Brandmeister Enabled            - ${VERDE}"
-enabled_bm=$(awk "NR==57" /home/pi/DMRGateway/DMRGateway.ini)
-if  [ $enabled_bm = "Enabled=1" ]
-then
-echo "${VERDE}$enabled_bm"
-else
-echo "${ROJO}$enabled_bm"
-fi
-
-echo -n "${CIAN}  27)${MARRON} DMR+ Enabled                    - ${VERDE}"
-enabled_plus=$(awk "NR==84" /home/pi/DMRGateway/DMRGateway.ini)
-if  [ $enabled_plus = "Enabled=1" ]
-then
-echo "${VERDE}$enabled_plus"
-else
-echo "${ROJO}$enabled_plus"
-fi
-
-echo -n "${CIAN}  28)${MARRON} Hblink Enabled                  - ${VERDE}"
-enabled_hblink=$(awk "NR==117" /home/pi/DMRGateway/DMRGateway.ini)
-if  [ $enabled_hblink = "Enabled=1" ]
-then
-echo "${VERDE}$enabled_hblink"
-else
-echo "${ROJO}$enabled_hblink"
-fi
-
-echo ""
-
-echo "${CIAN}  29)${BLANCO} Abrir fichero DMRGateway.ini para hacer modificaciones\33[1;33m"
 
 echo ""
 echo "${CIAN}   0)\33[1;31m Salir"
