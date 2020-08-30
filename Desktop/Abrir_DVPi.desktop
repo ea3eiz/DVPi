@@ -1,7 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=lxterminal
-#Exec=sh -c 'cd /home/pi/dvpi/; mono dvpi'
 Exec=sh -c 'cd /home/pi/DVPi; sudo sh Abrir_DVPi.sh'
 Icon=/home/pi/DVPi/ICONO_DVPI_OFF.png
 Type=Application
