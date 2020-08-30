@@ -40,15 +40,15 @@ contenido_url=$(awk "NR==35" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$contenido_url"
 
 
-echo -n "${CIAN}  70)${GRIS} Modificar Address     - ${AMARILLO}"
+echo -n "${CIAN}  14)${GRIS} Modificar Address     - ${AMARILLO}"
 address_BM=$(awk "NR==70" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$address_BM"
 
-echo -n "${CIAN}  71)${GRIS} Modificar Password    - ${AMARILLO}"
+echo -n "${CIAN}  15)${GRIS} Modificar Password    - ${AMARILLO}"
 pas_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$pas_BM"
 
-echo -n "${CIAN}  77)${GRIS} Modificar Options     - ${AMARILLO}"
+echo -n "${CIAN}  16)${GRIS} Modificar Options     - ${AMARILLO}"
 options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$options_BM"
 
@@ -68,7 +68,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
                           indicativo=`echo "$indicativo" | tr [:lower:] [:upper:]`
-                          sed -i "2c Callsign=$indicativo" /home/pi/MMDVMHost/MMDVMDMRGateway.ini
+                          sed -i "2c Callsign=$indicativo" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -82,7 +82,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "3c Id=$id" /home/pi/MMDVMHost/MMDVMDMRGateway.ini
+                          sed -i "3c Id=$id" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -295,7 +295,7 @@ do
                       [sS]* ) echo ""
                       master=`echo "$master" | tr -d '[[:space:]]'`
                       master=`echo "$master" | tr [:upper:] [:lower:]`
-                      sed -i "59c Address=$master" /home/pi/DMRGateway/DMRGateway.ini
+                      sed -i "59c Address=$master" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                       break;;
                       [nN]* ) echo ""
                       break;;
@@ -318,18 +318,20 @@ done;;
 16) echo ""
 while true
 do
-                     
-                      echo "   Valor actual del Master: ${AMARILLO}${address_PLUS#*=}\33[1;37m"
-                      read -p '   Address DMR+ Spain IPSC2-EA-Hotspot = 212.237.3.141: ' master1
-                      actualizar=S 
-                      case $actualizar in
-                      [sS]* ) echo ""
-                      master1=`echo "$master1" | tr -d '[[:space:]]'`
-                      master1=`echo "$master1" | tr [:upper:] [:lower:]`
-                      sed -i "86c Address=$master1" /home/pi/DMRGateway/DMRGateway.ini
-                      break;;
-                      [nN]* ) echo ""
-                      break;;
+                          read -p 'Estas en DMR+ ? S/N ' actualizar                                          
+                          case $actualizar in
+                          [sS]* ) echo ""
+                          read -p 'Intruduce reflector DMR+ al que se conectara (ej:4370) ' options
+                          if [ $options = 21465 ]
+                          then
+                          sed -i "77c Options=StartRef=4000;RelinkTime=15;TS2_1=21465" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                          else
+                          sed -i "77c Options=StartRef=$options;RelinkTime=10;" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                          fi
+                          break;;
+                          [nN]* ) echo ""
+                          sed -i "77c #Options=StartRef=4370;RelinkTime=10;" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                          break;;
 esac
 done;;
 17) echo ""
