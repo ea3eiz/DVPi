@@ -16,4 +16,4 @@ SCRIPTS_version=$(awk "NR==1" /home/pi/.config/autostart/version)
 # sudo rm /home/pi/Abrir_dv4mini.desktop
 
 cd /home/pi/dvpi
-mono mono dvpi
+mono dvpi
