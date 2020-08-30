@@ -1,16 +1,16 @@
 #!/bin/bash
-sudo killall MMDVMPLUS
-cd /home/pi/Desktop
-sudo cp Abrir_MMDVMPLUS.desktop /home/pi
+killall MMDVMPLUS
+# path usuario
+usuario=$(awk "NR==1" /home/pi/.config/autostart/usuario)
+SCRIPTS_version=$(awk "NR==1" $usuario/.config/autostart/version)
 
-SCRIPTS_version=$(awk "NR==1" /home/pi/.config/autostart/version)
-sed -i "4c Exec=sh -c 'cd /home/pi/$SCRIPTS_version;lxterminal --geometry=80x12 -e sudo sh ejecutar_DMRPLUS.sh'" /home/pi/Abrir_MMDVMPLUS.desktop
-sed -i "5c Icon=/home/pi/$SCRIPTS_version/ICONO_DMRPLUS_OFF.png" /home/pi/Abrir_MMDVMPLUS.desktop
-sed -i "10c Name[es_ES]=Abrir DMR+" /home/pi/Abrir_MMDVMPLUS.desktop
-sed -i "6c MMDVMPLUS=OFF" /home/pi/status.ini
+sed -i "4c Exec=sh -c 'cd $usuario/$SCRIPTS_version;lxterminal --geometry=80x12 -e sudo sh Abrir_DMRPLUS.sh'" $usuario/Abrir_MMDVMPLUS.desktop
+sed -i "5c Icon=$usuario/$SCRIPTS_version/ICONO_DMRPLUS_OFF.png" $usuario/Abrir_MMDVMPLUS.desktop
+sed -i "10c Name[es_ES]=Abrir DMR+" $usuario/Abrir_MMDVMPLUS.desktop
+sed -i "6c MMDVMPLUS=OFF" $usuario/status.ini
 
-cd /home/pi
-sudo cp Abrir_MMDVMPLUS.desktop /home/pi/Desktop
+cd $usuario
+sudo cp Abrir_MMDVMPLUS.desktop $usuario/Desktop
 
-sudo rm /home/pi/Abrir_MMDVMPLUS.desktop
+sudo rm $usuario/Abrir_MMDVMPLUS.desktop
 
