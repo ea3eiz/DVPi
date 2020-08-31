@@ -211,7 +211,7 @@ do
                           break;;
 esac
 done;;
-8) echo ""
+B) echo ""
 while true
 do
                           actualizar="s"             
@@ -219,6 +219,21 @@ do
                           [sS]* ) echo ""
                           cd /opt/Analog_Bridge/
                           sudo sh brandmeister_esp.sh
+                          sudo systemctl restart md380-emu.service && sudo systemctl restart mmdvm_bridge.service
+                          break;;
+                          [nN]* ) echo ""
+                          echo ""
+                          break;;
+esac
+done;;
+P) echo ""
+while true
+do
+                          actualizar="s"             
+                          case $actualizar in
+                          [sS]* ) echo ""
+                          cd /opt/Analog_Bridge/
+                          sudo sh dmrplus.sh
                           sudo systemctl restart md380-emu.service && sudo systemctl restart mmdvm_bridge.service
                           break;;
                           [nN]* ) echo ""
