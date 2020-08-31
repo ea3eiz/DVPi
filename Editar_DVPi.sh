@@ -70,9 +70,9 @@ echo -n "${CIAN}   7)${GRIS} Modificar Options     - ${AMARILLO}"
 options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$options_BM"
 
-
-echo -n "${CIAN}   8)${GRIS} Reiniciar sistema     - ${AMARILLO}"
-echo "Esto aplicará todos los cambios"
+echo ""
+echo -n "${CIAN}   8)${ROJO} Reiniciar sistema     - ${BLANCO}"
+echo "Para aplicar los cambios"
 
 
 
