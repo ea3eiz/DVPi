@@ -214,12 +214,11 @@ done;;
 8) echo ""
 while true
 do
-                                         
+                            actualizar="s"             
                           case $actualizar in
                           [sS]* ) echo ""
-                          sudo systemctl restart md380-emu.service && sudo systemctl restart mmdvm_bridge.service
+                          #sudo systemctl restart md380-emu.service && sudo systemctl restart mmdvm_bridge.service
                           break;;
-                          exit;
                           [nN]* ) echo ""
                           echo ""
                           break;;
