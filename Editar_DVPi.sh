@@ -235,7 +235,7 @@ done;;
 g) echo ""
 while true
 do
-                          read -p 'Estas seguro? S/N ' actualizar                                          
+                          read -p '   Estas seguro? S/N ' actualizar                                          
                           case $actualizar in
                           [sS]* ) echo ""                     
                           if [ $sistema = Port=55555 ]
