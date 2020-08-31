@@ -238,7 +238,14 @@ do
                           echo -n "${AMARILLO}"
                           read -p '   Estas seguro? S/N ' actualizar                                          
                           case $actualizar in
-                          [sS]* ) echo ""                     
+                          [sS]* ) echo ""  
+
+
+                          analogbridge="/opt/Analog_Bridge/Analog_Bridge.ini"
+                          sudo crudini --set $analogbridge GENERAL logLevel 11
+
+
+
                           if [ $sistema = Port=55555 ]
                           then
                           cp /opt/MMDVM_Bridge/MMDVM_Bridge.ini /opt/MMDVM_Bridge/dmrplus.ini
