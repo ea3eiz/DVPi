@@ -72,8 +72,8 @@ echo -n "${CIAN}   8)${GRIS} Modificar Options     - ${AMARILLO}"
 options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$options_BM"
 
-echo -n "${CIAN}   G)${GRIS} Graba datos en  $DIRECTORIO      - ${AMARILLO}"
-echo "Y reinicia el sistema $DIRECTORIO"
+echo -n "${CIAN}   G)${GRIS} Grabar  ${AMARILLO}$DIRECTORIO      - ${AMARILLO}"
+echo "Y reiniciar $DIRECTORIO"
 
 
 if [ $sistema = Port=55555 ]
