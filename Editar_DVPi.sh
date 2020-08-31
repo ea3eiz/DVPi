@@ -91,13 +91,15 @@ echo "$options_BM"
 
 if [ $sistema = Port=55555 ]
 then
+ITEM=9
 echo ""
-echo -n "${CIAN}   D)${ROJO} Cambiar a:            - ${BLANCO}"
-echo "DMR+"
+echo -n "${CIAN}   $ITEM)${ROJO} Cambiar a:            - ${BLANCO}"
+echo "BRANDMEISTER"
 else
+ITEM=10
 echo ""
-echo -n "${CIAN}   B)${ROJO} Cambiar a:            - ${BLANCO}"
-echo "Brandmeister"
+echo -n "${CIAN}   $ITEM)${ROJO} Cambiar a:            - ${BLANCO}"
+echo "DMR+"
 fi
 
 
