@@ -70,9 +70,28 @@ echo -n "${CIAN}   7)${GRIS} Modificar Options     - ${AMARILLO}"
 options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$options_BM"
 
+
+
+
+
+port_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
+sistema=port_BM
+if [ $sistema = Port=55555 ]
+then
 echo ""
+echo -n "${CIAN}   D)${ROJO} Cambiar a:            - ${BLANCO}"
+echo "DMR+"
+else
+echo ""
+echo -n "${CIAN}   B)${ROJO} Cambiar a:            - ${BLANCO}"
+echo "Brandmeister"
+fi
+
+
+
 echo -n "${CIAN}   9)${ROJO} Cambiar a:            - ${BLANCO}"
 echo "Brandmeister"
+
 
 echo ""
 echo -n "${CIAN}  10)${ROJO} Cambiar a:            - ${BLANCO}"
