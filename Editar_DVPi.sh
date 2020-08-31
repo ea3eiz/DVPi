@@ -235,6 +235,7 @@ done;;
 g) echo ""
 while true
 do
+                          echo -n "${AMARILLO}"
                           read -p '   Estas seguro? S/N ' actualizar                                          
                           case $actualizar in
                           [sS]* ) echo ""                     
