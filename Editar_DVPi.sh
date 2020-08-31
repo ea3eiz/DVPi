@@ -230,8 +230,10 @@ do
                           if [ $sistema = Port=55555 ]
                           then
                           cp /opt/MMDVM_Bridge/MMDVM_Bridge.ini /opt/MMDVM_Bridge/dmrplus.ini
+                          sudo systemctl restart md380-emu.service && sudo systemctl restart mmdvm_bridge.service
                           else
                           cp /opt/MMDVM_Bridge/MMDVM_Bridge.ini /opt/MMDVM_Bridge/brandmeister_esp.ini
+                          sudo systemctl restart md380-emu.service && sudo systemctl restart mmdvm_bridge.service
                           fi
                           break;;
                           [nN]* ) echo ""
