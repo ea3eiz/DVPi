@@ -121,8 +121,8 @@ done;;
 while true
 do
                           echo "   Valor  actual  de la Id: ${AMARILLO}${id#*=}\33[1;37m"
-                          read -p '   Introduce la Id 7 dígitos' id
-                          read -p '   Introduce la Id 9 dígitos' id2
+                          read -p '   Introduce Id 7 dígitos: ' id
+                          read -p '   Introduce Id 9 dígitos: ' id2
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
