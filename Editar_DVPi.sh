@@ -72,7 +72,7 @@ echo "$options_BM"
 
 
 echo -n "${CIAN}   8)${GRIS} Reiniciar sistema     - ${AMARILLO}"
-echo "         para aplicar los cambios"
+echo "Esto aplicará todos los cambios"
 
 
 
@@ -214,10 +214,10 @@ done;;
 8) echo ""
 while true
 do
-                            actualizar="s"             
+                          actualizar="s"             
                           case $actualizar in
                           [sS]* ) echo ""
-                          #sudo systemctl restart md380-emu.service && sudo systemctl restart mmdvm_bridge.service
+                          sudo systemctl restart md380-emu.service && sudo systemctl restart mmdvm_bridge.service
                           break;;
                           [nN]* ) echo ""
                           echo ""
