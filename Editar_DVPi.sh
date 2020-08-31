@@ -71,10 +71,12 @@ options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$options_BM"
 
 echo ""
-echo -n "${CIAN}   8)${ROJO} Reiniciar sistema     - ${BLANCO}"
-echo "Para aplicar los cambios"
+echo -n "${CIAN}   9)${ROJO} Cambiar a:            - ${BLANCO}"
+echo "Brandmeister"
 
-
+echo ""
+echo -n "${CIAN}  10)${ROJO} Cambiar a:            - ${BLANCO}"
+echo "DMR+"
 
 
 
@@ -211,7 +213,7 @@ do
                           break;;
 esac
 done;;
-B) echo ""
+9) echo ""
 while true
 do
                           actualizar="s"             
@@ -226,7 +228,7 @@ do
                           break;;
 esac
 done;;
-P) echo ""
+10) echo ""
 while true
 do
                           actualizar="s"             
