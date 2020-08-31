@@ -21,21 +21,16 @@ MARRON="\33[38;5;138m"
 port_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 sistema=$port_BM
 
-
-echo "Sistema:$sistema"
-read a
-
-
 if [ $sistema = Port=55555 ]
 then
-DIRECTORIO="DMR+"
+DIRECTORIO="DMRPLUS"
 else
 DIRECTORIO="BRANDMEISTER"
 fi
 
 echo "${VERDE}"
 echo "  ***************************************************************************"
-echo "                          Sistema $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
+echo "                          Sistema ${CIAN}$DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
 echo "  ***************************************************************************"
 
 echo -n "${CIAN}   1)${GRIS} Modificar Indicativo  - ${AMARILLO}"
@@ -99,7 +94,7 @@ else
 ITEM=10
 echo ""
 echo -n "${CIAN}   $ITEM)${ROJO} Cambiar a:            - ${BLANCO}"
-echo "DMR+"
+echo "DMRLUS"
 fi
 
 
