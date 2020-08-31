@@ -241,9 +241,13 @@ do
                           [sS]* ) echo ""  
 
 
-                          analogbridge="/opt/Analog_Bridge/Analog_Bridge.ini"
-                          sudo crudini --set $analogbridge GENERAL logLevel 11
-
+                            analogbridge="/opt/Analog_Bridge/Analog_Bridge.ini"
+                           
+                            sudo crudini --set $analogbridge GENERAL logLevel xx
+                            sudo crudini --set $analogbridge GENERAL useEmulator false
+                            sudo crudini --set $analogbridge AMBE_AUDIO gatewayDmrId 2143206
+                            sudo crudini --set $analogbridge AMBE_AUDIO repeaterID 214320691
+                            sudo crudini --set $analogbridge DV3000 rxPort 2460x
 
 
                           if [ $sistema = Port=55555 ]
