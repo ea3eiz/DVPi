@@ -60,35 +60,17 @@ echo -n "${CIAN}   5)${GRIS} Modificar Address     - ${AMARILLO}"
 address_BM=$(awk "NR==70" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$address_BM"
 
-
-
-echo -n "${CIAN}   a)${GRIS} Modificar Puerto      - ${AMARILLO}"
+echo -n "${CIAN}   6)${GRIS} Modificar Puerto      - ${AMARILLO}"
 port_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$port_BM"
 
-
-
-echo -n "${CIAN}   6)${GRIS} Modificar Password    - ${AMARILLO}"
+echo -n "${CIAN}   7)${GRIS} Modificar Password    - ${AMARILLO}"
 pas_BM=$(awk "NR==74" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$pas_BM"
 
-
-
-
-
-
-
-
-
-
-
-echo -n "${CIAN}   7)${GRIS} Modificar Options     - ${AMARILLO}"
+echo -n "${CIAN}   8)${GRIS} Modificar Options     - ${AMARILLO}"
 options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$options_BM"
-
-
-
-
 
 if [ $sistema = Port=55555 ]
 then
@@ -102,10 +84,6 @@ echo ""
 echo -n "${CIAN}   $ITEM)${ROJO} Cambiar a:            - ${BLANCO}"
 echo "DMRLUS"
 fi
-
-
-
-
 
 echo ""
 echo "${CIAN}   0)\33[1;31m Salir"
@@ -189,7 +167,7 @@ esac
 done;;
 
 
-a) echo ""
+6) echo ""
 while true
 do
                       echo "   Valor actual del Puerto: ${AMARILLO}${port_BM#*=}\33[1;37m"
@@ -207,7 +185,7 @@ done;;
 
 
 
-6) echo ""
+7) echo ""
 while true
 do
                       echo "   Valor actual del Password: ${AMARILLO}${pas_BM#*=}\33[1;37m"
@@ -221,7 +199,7 @@ do
                       break;;
 esac
 done;;
-7) echo ""
+8) echo ""
 while true
 do
                           read -p 'Estas en DMR+ ? S/N ' actualizar                                          
