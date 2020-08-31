@@ -71,6 +71,13 @@ options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$options_BM"
 
 
+echo -n "${CIAN}   8)${GRIS} Reiniciar sistema     - ${AMARILLO}"
+echo "         para aplicar los cambios"
+
+
+
+
+
 echo ""
 echo "${CIAN}   0)\33[1;31m Salir"
 echo ""
@@ -201,6 +208,19 @@ do
                           break;;
                           [nN]* ) echo ""
                           sed -i "77c #Options=StartRef=4370;RelinkTime=10;" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                          break;;
+esac
+done;;
+8) echo ""
+while true
+do
+                                         
+                          case $actualizar in
+                          [sS]* ) echo ""
+                          sudo systemctl restart md380-emu.service && sudo systemctl restart mmdvm_bridge.service
+                          exit
+                          [nN]* ) echo ""
+                          echo ""
                           break;;
 esac
 done;;
