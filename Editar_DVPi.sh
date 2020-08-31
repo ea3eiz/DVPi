@@ -7,8 +7,6 @@ clear
 # path usuario
 usuario=$(awk "NR==1" /home/pi/.config/autostart/usuario)
 SCRIPTS_version=$(awk "NR==1" $usuario/.config/autostart/version)
-#Editor DMRGateway Brabdmeister
-DIRECTORIO="DVPi"
 
 #Colores
 ROJO="\033[1;31m"
@@ -18,9 +16,20 @@ AMARILLO="\033[1;33m"
 CIAN="\033[1;36m"
 GRIS="\033[0m"
 MARRON="\33[38;5;138m"
+
+
+port_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
+sistema=port_BM
+if [ $sistema = Port=55555 ]
+then
+DIRECTORIO="DMR+"
+else
+DIRECTORIO="BRANDMEISTER"
+fi
+
 echo "${VERDE}"
 echo "  ***************************************************************************"
-echo "                  Script Modificar $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
+echo "                          Sistema $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
 echo "  ***************************************************************************"
 
 echo -n "${CIAN}   1)${GRIS} Modificar Indicativo  - ${AMARILLO}"
@@ -74,8 +83,8 @@ echo "$options_BM"
 
 
 
-port_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
-sistema=port_BM
+# port_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
+# sistema=port_BM
 if [ $sistema = Port=55555 ]
 then
 echo ""
