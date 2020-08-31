@@ -67,7 +67,7 @@ echo "$pas_BM"
 
 
 echo -n "${CIAN}   7)${GRIS} Modificar Options     - ${AMARILLO}"
-options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
+options_BM=$(awk "NR==78" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$options_BM"
 
 echo ""
@@ -201,13 +201,13 @@ do
                           read -p 'Intruduce reflector DMR+ al que se conectara (ej:4370) ' options
                           if [ $options = 21465 ]
                           then
-                          sed -i "77c Options=StartRef=4000;RelinkTime=15;TS2_1=21465" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                          sed -i "78c Options=StartRef=4000;RelinkTime=15;TS2_1=21465" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                           else
-                          sed -i "77c Options=StartRef=$options;RelinkTime=10;" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                          sed -i "78c Options=StartRef=$options;RelinkTime=10;" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                           fi
                           break;;
                           [nN]* ) echo ""
-                          sed -i "77c #Options=StartRef=4370;RelinkTime=10;" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                          sed -i "78c #Options=StartRef=4370;RelinkTime=10;" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                           break;;
 esac
 done;;
