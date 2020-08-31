@@ -19,7 +19,7 @@ MARRON="\33[38;5;138m"
 
 
 port_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
-sistema=port_BM
+sistema=$port_BM
 
 
 echo "Sistema:$sistema"
