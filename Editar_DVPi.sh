@@ -77,10 +77,10 @@ echo "$options_BM"
 if [ $sistema = Port=55555 ]
 then
 echo -n "${CIAN}   G)${GRIS} Graba estos datos en  - "
-echo "${BLANCO}$DIRECTORIO ${GRIS}y reinicia el sistema"
+echo "${BLANCO}$DIRECTORIO y reinicia el sistema"
 else
 echo -n "${CIAN}   G)${GRIS} Graba estos datos en  - "
-echo "${CIAN}$DIRECTORIO ${GRIS}y reinicia el sistema"
+echo "${CIAN}$DIRECTORIO y reinicia el sistema"
 fi
 
 if [ $sistema = Port=55555 ]
