@@ -218,7 +218,8 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
                           sudo systemctl restart md380-emu.service && sudo systemctl restart mmdvm_bridge.service
-                          exit
+                          break;;
+                          exit;
                           [nN]* ) echo ""
                           echo ""
                           break;;
