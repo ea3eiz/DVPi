@@ -195,7 +195,7 @@ do
                       [sS]* ) echo ""
                       sed -i "74c Password=$pasbm" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
 
-                      cp /opt/MMDVM_Bridge/MMDVM_Bridge.ini /opt/MMDVM_Bridge/brandmeister_esp.ini
+                      #cp /opt/MMDVM_Bridge/MMDVM_Bridge.ini /opt/MMDVM_Bridge/brandmeister_esp.ini
                       
                       break;;
                       [nN]* ) echo ""
@@ -218,6 +218,23 @@ do
                           break;;
                           [nN]* ) echo ""
                           sed -i "77c #Options=StartRef=4370;RelinkTime=10;" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+                          break;;
+esac
+done;;
+g) echo ""
+while true
+do
+                          read -p 'Estas seguro? S/N ' actualizar                                          
+                          case $actualizar in
+                          [sS]* ) echo ""                     
+                          if [ $sistema = Port=55555 ]
+                          then
+                          cp /opt/MMDVM_Bridge/MMDVM_Bridge.ini /opt/MMDVM_Bridge/dmrplus.ini
+                          else
+                          cp /opt/MMDVM_Bridge/MMDVM_Bridge.ini /opt/MMDVM_Bridge/brandmeister_esp.ini
+                          fi
+                          break;;
+                          [nN]* ) echo ""
                           break;;
 esac
 done;;
