@@ -241,7 +241,7 @@ do
                           break;;
 esac
 done;;
-g) echo ""
+G) echo ""
 while true
 do
                           echo -n "${AMARILLO}"
