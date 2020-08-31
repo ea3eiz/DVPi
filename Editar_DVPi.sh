@@ -26,13 +26,13 @@ then
 DIRECTORIO="DMRPLUS"
 echo "${VERDE}"
 echo "  ***************************************************************************"
-echo "                          ${BLANCO}  Sistema $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
+echo "                          ${BLANCO}    Sistema $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
 echo "  ***************************************************************************"
 else
 DIRECTORIO="BRANDMEISTER"
 echo "${VERDE}"
 echo "  ***************************************************************************"
-echo "                          ${CIAN}  Sistema $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
+echo "                          ${CIAN}    Sistema $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
 echo "  ***************************************************************************"
 DIRECTORIO="BRANDMEISTER"
 fi
