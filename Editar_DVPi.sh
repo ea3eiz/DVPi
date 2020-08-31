@@ -121,11 +121,27 @@ done;;
 while true
 do
                           echo "   Valor  actual  de la Id: ${AMARILLO}${id#*=}\33[1;37m"
-                          read -p '   Introduce la Id ' id
+                          read -p '   Introduce la Id 7 dígitos' id
+                          read -p '   Introduce la Id 9 dígitos' id2
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "3c Id=$id" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+
+
+
+
+
+
+                            analogbridge="/opt/Analog_Bridge/Analog_Bridge.ini"
+                            sudo crudini --set $analogbridge GENERAL logLevel 0
+                            sudo crudini --set $analogbridge GENERAL useEmulator true
+                            sudo crudini --set $analogbridge AMBE_AUDIO gatewayDmrId $id
+                            sudo crudini --set $analogbridge AMBE_AUDIO repeaterID $id2
+                            sudo crudini --set $analogbridge DV3000 rxPort 2460
+
+
+
+                          sed -i "3c Id=$id2" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -241,13 +257,12 @@ do
                           [sS]* ) echo ""  
 
 
-                            analogbridge="/opt/Analog_Bridge/Analog_Bridge.ini"
-                           
-                            sudo crudini --set $analogbridge GENERAL logLevel xx
-                            sudo crudini --set $analogbridge GENERAL useEmulator false
-                            sudo crudini --set $analogbridge AMBE_AUDIO gatewayDmrId 2143206
-                            sudo crudini --set $analogbridge AMBE_AUDIO repeaterID 214320691
-                            sudo crudini --set $analogbridge DV3000 rxPort 2460x
+                            #analogbridge="/opt/Analog_Bridge/Analog_Bridge.ini"
+                            #sudo crudini --set $analogbridge GENERAL logLevel 0
+                            #sudo crudini --set $analogbridge GENERAL useEmulator true
+                            #sudo crudini --set $analogbridge AMBE_AUDIO gatewayDmrId 2143175
+                            #sudo crudini --set $analogbridge AMBE_AUDIO repeaterID 214317591
+                            #sudo crudini --set $analogbridge DV3000 rxPort 2460
 
 
                           if [ $sistema = Port=55555 ]
