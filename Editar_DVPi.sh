@@ -87,12 +87,12 @@ if [ $sistema = Port=55555 ]
 then
 ITEM=9
 echo ""
-echo -n "${CIAN}   $ITEM)${ROJO} Cambiar a:            - ${CIAN}"
+echo -n "${CIAN}   $ITEM) Cambiar a:            - ${CIAN}"
 echo "BRANDMEISTER"
 else
 ITEM=10
 echo ""
-echo -n "${CIAN}   $ITEM)${ROJO} Cambiar a:            - ${BLANCO}"
+echo -n "${CIAN}   $ITEM) Cambiar a:            - ${BLANCO}"
 echo "DMRLUS"
 fi
 
