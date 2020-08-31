@@ -24,14 +24,19 @@ sistema=$port_BM
 if [ $sistema = Port=55555 ]
 then
 DIRECTORIO="DMRPLUS"
+echo "${VERDE}"
+echo "  ***************************************************************************"
+echo "                          ${BLANCO}Sistema $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
+echo "  ***************************************************************************"
 else
+echo "${VERDE}"
+echo "  ***************************************************************************"
+echo "                          ${CIAN}Sistema $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
+echo "  ***************************************************************************"
 DIRECTORIO="BRANDMEISTER"
 fi
 
-echo "${VERDE}"
-echo "  ***************************************************************************"
-echo "                          Sistema ${CIAN}$DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
-echo "  ***************************************************************************"
+
 
 echo -n "${CIAN}   1)${GRIS} Modificar Indicativo  - ${AMARILLO}"
 indicativo=$(awk "NR==2" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
@@ -88,7 +93,7 @@ if [ $sistema = Port=55555 ]
 then
 ITEM=9
 echo ""
-echo -n "${CIAN}   $ITEM)${ROJO} Cambiar a:            - ${BLANCO}"
+echo -n "${CIAN}   $ITEM)${ROJO} Cambiar a:            - ${CIAN}"
 echo "BRANDMEISTER"
 else
 ITEM=10
