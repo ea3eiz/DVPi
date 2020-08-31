@@ -127,19 +127,12 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
 
-
-
-
-
-
                             analogbridge="/opt/Analog_Bridge/Analog_Bridge.ini"
-                            sudo crudini --set $analogbridge GENERAL logLevel 0
-                            sudo crudini --set $analogbridge GENERAL useEmulator true
+                            # sudo crudini --set $analogbridge GENERAL logLevel 0
+                            # sudo crudini --set $analogbridge GENERAL useEmulator true
                             sudo crudini --set $analogbridge AMBE_AUDIO gatewayDmrId $id
                             sudo crudini --set $analogbridge AMBE_AUDIO repeaterID $id2
-                            sudo crudini --set $analogbridge DV3000 rxPort 2460
-
-
+                            # sudo crudini --set $analogbridge DV3000 rxPort 2460
 
                           sed -i "3c Id=$id2" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                           break;;
