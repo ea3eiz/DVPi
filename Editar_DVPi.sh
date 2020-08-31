@@ -92,7 +92,7 @@ echo "BRANDMEISTER"
 else
 ITEM=10
 echo ""
-echo -n "${CIAN}  $ITEM)${BLANCO}Cambiar a             - ${BLANCO}"
+echo -n "${CIAN}  $ITEM)${BLANCO} Cambiar a             - ${BLANCO}"
 echo "DMRLUS"
 fi
 
