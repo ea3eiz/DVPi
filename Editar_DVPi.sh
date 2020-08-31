@@ -20,6 +20,12 @@ MARRON="\33[38;5;138m"
 
 port_BM=$(awk "NR==71" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 sistema=port_BM
+
+
+echo "Sistema:$sistema"
+read a
+
+
 if [ $sistema = Port=55555 ]
 then
 DIRECTORIO="DMR+"
@@ -79,6 +85,10 @@ echo -n "${CIAN}   7)${GRIS} Modificar Options     - ${AMARILLO}"
 options_BM=$(awk "NR==77" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 echo "$options_BM"
 
+
+
+
+
 if [ $sistema = Port=55555 ]
 then
 echo ""
@@ -89,6 +99,10 @@ echo ""
 echo -n "${CIAN}   B)${ROJO} Cambiar a:            - ${BLANCO}"
 echo "Brandmeister"
 fi
+
+
+
+
 
 echo ""
 echo "${CIAN}   0)\33[1;31m Salir"
