@@ -194,6 +194,9 @@ do
                       case $actualizar in
                       [sS]* ) echo ""
                       sed -i "74c Password=$pasbm" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+
+                      cp /opt/MMDVM_Bridge/MMDVM_Bridge.ini /opt/MMDVM_Bridge/brandmeister_esp.ini
+                      
                       break;;
                       [nN]* ) echo ""
                       break;;
