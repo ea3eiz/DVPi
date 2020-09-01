@@ -125,7 +125,7 @@ echo -n "${CIAN}  14)${GRIS} Modificar TXInvert    - ${AMARILLO}"
 txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
 echo -n "$txinv1"
 
-echo -n "${CIAN}        \ta)${GRIS} D-STAR      - ${AMARILLO}"
+echo -n "${CIAN}        \t\ta)${GRIS} D-STAR      - ${AMARILLO}"
 dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-Star Enable)
 echo "$dstar_enable"
 
