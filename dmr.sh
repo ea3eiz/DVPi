@@ -4,8 +4,10 @@ while true
 do
 clear
 # path usuario
-usuario=$(awk "NR==1" /home/pi/.config/autostart/usuario)
+usuario=$(awk "NR==1" usuario)
 
+echo "usuario:$usuario"
+read actual
 # path Versión
 SCRIPTS_version=$(awk "NR==1" $usuario/.config/autostart/version)
 
