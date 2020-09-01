@@ -200,7 +200,7 @@ ScreenLayout1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Screen
 echo -n "$ScreenLayout1"
 
 # i) NXDN Enable=
-echo "  ${CIAN}  \ti) ${GRIS}NXDN        - ${AMARILLO}$NXDN"
+echo -n "  ${CIAN}  \ti) ${GRIS}NXDN        - ${AMARILLO}$NXDN"
 Enable_nxdn=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO NXDN Enable)
 echo "$Enable_nxdn"
 
@@ -210,7 +210,7 @@ brillo_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion IdleB
 echo -n "$brillo_nextion"
 
 # j) POCSAG Enable=
-echo "${CIAN}   \tj) ${GRIS}POCSAG      - ${AMARILLO}$POCSAG"
+echo -n "${CIAN}   \tj) ${GRIS}POCSAG      - ${AMARILLO}$POCSAG"
 pocsag=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable)
 echo "$pocsag"
 
