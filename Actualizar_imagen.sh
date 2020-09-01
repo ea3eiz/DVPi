@@ -16,7 +16,7 @@ MARRON="\33[38;5;138m"
 
 echo "${VERDE}"
 echo "   *************************************************************************"
-echo "   *                     vvvvvACTUALIZANDO POSIBLES CAMBIOS                     *"
+echo "   *                     zzzzzACTUALIZANDO POSIBLES CAMBIOS                     *"
 echo "   *                         EN LA IMAGEN ADER ${AMARILLO}$SCRIPTS_version${VERDE}                        *"
 echo "   *************************************************************************"
 echo "${CIAN}"
