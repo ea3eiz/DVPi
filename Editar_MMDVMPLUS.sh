@@ -67,17 +67,15 @@ echo -n "${VERDE}"
 echo "   ***************************************************************************************"
 
 echo -n "${CIAN}   1)${GRIS} Modificar indicativo  - ${AMARILLO}"
-# ind=`grep -n "^Callsign=" $usuario/MMDVMHost/$DIRECTORIO`
-# indi1=`echo "$ind" | tr -d '[[:space:]]'`
-# buscar=":"
-# largo_linea=`expr index $indi1 $buscar`
-# largo_linea=`expr $largo_linea - 1`
-# numero_linea=`expr substr $indi1 1 $largo_linea`
-# letrac=c
-# numero_linea_indi=$numero_linea$letrac
-# contenido_indicativo=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-
-contenido_indicativo=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Callsign)
+ind=`grep -n "^Callsign=" $usuario/MMDVMHost/$DIRECTORIO`
+indi1=`echo "$ind" | tr -d '[[:space:]]'`
+buscar=":"
+largo_linea=`expr index $indi1 $buscar`
+largo_linea=`expr $largo_linea - 1`
+numero_linea=`expr substr $indi1 1 $largo_linea`
+letrac=c
+numero_linea_indi=$numero_linea$letrac
+contenido_indicativo=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
 echo "$contenido_indicativo"
 
 echo -n "${CIAN}   2)${GRIS} Modificar RXFrequency - ${AMARILLO}"
@@ -454,16 +452,14 @@ case $escoger_menu in
 1) echo ""
 while true
 do
-                          echo "Valor actual Indicativo: $contenido_indicativo\33[1;37m"
+                          echo "Valor actual Indicativo: ${AMARILLO}${ind#*=}\33[1;37m"
            	              read -p 'Introduce tu indicativo: ' indicativo
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
                           indicativo=`echo "$indicativo" | tr [:lower:] [:upper:]`
 			                    indicativo=`echo "$indicativo" | tr -d '[[:space:]]'`
-                      
-                          sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Callsign $indicativo
-                          #sed -i "$numero_linea_indi Callsign=$indicativo" $usuario/MMDVMHost/$DIRECTORIO
+                          sed -i "$numero_linea_indi Callsign=$indicativo" $usuario/MMDVMHost/$DIRECTORIO
                           sed -i "$primero $contenido_indicativo" $usuario/info_panel_control.ini
 			                    break;;
 			                    [nN]* ) echo ""
