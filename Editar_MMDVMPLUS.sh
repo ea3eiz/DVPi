@@ -78,7 +78,9 @@ echo -n "${CIAN}   1)${GRIS} Modificar indicativo  - ${AMARILLO}"
 # contenido_indicativo=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
 dmr_bm_port="/home/pi/MMDVMHost/MMDVMPLUS.ini"
 contenido_indicativo=$(sudo crudini --get $dmr_bm_port General Callsign)
-echo "$contenido_indicativo"
+echo "inticativo:$contenido_indicativo"
+
+read a
 
 echo -n "${CIAN}   2)${GRIS} Modificar RXFrequency - ${AMARILLO}"
 rxf=`grep -n "^RXFrequency=" $usuario/MMDVMHost/$DIRECTORIO`
