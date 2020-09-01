@@ -115,7 +115,7 @@ do
                           #spot="[PROVA]"
                           name_hotspot= "EA3EIZ DVPi"
                           mmdvmbridge="/opt/MMDVM_Bridge/DVSwitch.ini"
-                          sudo crudini --set $mmdvmbridge DMR TalkerAlias $name_hotspot
+                          sudo crudini --set $mmdvmbridge DMR TalkerAlias EA3EIZ DVPi
                           break;;
                           [nN]* ) echo ""
                           break;;
