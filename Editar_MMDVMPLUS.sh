@@ -398,12 +398,8 @@ echo "${CIAN}     \t\tm) ${GRIS}Tipo OLED   - ${AMARILLO}$tipo_oled"
 
 #27)reflector DMR+=
 echo -n "${CIAN}  27)${GRIS} Entra reflector DMR+  - ${AMARILLO}"
-OPCION=`expr substr $pas 1 $largo1`
-OPCION=`expr $OPCION + 1`
-linea33port=$OPCION
-letra=p
-linea22port=$OPCION$letra
-var300port= sed -n $linea22port  $usuario/MMDVMHost/$DIRECTORIO;
+contenido_options=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR_Network Options)
+echo "$contenido_options"
 
 echo ""
 echo "${CIAN}  28)${AMARILLO} Abrir fichero $DIRECTORIO para hacer cualquier cambio${AMARILLO}"
