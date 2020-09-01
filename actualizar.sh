@@ -24,7 +24,7 @@ usuario="/home/pi"
 usuario="$usuario"
 actualizacion=$(awk "NR==1" /home/pi/.config/autostart/actualizacion)
 SCRIPTS_version="DVPi"
-version="V105-"
+version="DVPi-"
 version=$version$actualizacion
 
 #pone todos los status de inicio en OFF
