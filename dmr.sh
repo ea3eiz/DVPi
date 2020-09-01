@@ -128,30 +128,19 @@ txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
 echo -n "$txinv1"
 
 echo -n "${CIAN}        \ta)${GRIS} D-STAR      - ${AMARILLO}"
-dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
-echo -n "$dstar_enable"
+dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Enable)
+echo "$dstar_enable"
 
 echo -n "${CIAN}  15)${GRIS} Modificar RXLevel     - ${AMARILLO}"
-rx=`grep -n '\<RXLevel\>' $usuario/MMDVMHost/$DIRECTORIO`
-rx1=`expr substr $rx 4 30`
+rx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem RXLevel)
 echo -n "$rx1"
 
 echo -n "${CIAN}        \tb)${GRIS} DMR         - ${AMARILLO}"
-dmr=`grep -n "\[DMR\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $dmr $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $dmr 1 $largo_linea`
-numero_linea_dmr=`expr $numero_linea + 1`
-letra=p
-numero_linea_dmr_letrap=$numero_linea_dmr$letra #crea 74p
-letrac=c
-numero_linea_dmr_letrac=$numero_linea_dmr$letrac #crea 74c
-presentar_valor= sed -n $numero_linea_dmr_letrap  $usuario/MMDVMHost/$DIRECTORIO;
+dmr_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Enable)
+echo "$dmr_enable"
 
 echo -n "${CIAN}  16)${GRIS} Modificar TXLevel     - ${AMARILLO}"
-tx=`grep -n -m 1 '\<TXLevel\>' $usuario/MMDVMHost/$DIRECTORIO`
-tx1=`expr substr $tx 4 30`
+tx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel)
 echo -n "$tx1"
 
 echo -n "${CIAN}        \tc)${GRIS} FUSION      - ${AMARILLO}"
