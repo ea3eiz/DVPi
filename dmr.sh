@@ -155,26 +155,15 @@ numero_linea_fusion_letrac=$numero_linea_fusion$letrac
 presentar_valor= sed -n $numero_linea_fusion_letrap  $usuario/MMDVMHost/$DIRECTORIO;
 
 echo -n "${CIAN}  17)${GRIS} Modificar Duplex      - ${AMARILLO}"
-dup=`grep -n -m 1 '\<Duplex\>' $usuario/MMDVMHost/$DIRECTORIO`
-dup1=`expr substr $dup 3 30`
+dup1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Duplex)
 echo -n "$dup1"
 
 echo -n "${CIAN}          \td)${GRIS} P25         - ${AMARILLO}"
-p25=`grep -n "\[P25\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $p25 $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $p25 1 $largo_linea`
-numero_linea_p25=`expr $numero_linea + 1`
-letra=p
-numero_linea_p25_letrap=$numero_linea_p25$letra
-letrac=c
-numero_linea_p25_letrac=$numero_linea_p25$letrac
-presentar_valor= sed -n $numero_linea_p25_letrap  $usuario/MMDVMHost/$DIRECTORIO;
+p25_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO P25 Enable)
+echo -n "$p25_enable"
 
 echo -n "${CIAN}  18)${GRIS} Modificar TXHang      - ${AMARILLO}"
-txh=`grep -n -m 1 '\<TXHang\>' $usuario/MMDVMHost/$DIRECTORIO`
-txh1=`expr substr $txh 5 30`
+txh1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General TXHang)
 echo -n "$txh1"
 
 echo -n "${CIAN}          \te)${GRIS} Baliza      - ${AMARILLO}"
@@ -186,39 +175,21 @@ lg1=`expr substr $lg 4 30`
 echo -n "$lg1"
 
 echo -n "${CIAN}    \tf)${GRIS} RFModeHang  - ${AMARILLO}"
-modehang=`grep -n -m 1 -c '\<RFModeHang\>' $usuario/MMDVMHost/$DIRECTORIO`
-if [ $modehang = 0 ]; then
-echo "\33[1;31mEsta versión MMDVMHost no trae este parámetro"
-else
-modehang=`grep -n -m 1 '\<RFModeHang\>' $usuario/MMDVMHost/$DIRECTORIO`
-modehang1=`expr substr $modehang 3 30`
+modehang1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General RFModeHang)
 echo "$modehang1"
-fi
 
 echo -n "${CIAN}  20)${GRIS} Modificar Slot1       - ${AMARILLO}"
-sl=`grep -n -m 1 '\<Slot1\>' $usuario/MMDVMHost/$DIRECTORIO`
-sl1=`expr substr $sl 5 30`
+sl1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR Slot1)
 echo -n "$sl1"
 
 echo -n "${CIAN}           \tg)${GRIS} Timeout     - ${AMARILLO}"
-timeo=`grep -n -m 1 -c '\<Timeout\>' $usuario/MMDVMHost/$DIRECTORIO`
-if [ $timeo = 0 ]; then
-echo "\33[1;31mEsta versión MMDVMHost no trae este parámetro"
-else
-timeo=`grep -n -m 1 '\<Timeout\>' $usuario/MMDVMHost/$DIRECTORIO`
-timeo1=`expr substr $timeo 3 30`
+timeo1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Timeout)
 echo "$timeo1"
-fi
 
 echo -n "${CIAN}  21)${GRIS} Tipo Pantalla Display - ${AMARILLO}"
-Display=`grep -n -m 1 -c '\<Display\>' $usuario/MMDVMHost/$DIRECTORIO`
-if [ $Display = 0 ]; then
-echo "\33[1;31mEsta versión MMDVMHost no trae este parámetro"
-else
-Display=`grep -n -m 1 '\<Display\>' $usuario/MMDVMHost/$DIRECTORIO`
-Display1=`expr substr $Display 3 30`
+Display1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Display)
 echo -n "$Display1"
-fi
+
 
 var=`grep -n -m 1 "\[Nextion\]" $usuario/MMDVMHost/$DIRECTORIO`
 buscar=":"
@@ -230,6 +201,8 @@ MODEMNEXTION=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
 letra=c
 linea_sed_MN=$numero_linea$letra
 echo " ${CIAN}\t\th) ${GRIS}Port Display- ${AMARILLO}$MODEMNEXTION"
+port_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Port)
+echo "$port_nextion"
 
 echo -n "${CIAN}  22)${GRIS} Version Display       - ${AMARILLO}"
 ScreenLayout=`grep -n -m 1 -c '\<ScreenLayout\>' $usuario/MMDVMHost/$DIRECTORIO`
