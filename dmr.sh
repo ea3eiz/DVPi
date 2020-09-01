@@ -246,7 +246,7 @@ modu1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-Star Module)
 echo -n "$modu1"
 
 # M) OLED Type=
-echo -n "${CIAN}     \t\t\t\tm) ${GRIS}Tipo OLED   - ${AMARILLO}$tipo_oled"
+echo -n "${CIAN}     \t\t\tm) ${GRIS}Tipo OLED   - ${AMARILLO}$tipo_oled"
 tipo_oled=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO OLED Type)
 echo "$tipo_oled"
 
