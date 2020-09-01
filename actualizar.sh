@@ -22,9 +22,8 @@ fi
 # path usuario
 usuario="/home/pi"
 usuario="$usuario"
-SCRIPTS_version="V105"
 actualizacion=$(awk "NR==1" /home/pi/.config/autostart/actualizacion)
-SCRIPTS_version="V105"
+SCRIPTS_version="DVPi"
 version="V105-"
 version=$version$actualizacion
 
@@ -271,7 +270,7 @@ sudo systemctl stop nxdngateway.service
 else
 echo ""
 fi
-sudo rm -R /home/pi/V105/associacioader.com
-sudo rm -R /home/pi/V105/Desktop/associacioader.com
-sudo rm /home/pi/V105/Desktop/st-data
+sudo rm -R /home/pi/$SCRIPTS_version/associacioader.com
+sudo rm -R /home/pi/$SCRIPTS_version/Desktop/associacioader.com
+sudo rm /home/pi/$SCRIPTS_version/Desktop/st-data
 sudo rm /home/pi/Desktop/st-data
