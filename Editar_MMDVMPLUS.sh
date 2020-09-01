@@ -77,7 +77,7 @@ echo -n "${CIAN}   1)${GRIS} Modificar indicativo  - ${AMARILLO}"
 # numero_linea_indi=$numero_linea$letrac
 # contenido_indicativo=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
 
-contenido_indicativo=$(sudo crudini --get $usuario/$DIRECTORIO General Callsign)
+contenido_indicativo=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Callsign)
 echo "inticativo:$contenido_indicativo"
 
 echo -n "${CIAN}   2)${GRIS} Modificar RXFrequency - ${AMARILLO}"
