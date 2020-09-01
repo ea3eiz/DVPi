@@ -166,7 +166,7 @@ echo -n "${CIAN}  18)${GRIS} Modificar TXHang      - ${AMARILLO}"
 txh1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR TXHang)
 echo -n "$txh1"
 
-echo -n "${CIAN}          \t\7e)${GRIS} Baliza      - ${AMARILLO}"
+echo -n "${CIAN}          \t\te)${GRIS} Baliza      - ${AMARILLO}"
 cw= sed -n "31p"  $usuario/MMDVMHost/$DIRECTORIO;
 
 echo -n "${CIAN}  19)${GRIS} Modificar Tramas      - ${AMARILLO}"
@@ -191,7 +191,7 @@ echo -n "${CIAN}  21)${GRIS} Tipo Pantalla Display - ${AMARILLO}"
 Display1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Display)
 echo -n "$Display1"
 
-echo " ${CIAN}\t\t\th) ${GRIS}Port Display- ${AMARILLO}$MODEMNEXTION"
+echo " ${CIAN}\t\th) ${GRIS}Port Display- ${AMARILLO}$MODEMNEXTION"
 port_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Port)
 echo "$port_nextion"
 
