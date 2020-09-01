@@ -196,55 +196,27 @@ port_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Port)
 echo "$port_nextion"
 
 echo -n "${CIAN}  22)${GRIS} Version Display       - ${AMARILLO}"
-ScreenLayout=`grep -n -m 1 -c '\<ScreenLayout\>' $usuario/MMDVMHost/$DIRECTORIO`
-if [ $ScreenLayout = 0 ]; then
-echo "\33[1;31mEsta versión MMDVMHost no trae este parámetro"
-else
-ScreenLayout=`grep -n -m 1 '\<ScreenLayout\>' $usuario/MMDVMHost/$DIRECTORIO`
-ScreenLayout1=`expr substr $ScreenLayout 5 30`
+ScreenLayout1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion ScreenLayout)
 echo -n "$ScreenLayout1"
-fi
 
 # i) NXDN Enable=
-var=`grep -n -m 1 "\[NXDN\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-numero_linea=`expr $numero_linea + 1`
-NXDN=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letra=c
-linea_sed_NXDN=$numero_linea$letra
 echo "  ${CIAN}  \ti) ${GRIS}NXDN        - ${AMARILLO}$NXDN"
+Enable_nxdn=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO NXDN Enable)
+echo "$Enable_nxdn"
 
 # 23) IdleBrightness=
-var=`grep -n -m 1 "^IdleBrightness=" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-IdleBrightness=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-IdleBrightness_CORTO=`expr substr $IdleBrightness 3 22`
-letra=c
-linea_sed_IdleBrightness=$numero_linea$letra
 echo -n "  ${CIAN}23) ${GRIS}Brillo reposo Nextion - ${AMARILLO}$IdleBrightness_CORTO"
+brillo_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion IdleBrightness)
+echo -n "$brillo_nextion"
 
 # j) POCSAG Enable=
-var=`grep -n -m 1 "\[POCSAG\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-numero_linea=`expr $numero_linea + 1`
-POCSAG=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letra=c
-linea_sed_POCSAG=$numero_linea$letra
 echo "${CIAN}   \tj) ${GRIS}POCSAG      - ${AMARILLO}$POCSAG"
+pocsag=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable)
+echo "$pocsag"
 
 # 24) Latitude=
 echo -n "${CIAN}  24)${GRIS} Coordenada Latitud    - ${AMARILLO}"
-lat=`grep -n "Latitude" $usuario/MMDVMHost/$DIRECTORIO`
-lat1=`expr substr $lat 4 30`
+lat1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Latitude)
 echo -n "$lat1"
 
 # k) Jitter=
@@ -260,8 +232,7 @@ echo "  ${CIAN}     \tk) ${GRIS}Jitter      - ${AMARILLO}$Jitter"
 
 # 25) Longitude=
 echo -n "${CIAN}  25)${GRIS} Coordenada Longitud   - ${AMARILLO}"
-long=`grep -n "Longitude" $usuario/MMDVMHost/$DIRECTORIO`
-long1=`expr substr $long 4 30`
+long1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Longitude)
 echo -n "$long1"
 
 # l) FM Enable=
