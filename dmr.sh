@@ -160,7 +160,7 @@ echo -n "$dup1"
 
 echo -n "${CIAN}          \td)${GRIS} P25         - ${AMARILLO}"
 p25_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO P25 Enable)
-echo -n "$p25_enable"
+echo "$p25_enable"
 
 echo -n "${CIAN}  18)${GRIS} Modificar TXHang      - ${AMARILLO}"
 txh1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR TXHang)
@@ -191,16 +191,6 @@ echo -n "${CIAN}  21)${GRIS} Tipo Pantalla Display - ${AMARILLO}"
 Display1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Display)
 echo -n "$Display1"
 
-
-var=`grep -n -m 1 "\[Nextion\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-numero_linea=`expr $numero_linea + 2`
-MODEMNEXTION=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letra=c
-linea_sed_MN=$numero_linea$letra
 echo " ${CIAN}\t\th) ${GRIS}Port Display- ${AMARILLO}$MODEMNEXTION"
 port_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Port)
 echo "$port_nextion"
