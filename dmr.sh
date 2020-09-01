@@ -128,7 +128,7 @@ txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
 echo -n "$txinv1"
 
 echo -n "${CIAN}        \ta)${GRIS} D-STAR      - ${AMARILLO}"
-dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Enable)
+dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-STAR Enable)
 echo "$dstar_enable"
 
 echo -n "${CIAN}  15)${GRIS} Modificar RXLevel     - ${AMARILLO}"
@@ -136,7 +136,7 @@ rx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem RXLevel)
 echo -n "$rx1"
 
 echo -n "${CIAN}        \tb)${GRIS} DMR         - ${AMARILLO}"
-dmr_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Enable)
+dmr_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR Enable)
 echo "$dmr_enable"
 
 echo -n "${CIAN}  16)${GRIS} Modificar TXLevel     - ${AMARILLO}"
