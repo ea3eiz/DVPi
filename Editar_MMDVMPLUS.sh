@@ -398,7 +398,7 @@ echo "${CIAN}     \t\tm) ${GRIS}Tipo OLED   - ${AMARILLO}$tipo_oled"
 
 #27)reflector DMR+=
 echo -n "${CIAN}  27)${GRIS} Entra reflector DMR+  - ${AMARILLO}"
-contenido_options=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO [DMR\ \Network] Options)
+contenido_options=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO [DMR\ /Network] Options)
 echo "$contenido_options"
 
 echo ""
