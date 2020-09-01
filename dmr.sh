@@ -200,7 +200,7 @@ ScreenLayout1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Screen
 echo -n "$ScreenLayout1"
 
 # i) NXDN Enable=
-echo -n "  ${CIAN}  \t\ti) ${GRIS}NXDN        - ${AMARILLO}$NXDN"
+echo -n "  ${CIAN}  \t\t\ti) ${GRIS}NXDN        - ${AMARILLO}$NXDN"
 Enable_nxdn=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO NXDN Enable)
 echo "$Enable_nxdn"
 
@@ -210,7 +210,7 @@ brillo_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion IdleB
 echo -n "$brillo_nextion"
 
 # j) POCSAG Enable=
-echo -n "${CIAN}   \t\tj) ${GRIS}POCSAG      - ${AMARILLO}$POCSAG"
+echo -n "${CIAN}   \t\t\tj) ${GRIS}POCSAG      - ${AMARILLO}$POCSAG"
 pocsag=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable)
 echo "$pocsag"
 
@@ -236,22 +236,13 @@ long1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Longitude)
 echo -n "$long1"
 
 # l) FM Enable=
-var=`grep -n -m 1 "\[FM\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-numero_linea=`expr $numero_linea + 1`
-FM=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letra=c
-linea_sed_FM=$numero_linea$letra
 echo "${CIAN}     \t\tl) ${GRIS}FM          - ${AMARILLO}$FM"
 Enable_fm=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO FM Enable)
 echo "$Enable_fm"
+
 # 26) Modulo D-STAR=
 echo -n "${CIAN}  26)${GRIS} Modulo D-STAR         - ${AMARILLO}"
-modu=`grep -n -m 1 '\<Module\>' $usuario/MMDVMHost/$DIRECTORIO`
-modu1=`expr substr $modu 4 30`
+modu1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-Star Module)
 echo -n "$modu1"
 
 # M) OLED Type=
