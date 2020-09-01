@@ -93,7 +93,7 @@ echo "${CIAN}   9)${GRIS} Entrar Puerto manual  ${CIAN}"
 
 echo -n "                            - "
 
-idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Port)
+idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
 echo "$idd1"
 
 echo -n "${CIAN}  11)${GRIS} Modificar Address     - ${AMARILLO}"
