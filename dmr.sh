@@ -6,8 +6,6 @@ clear
 # path usuario
 usuario=$(awk "NR==1" ~/usuario)
 
-echo "usuario:$usuario"
-read actual
 # path Versión
 SCRIPTS_version=$(awk "NR==1" $usuario/.config/autostart/version)
 
@@ -128,7 +126,7 @@ txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
 echo -n "$txinv1"
 
 echo -n "${CIAN}        \ta)${GRIS} D-STAR      - ${AMARILLO}"
-dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-STAR Enable)
+dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-Star Enable)
 echo "$dstar_enable"
 
 echo -n "${CIAN}  15)${GRIS} Modificar RXLevel     - ${AMARILLO}"
