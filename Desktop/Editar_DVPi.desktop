@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=lxterminal
-Exec=sh -c "cd /home/pi/DVPi;lxterminal --geometry=79x23 -e sudo sh  Editar_DVPi.sh"
+Exec=sh -c "cd /home/pi/DVPi;lxterminal --geometry=79x30 -e sudo sh  Editar_DVPi.sh"
 Icon=/home/pi/DVPi/ICONO_EDITAR_DVPI.png
 Type=Application
 StartupNotify=false
