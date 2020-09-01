@@ -67,15 +67,17 @@ echo -n "${VERDE}"
 echo "   ***************************************************************************************"
 
 echo -n "${CIAN}   1)${GRIS} Modificar indicativo  - ${AMARILLO}"
-ind=`grep -n "^Callsign=" $usuario/MMDVMHost/$DIRECTORIO`
-indi1=`echo "$ind" | tr -d '[[:space:]]'`
-buscar=":"
-largo_linea=`expr index $indi1 $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $indi1 1 $largo_linea`
-letrac=c
-numero_linea_indi=$numero_linea$letrac
-contenido_indicativo=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
+# ind=`grep -n "^Callsign=" $usuario/MMDVMHost/$DIRECTORIO`
+# indi1=`echo "$ind" | tr -d '[[:space:]]'`
+# buscar=":"
+# largo_linea=`expr index $indi1 $buscar`
+# largo_linea=`expr $largo_linea - 1`
+# numero_linea=`expr substr $indi1 1 $largo_linea`
+# letrac=c
+# numero_linea_indi=$numero_linea$letrac
+# contenido_indicativo=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
+
+contenido_indicativo=$(sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Callsign)
 echo "$contenido_indicativo"
 
 echo -n "${CIAN}   2)${GRIS} Modificar RXFrequency - ${AMARILLO}"
@@ -459,7 +461,9 @@ do
 			                    [sS]* ) echo ""
                           indicativo=`echo "$indicativo" | tr [:lower:] [:upper:]`
 			                    indicativo=`echo "$indicativo" | tr -d '[[:space:]]'`
-                          sed -i "$numero_linea_indi Callsign=$indicativo" $usuario/MMDVMHost/$DIRECTORIO
+                      
+                          sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO DMR TalkerAlias $indicativo
+                          #sed -i "$numero_linea_indi Callsign=$indicativo" $usuario/MMDVMHost/$DIRECTORIO
                           sed -i "$primero $contenido_indicativo" $usuario/info_panel_control.ini
 			                    break;;
 			                    [nN]* ) echo ""
