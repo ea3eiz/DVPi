@@ -4,7 +4,7 @@ while true
 do
 clear
 # path usuario
-usuario=$(awk "NR==1" usuario)
+usuario=$(awk "NR==1" ~/usuario)
 
 echo "usuario:$usuario"
 read actual
