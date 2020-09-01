@@ -191,7 +191,7 @@ echo -n "${CIAN}  21)${GRIS} Tipo Pantalla Display - ${AMARILLO}"
 Display1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Display)
 echo -n "$Display1"
 
-echo " ${CIAN}\t\th) ${GRIS}Port Display- ${AMARILLO}$MODEMNEXTION"
+echo -n " ${CIAN}\t\t\th) ${GRIS}Port Display- ${AMARILLO}$MODEMNEXTION"
 port_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Port)
 echo "$port_nextion"
 
