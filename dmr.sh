@@ -236,7 +236,7 @@ long1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Longitude)
 echo -n "$long1"
 
 # l) FM Enable=
-echo "${CIAN}     \t\tl) ${GRIS}FM          - ${AMARILLO}$FM"
+echo -n "${CIAN}     \t\tl) ${GRIS}FM          - ${AMARILLO}$FM"
 Enable_fm=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO FM Enable)
 echo "$Enable_fm"
 
@@ -246,16 +246,9 @@ modu1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-Star Module)
 echo -n "$modu1"
 
 # M) OLED Type=
-var=`grep -n -m 1 "\[OLED\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-numero_linea=`expr $numero_linea + 1`
-tipo_oled=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letra=c
-linea_sed_oled=$numero_linea$letra
-echo "${CIAN}     \t\tm) ${GRIS}Tipo OLED   - ${AMARILLO}$tipo_oled"
+echo -n "${CIAN}     \t\tm) ${GRIS}Tipo OLED   - ${AMARILLO}$tipo_oled"
+long1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO OLED Type)
+echo "$tipo_oled"
 
 #27)reflector DMR+=
 echo -n "${CIAN}  27)${GRIS} Entra reflector DMR+  - ${AMARILLO}"
