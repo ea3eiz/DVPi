@@ -112,8 +112,8 @@ do
                           [sS]* ) echo ""
                           indicativo=`echo "$indicativo" | tr [:lower:] [:upper:]`
                           sed -i "2c Callsign=$indicativo" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
-                          spot="[PROVA]"
-                          name_hotspot=$indicativo$spot
+                          #spot="[PROVA]"
+                          name_hotspot=$indicativo
                           mmdvmbridge="/opt/MMDVM_Bridge/DVSwitch.ini"
                           sudo crudini --set $mmdvmbridge DMR TalkerAlias $name_hotspot
                           break;;
