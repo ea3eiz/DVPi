@@ -124,22 +124,12 @@ pas1=`expr substr $pas 5 30`
 echo "$pas1"
 
 echo -n "${CIAN}  14)${GRIS} Modificar TXInvert    - ${AMARILLO}"
-txinv=`grep -n '\<TXInvert\>' $usuario/MMDVMHost/$DIRECTORIO`
-txinv1=`expr substr $txinv 4 30`
+txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
 echo -n "$txinv1"
 
 echo -n "${CIAN}        \ta)${GRIS} D-STAR      - ${AMARILLO}"
-dstar=`grep -n "\[D-Star\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $dstar $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $dstar 1 $largo_linea`
-numero_linea_dstar=`expr $numero_linea + 1`
-letra=p
-numero_linea_dstar_letrap=$numero_linea_dstar$letra
-letrac=c
-numero_linea_dstar_letrac=$numero_linea_dstar$letrac
-presentar_valo= sed -n $numero_linea_dstar_letrap  $usuario/MMDVMHost/$DIRECTORIO;
+dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
+echo -n "$dstar_enable"
 
 echo -n "${CIAN}  15)${GRIS} Modificar RXLevel     - ${AMARILLO}"
 rx=`grep -n '\<RXLevel\>' $usuario/MMDVMHost/$DIRECTORIO`
