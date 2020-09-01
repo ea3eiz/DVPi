@@ -76,8 +76,8 @@ echo -n "${CIAN}   1)${GRIS} Modificar indicativo  - ${AMARILLO}"
 # letrac=c
 # numero_linea_indi=$numero_linea$letrac
 # contenido_indicativo=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-
-contenido_indicativo=$(sudo crudini --get /home/pi/MMDVMHost/$DIRECTORIO General Callsign)
+dmr_bm_port="/home/pi/MMDVMHost/MMDVMPLUS.ini"
+contenido_indicativo=$(sudo crudini --get $dmr_bm_port General Callsign)
 echo "$contenido_indicativo"
 
 echo -n "${CIAN}   2)${GRIS} Modificar RXFrequency - ${AMARILLO}"
