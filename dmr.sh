@@ -163,7 +163,7 @@ p25_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO P25 Enable)
 echo -n "$p25_enable"
 
 echo -n "${CIAN}  18)${GRIS} Modificar TXHang      - ${AMARILLO}"
-txh1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General TXHang)
+txh1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR TXHang)
 echo -n "$txh1"
 
 echo -n "${CIAN}          \te)${GRIS} Baliza      - ${AMARILLO}"
@@ -179,7 +179,8 @@ modehang1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General RFModeHang
 echo "$modehang1"
 
 echo -n "${CIAN}  20)${GRIS} Modificar Slot1       - ${AMARILLO}"
-sl1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR Slot1)
+sl=`grep -n -m 1 '\<Slot1\>' $usuario/MMDVMHost/$DIRECTORIO`
+sl1=`expr substr $sl 5 30`
 echo -n "$sl1"
 
 echo -n "${CIAN}           \tg)${GRIS} Timeout     - ${AMARILLO}"
