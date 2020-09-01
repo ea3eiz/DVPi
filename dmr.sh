@@ -125,7 +125,7 @@ echo -n "${CIAN}  14)${GRIS} Modificar TXInvert    - ${AMARILLO}"
 txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
 echo -n "$txinv1"
 
-echo -n "${CIAN}        \t\ta)${GRIS} D-STAR      - ${AMARILLO}"
+echo -n "${CIAN}        \t\t\ta)${GRIS} D-STAR      - ${AMARILLO}"
 dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-Star Enable)
 echo "$dstar_enable"
 
@@ -133,7 +133,7 @@ echo -n "${CIAN}  15)${GRIS} Modificar RXLevel     - ${AMARILLO}"
 rx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem RXLevel)
 echo -n "$rx1"
 
-echo -n "${CIAN}        \tb)${GRIS} DMR         - ${AMARILLO}"
+echo -n "${CIAN}        \t\tb)${GRIS} DMR         - ${AMARILLO}"
 dmr_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR Enable)
 echo "$dmr_enable"
 
@@ -141,7 +141,7 @@ echo -n "${CIAN}  16)${GRIS} Modificar TXLevel     - ${AMARILLO}"
 tx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel)
 echo -n "$tx1"
 
-echo -n "${CIAN}        \tc)${GRIS} FUSION      - ${AMARILLO}"
+echo -n "${CIAN}        \t\tc)${GRIS} FUSION      - ${AMARILLO}"
 fusion=`grep -n "LowDeviation" $usuario/MMDVMHost/$DIRECTORIO`
 buscar=":"
 largo_linea=`expr index $fusion $buscar`
@@ -158,7 +158,7 @@ echo -n "${CIAN}  17)${GRIS} Modificar Duplex      - ${AMARILLO}"
 dup1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Duplex)
 echo -n "$dup1"
 
-echo -n "${CIAN}          \td)${GRIS} P25         - ${AMARILLO}"
+echo -n "${CIAN}          \t\td)${GRIS} P25         - ${AMARILLO}"
 p25_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO P25 Enable)
 echo "$p25_enable"
 
@@ -166,7 +166,7 @@ echo -n "${CIAN}  18)${GRIS} Modificar TXHang      - ${AMARILLO}"
 txh1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR TXHang)
 echo -n "$txh1"
 
-echo -n "${CIAN}          \te)${GRIS} Baliza      - ${AMARILLO}"
+echo -n "${CIAN}          \t\7e)${GRIS} Baliza      - ${AMARILLO}"
 cw= sed -n "31p"  $usuario/MMDVMHost/$DIRECTORIO;
 
 echo -n "${CIAN}  19)${GRIS} Modificar Tramas      - ${AMARILLO}"
@@ -191,7 +191,7 @@ echo -n "${CIAN}  21)${GRIS} Tipo Pantalla Display - ${AMARILLO}"
 Display1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Display)
 echo -n "$Display1"
 
-echo " ${CIAN}\t\th) ${GRIS}Port Display- ${AMARILLO}$MODEMNEXTION"
+echo " ${CIAN}\t\t\th) ${GRIS}Port Display- ${AMARILLO}$MODEMNEXTION"
 port_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Port)
 echo "$port_nextion"
 
