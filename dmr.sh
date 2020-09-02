@@ -132,17 +132,9 @@ tx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel)
 echo -n "$tx1"
 
 echo -n "${CIAN}        \t\tc)${GRIS} FUSION      - ${AMARILLO}"
-fusion=`grep -n "LowDeviation" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $fusion $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $fusion 1 $largo_linea`
-numero_linea_fusion=`expr $numero_linea - 1`
-letra=p
-numero_linea_fusion_letrap=$numero_linea_fusion$letra
-letrac=c
-numero_linea_fusion_letrac=$numero_linea_fusion$letrac
-presentar_valor= sed -n $numero_linea_fusion_letrap  $usuario/MMDVMHost/$DIRECTORIO;
+ad="System Fusion Network"          
+Enable_fusion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
+echo "$Enable_fusion"
 
 echo -n "${CIAN}  17)${GRIS} Modificar Duplex      - ${AMARILLO}"
 dup1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Duplex)
@@ -210,15 +202,10 @@ lat1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Latitude)
 echo -n "$lat1"
 
 # k) Jitter=
-Jitter=`grep -n "Jitter" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $Jitter $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $Jitter 1 $largo_linea`
-Jitter=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letrac=c
-numero_linea_jiter_letrac=$numero_linea$letrac
 echo "  ${CIAN}     \t\tk) ${GRIS}Jitter      - ${AMARILLO}$Jitter"
+ad="DMR Network"          
+jitter=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter)
+echo "$jitter"
 
 # 25) Longitude=
 echo -n "${CIAN}  25)${GRIS} Coordenada Longitud   - ${AMARILLO}"
