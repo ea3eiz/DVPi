@@ -238,9 +238,13 @@ echo "$tipo_oled"
 echo -n "${CIAN}  27)${GRIS} Entra reflector DMR+  - ${AMARILLO}"
 if [ $port = 55555 ]
 then
-echo "es 55555"
+ad="DMR Network"          
+port_dmr=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Options)
+echo "$port_dmr"
 else
-echo "no es 55555"
+ad="DMR Network"          
+port_bm=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" #Options)
+echo "$port_bm"
 fi
 
 
