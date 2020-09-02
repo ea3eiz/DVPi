@@ -106,7 +106,7 @@ case $escoger_menu in
 while true
 do
                           echo "   Valor  actual  del Indicativo: ${AMARILLO}${indicativo#*=}"
-                          echo "   ej: Indicativo = EA3EIZ   Alias = DVpi"
+                          echo "   Ej. Indicativo = EA3EIZ   Alias = DVpi...el TalkerAlias será: (EA3EIZ DVPi)"
                           echo -n "${BLANCO}"
                           read -p '   Introduce el Indicativo ' indicativo
                           read -p '   Introduce alias ' alias
