@@ -158,7 +158,7 @@ ad="Log"
 lg1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" DisplayLevel)
 echo -n "$lg1"
 
-echo -n "${CIAN}    \tf)${GRIS} RFModeHang  - ${AMARILLO}"
+echo -n "${CIAN}    \t\t\tf)${GRIS} RFModeHang  - ${AMARILLO}"
 modehang1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General RFModeHang)
 echo "$modehang1"
 
@@ -167,7 +167,7 @@ ad="DMR Network"
 sl1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Slot1)
 echo -n "$sl1"
 
-echo -n "${CIAN}           \tg)${GRIS} Timeout     - ${AMARILLO}"
+echo -n "${CIAN}           \t\tg)${GRIS} Timeout     - ${AMARILLO}"
 timeo1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Timeout)
 echo "$timeo1"
 
