@@ -114,7 +114,7 @@ do
                           sed -i "2c Callsign=$indicativo" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                          
                           mmdvmbridge="/opt/MMDVM_Bridge/DVSwitch.ini"
-                          sudo crudini --set $mmdvmbridge DMR TalkerAlias ${indicativo} DDD
+                          sudo crudini --set $mmdvmbridge DMR TalkerAlias "${indicativo} DDD"
                           break;;
                           [nN]* ) echo ""
                           break;;
