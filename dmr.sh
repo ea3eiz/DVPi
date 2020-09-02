@@ -331,7 +331,7 @@ done;;
 3) echo ""
 while true
 do
-                          echo "Valor actual del TXFrequency: $contenido_txf\33[1;37m"
+                          echo "Valor actual del TXFrequency: $contenido_txf\33[1;37m Pulse Enter y no modifica nada"
                           read -p 'Introduce TXFrequency:        ' txfre
                           if [ $txfre="" ]
                           then
