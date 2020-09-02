@@ -97,7 +97,7 @@ idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
 echo "$idd1"
 
 echo -n "${CIAN}  11)${GRIS} Modificar Address     - ${AMARILLO}"           
-master1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "{DMR}"" {Network}" Address)
+master1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "{DMR Network}" Address)
 echo "$master1"
 
 echo -n "${CIAN}  12)${GRIS} Modificar Puerto      - ${AMARILLO}"
