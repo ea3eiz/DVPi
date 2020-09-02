@@ -526,22 +526,12 @@ done;;
 15) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $rx $buscar`
-                          echo "Valor  actual  del  RXLevel : ${AMARILLO}${rx#*=}\33[1;37m"
+                          echo "Valor  actual  del  RXLevel : $rx1\33[1;37m"
                           read -p 'Valor óptimo (en mi caso) para DVMEGA=45, Low cost EA4AOJ=45, NANO BLAS=60 : ' var2
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $rx 1 2`
-                          else
-                          linea=`expr substr $rx 1 3`
-                          fi
-                          linea=$linea$letra
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea RXLevel=$var2" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert $var2
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
