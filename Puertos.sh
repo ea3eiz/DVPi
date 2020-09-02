@@ -66,9 +66,15 @@ echo "                                       $SCRIPTS_version by EA3EIZ"
 echo -n "${VERDE}"
 echo "   ***************************************************************************************"
 
-echo -n "${CIAN}   1)${GRIS} Modificar indicativo  - ${AMARILLO}"
-contenido_indicativo=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Callsign)
-echo "$contenido_indicativo"
+echo -n "${CIAN}   1)${GRIS} Puerto ACM0"
+echo -n "${CIAN}   2)${GRIS} Puerto ACM1"
+echo -n "${CIAN}   3)${GRIS} Puerto ACM2"
+echo -n "${CIAN}   4)${GRIS} Puerto ACM3"
+echo -n "${CIAN}   5)${GRIS} Puerto AMA0"
+echo -n "${CIAN}   6)${GRIS} Puerto AMA1"
+echo -n "${CIAN}   7)${GRIS} Puerto AMA2"
+echo -n "${CIAN}   8)${GRIS} Puerto AMA3"
+
 
 echo -n "${CIAN}   2)${GRIS} Modificar RXFrequency - ${AMARILLO}"
 contenido_rxf=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info RXFrequency)
@@ -395,18 +401,14 @@ sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB0
 			                    break;;
 esac
 done;;
-9) echo ""
+1) echo ""
 while true
 do
-                          
-
-port_modem=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
-                          echo "Valor del Port: ${AMARILLO}$port_modem"
-                          read -p 'Ej. /dev/ttyAMA1  /dev/ttyACM1  /dev/ttyUSB1  : ' port
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port $port
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM0
+                          exit
                           break;;
                           [nN]* ) echo ""
                           break;;

@@ -398,6 +398,18 @@ done;;
 9) echo ""
 while true
 do
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+sh Puertos.sh
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+9copia) echo ""
+while true
+do
                           
 
 port_modem=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
