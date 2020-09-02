@@ -347,7 +347,6 @@ while true
 do
                           echo "Valor de la Ciudad: $contenido_location\33[1;37m"
                           read -p 'Introduce tu Ciudad ' loc1
-                          loc1=`echo "$loc1" | tr -d '[[:space:]]'`
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
