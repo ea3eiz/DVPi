@@ -106,7 +106,7 @@ ad="DMR Network"
 master1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
 echo "$master1"
 
-echo -n "${CIAN}  12)${GRIS} Modificar Port      - ${AMARILLO}"
+echo -n "${CIAN}  12)${GRIS} Modificar Port        - ${AMARILLO}"
 ad="DMR Network"          
 port=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port)
 echo "$port"
@@ -115,6 +115,10 @@ echo -n "${CIAN}  13)${GRIS} Modificar Password    - ${AMARILLO}"
 ad="DMR Network"          
 password=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password)
 echo "$password"
+
+echo -n "${CIAN}   R)${GRIS} Modificar RXInvert    - ${AMARILLO}"          
+rxinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem RXInvert)
+echo -n "$rxinv1
 
 echo -n "${CIAN}  14)${GRIS} Modificar TXInvert    - ${AMARILLO}"
 txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
