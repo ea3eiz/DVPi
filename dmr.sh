@@ -458,20 +458,20 @@ sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address $master1
                       break;;
 esac
 done;;
-12) echo ""
-while true
-do
-                          echo -n "Valor actual del \33[1;37m$port\33[1;37m"
-                          read -p 'Puerto para Brandmeister=62031 puerto para DMR+=55555 : ' miid
-                          actualizar=S 
-                          case $actualizar in
-                          [sS]* ) echo ""
-ad="DMR Network"          
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port $miid
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
+# 12) echo ""
+# while true
+# do
+#                           echo -n "Valor actual del \33[1;37m$port\33[1;37m"
+#                           read -p 'Puerto para Brandmeister=62031 puerto para DMR+=55555 : ' miid
+#                           actualizar=S 
+#                           case $actualizar in
+#                           [sS]* ) echo ""
+# ad="DMR Network"          
+# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port $miid
+#                           [nN]* ) echo ""
+#                           break;;
+# esac
+# done;;
 13) echo ""
 while true
 do
