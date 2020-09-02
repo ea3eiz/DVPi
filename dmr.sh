@@ -467,7 +467,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
 ad="DMR Network"          
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port $miis
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port $miid
                           [nN]* ) echo ""
                           break;;
 esac
