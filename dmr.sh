@@ -446,15 +446,13 @@ done;;
 11) echo ""
 while true
 do
-                      echo "Valor actual del Master: ${AMARILLO}${master#*=}\33[1;37m"
+                      echo "Valor actual del Master: $master1\33[1;37m"
                       read -p 'Brandmeister=master.spain-dmr.es / DMR+=212.237.3.141: ' master1
                       actualizar=S 
                       case $actualizar in
                       [sS]* ) echo ""
-                      master1=`echo "$master1" | tr -d '[[:space:]]'`
-                      master1=`echo "$master1" | tr [:upper:] [:lower:]`
-                      sed -i "$linea_master Address=$master1" $usuario/MMDVMHost/$DIRECTORIO
-                      sed -i "$cuarto Address=$master1" $usuario/info_panel_control.ini
+ad="DMR Network"          
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
                       break;;
                       [nN]* ) echo ""
                       break;;
