@@ -572,7 +572,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem TXHang $txh1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO DMR TXHang $txh1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -595,31 +595,13 @@ done;;
 20) echo ""
 while true
 do
-                          sl=`grep -n -m 1 -c '\<Slot1\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          if [ $sl = 0 ]; then
-                          echo "no existe este comando"
-                          else
-                          sl=`grep -n -m 1 '\<Slot1\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          sl1=`expr substr $sl 5 30`
-                          echo "$sl1"
-                          fi
-                          buscar=":"
-                          largo=`expr index $sl $buscar`
-                          echo "Valor actual del Slot1=: ${AMARILLO}${sl#*=}\33[1;37m"
-           	              read -p 'Para DVMEGA Modificar el valor del Slot1=0: ' V
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $sl 1 2`
-                          else
-                          linea=`expr substr $sl 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "Valor actual del Slot1=: $sl1\33[1;37m"
+           	              read -p 'Para DVMEGA Modificar el valor del Slot1=0: ' slot
                           actualizar=S 
                           case $actualizar in                                            
 			                    [sS]* ) echo ""
-			                    V=`echo "$V" | tr -d '[[:space:]]'`			  
-                          sed -i "$linea Slot1=$V" $usuario/MMDVMHost/$DIRECTORIO             
+ad="DMR Network"          
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Slot1 $slot            
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
