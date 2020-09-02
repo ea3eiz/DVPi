@@ -333,7 +333,12 @@ while true
 do
                           echo "Valor actual del TXFrequency: $contenido_txf\33[1;37m"
                           read -p 'Introduce TXFrequency:        ' txfre
+                          if [ $txfre="" ]
+                          then
+                          actualizar=N
+                          else
                           actualizar=S 
+                          fi
                           case $actualizar in
                           [sS]* ) echo ""
 sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info TXFrequency $txfre
