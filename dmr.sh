@@ -235,24 +235,16 @@ tipo_oled=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO OLED Type)
 echo "$tipo_oled"
 
 #27)reflector DMR+=
+
+pas=`grep -n '\<Password\>' $usuario/MMDVMHost/$DIRECTORIO`
+
 echo -n "${CIAN}  27)${GRIS} Entra reflector DMR+  - ${AMARILLO}"
-if [ $port = 55555 ]
-then
-ad="DMR Network"          
-port_dmr=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Options)
-echo "$port_dmr"
-else
-ad="DMR Network"
-option="# Options"       
-port_bm=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" $option)
-echo "$port_bm"
-fi
-
-
-
-
-
-read s
+OPCION=`expr substr $pas 1 $largo1`
+OPCION=`expr $OPCION + 1`
+linea33port=$OPCION
+letra=p
+linea22port=$OPCION$letra
+var300port= sed -n $linea22port  $usuario/MMDVMHost/$DIRECTORIO;
 
 echo ""
 echo "${CIAN}  28)${AMARILLO} Abrir fichero $DIRECTORIO para hacer cualquier cambio${AMARILLO}"
