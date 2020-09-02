@@ -970,22 +970,12 @@ done;;
 24) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $lat $buscar`
-                          echo "Valor de la Latitud: ${AMARILLO}${lat#*=}\33[1;37m"
+                          echo "Valor de la Latitud: $lat1\33[1;37m"
            	              read -p 'Introduce la Latitud ' lat1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $lat 1 2`
-                          else
-                          linea=`expr substr $lat 1 3`
-                          fi
-                          linea=$linea$letra
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea Latitude=$lat1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info Latitude $lat1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -999,7 +989,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info Longitude $long1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info Longitude $long1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
