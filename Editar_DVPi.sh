@@ -105,10 +105,11 @@ case $escoger_menu in
 1) echo ""
 while true
 do
-                          echo "   Valor  actual  del Indicativo: ${AMARILLO}${indicativo#*=}\33[1;37m"
+                          echo "   Valor  actual  del Indicativo: ${AMARILLO}${indicativo#*=}"
                           echo "   ej: Indicativo = EA3EIZ   Alias = DVpi"
+                          echo -n "${BLANCO}"
                           read -p '   Introduce el Indicativo ' indicativo
-                          read -p '   Introduce el Indicativo ' alias
+                          read -p '   Introduce alias ' alias
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
