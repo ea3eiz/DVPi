@@ -703,30 +703,12 @@ done;;
 22) echo ""
 while true
 do
-                          ScreenLayout=`grep -n -m 1 -c '\<ScreenLayout\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          if [ $ScreenLayout = 0 ]; then
-                          echo "no existe este comando"
-                          else
-                          ScreenLayout=`grep -n -m 1 '\<ScreenLayout\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          ScreenLayout1=`expr substr $ScreenLayout 5 30`
-                          fi
-                          buscar=":"
-                          largo=`expr index $ScreenLayout $buscar`
                           echo "Valor actual del ScreenLayout=: ${AMARILLO}${ScreenLayout1#*=}\33[1;37m"
-                          read -p 'Este parametro debe ser 3: ' V
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $ScreenLayout 1 2`
-                          else
-                          linea=`expr substr $ScreenLayout 1 3`
-                          fi
-                          linea=$linea$letra
+                          read -p 'Este parametro debe ser 3: ' V1
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`       
-                          sed -i "$linea ScreenLayout=$V" $usuario/MMDVMHost/$DIRECTORIO             
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion ScreenLayout $V1             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -738,9 +720,8 @@ do
                           read -p 'Introduce el brillo IdleBrightness: ' V
                           actualizar=S 
                           case $actualizar in                                            
-                          [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`      
-                          sed -i "$linea_sed_IdleBrightness IdleBrightness=$V" $usuario/MMDVMHost/$DIRECTORIO             
+                          [sS]* ) echo ""     
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion IdleBrightness $V            
                           break;;
                           [nN]* ) echo ""
                           break;;
