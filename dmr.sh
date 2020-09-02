@@ -97,24 +97,14 @@ idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
 echo "$idd1"
 
 echo -n "${CIAN}  11)${GRIS} Modificar Address     - ${AMARILLO}"
-master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo=`expr index $master $buscar`
-largo=`expr $largo + 1`
-largo1=`expr $largo - 2`
-master1=`expr substr $master $largo 40`
-largo=`expr substr $master 1 $largo1`
-letra=c            
-linea_master=$largo$letra
+ad="DMR Network"          
+master1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
 echo "$master1"
 
 echo -n "${CIAN}  12)${GRIS} Modificar Puerto      - ${AMARILLO}"
-lineaport=`expr substr $master 1 $largo1`
-lineaport=`expr $lineaport + 1`
-linea3port=$lineaport
-letra=p
-linea2port=$lineaport$letra
-var100port= sed -n $linea2port  $usuario/MMDVMHost/$DIRECTORIO;
+ad="DMR Network"          
+port=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port)
+echo "$port"
 
 echo -n "${CIAN}  13)${GRIS} Modificar Password    - ${AMARILLO}"
 pas=`grep -n '\<Password\>' $usuario/MMDVMHost/$DIRECTORIO`
