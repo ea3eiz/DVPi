@@ -452,7 +452,7 @@ do
                       case $actualizar in
                       [sS]* ) echo ""
 ad="DMR Network"          
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address $master1
                       break;;
                       [nN]* ) echo ""
                       break;;
