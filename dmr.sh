@@ -672,7 +672,7 @@ done;;
 while true
 do
                           echo "Valor actual del Display=: $Display1\33[1;37m"
-                          read -p 'Introduce tipo de Display Ej. Nextion ó OLED: ' $Display
+                          read -p 'Introduce tipo de Display Ej. Nextion ó OLED: ' Display
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""
