@@ -162,9 +162,8 @@ ad="CW Id"
 Enable_baliza=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
 echo "$Enable_baliza"
 
-echo -n "${CIAN}  19)${GRIS} Modificar DisplayLevel- ${AMARILLO}"
-ad="Log"          
-lg1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" DisplayLevel)
+echo -n "${CIAN}  19)${GRIS} Modificar DisplayLevel- ${AMARILLO}"          
+lg1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Log DisplayLevel)
 echo -n "$lg1"
 
 echo -n "${CIAN}    \t\t\tf)${GRIS} RFModeHang  - ${AMARILLO}"
@@ -540,22 +539,12 @@ done;;
 16) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $tx $buscar`
-                          echo "Valor  actual  del  TXLevel : ${AMARILLO}${tx#*=}\33[1;37m"
-           	              read -p 'Valor óptimo=50 : ' var2
-                          letra=c
-                          if [ $largo = 3 ]3
-                          then
-                          linea=`expr substr $tx 1 2`
-                          else
-                          linea=`expr substr $tx 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "Valor  actual  del  TXLevel : $tx1\33[1;37m"
+           	              read -p 'Valor óptimo=50 : ' vartx
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea TXLevel=$var2" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel $vartx
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -564,22 +553,12 @@ done;;
 17) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $dup $buscar`
-                          echo "Valor actual del Duplex: ${AMARILLO}${dup#*=}\33[1;37m"
+                          echo "Valor actual del Duplex: $dup1\33[1;37m"
            	              read -p 'Para un repetidor Duplex=1 Para un DVMEGA Duplex=0: ' dup1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $dup 1 1`
-                          else
-                          linea=`expr substr $dup 1 1`
-                          fi
-                          linea=$linea$letra
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea Duplex=$dup1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Duplex $dup1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -588,22 +567,12 @@ done;;
 18) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $txh $buscar`
-                          echo "Valor actual del TXHang: ${AMARILLO}${txh#*=}\33[1;37m"
+                          echo "Valor actual del TXHang: $txh1\33[1;37m"
            	              read -p 'Para un repetidor TXHang=4 Para un DVMEGA TXHang=0: ' txh1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $txh 1 2`
-                          else
-                          linea=`expr substr $txh 1 3`
-                          fi
-                          linea=$linea$letra
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea TXHang=$txh1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem TXHang $txh1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -612,22 +581,12 @@ done;;
 19) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $lg $buscar`
-                          echo "Valor actual del DisplayLevel: ${AMARILLO}${lg#*=}\33[1;37m"
+                          echo "Valor actual del DisplayLevel: $lg1\33[1;37m"
            	              read -p 'Para visualizar tramas seguidas introduce 1, para una sola trama introduce 2:' lg1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $lg 1 2`
-                          else
-                          linea=`expr substr $lg 1 3`
-                          fi
-                          linea=$linea$letra
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea DisplayLevel=$lg1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Log DisplayLevel $lg1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
