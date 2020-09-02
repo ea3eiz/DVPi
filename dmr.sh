@@ -771,32 +771,6 @@ do
                           break;;
 esac
 done;;
-26) echo ""
-while true
-do
-                          buscar=":"
-                          largo=`expr index $modu $buscar`
-                          echo "Valor  actual  del  Module: ${AMARILLO}${modu#*=}\33[1;37m"
-           	              read -p 'Valor óptimo para D-STAR=B: '  modu1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $modu 1 2`
-                          else
-                          linea=`expr substr $modu 1 3`
-                          fi
-                          linea=$linea$letra
-                          actualizar=S 
-                          case $actualizar in
-			                    [sS]* ) echo ""
-                          #Convierte indicativo si se introduce en minúsculas a Mayúsculas
-                          modu1=`echo "$modu1" | tr [:lower:] [:upper:]`
-                          sed -i "$linea Module=$modu1" $usuario/MMDVMHost/$DIRECTORIO
-			                    break;;
-			                    [nN]* ) echo ""
-			                    break;;
-esac
-done;;
 a) echo ""
 while true
 do
@@ -1042,7 +1016,6 @@ do
 			                    break;;
 esac
 done;;
-
 25) echo ""
 while true
 do
@@ -1062,6 +1035,22 @@ do
                           case $actualizar in
 			                    [sS]* ) echo ""
                           sed -i "$linea Longitude=$long1" $usuario/MMDVMHost/$DIRECTORIO
+			                    break;;
+			                    [nN]* ) echo ""
+			                    break;;
+esac
+done;;
+26) echo ""
+while true
+do
+                          echo "Valor  actual  del  Module: ${AMARILLO}$modu1\33[1;37m"
+           	              read -p 'Valor óptimo para D-STAR=B: '  modu1
+                          actualizar=S 
+                          case $actualizar in
+			                    [sS]* ) echo ""
+                          #Convierte minúsculas a Mayúsculas
+                          modu1=`echo "$modu1" | tr [:lower:] [:upper:]`
+                          sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO D-Star Module $modu1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
