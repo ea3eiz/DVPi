@@ -162,7 +162,7 @@ ad="CW Id"
 Enable_baliza=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
 echo "$Enable_baliza"
 
-echo -n "${CIAN}  19)${GRIS} Modificar DisplayLevel - ${AMARILLO}"
+echo -n "${CIAN}  19)${GRIS} Modificar DisplayLevel- ${AMARILLO}"
 ad="Log"          
 lg1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" DisplayLevel)
 echo -n "$lg1"
@@ -208,7 +208,7 @@ pocsag=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable)
 echo "$pocsag"
 
 # 24) Latitude=
-echo -n "${CIAN}  24)${GRIS} Coordenada Latitude    - ${AMARILLO}"
+echo -n "${CIAN}  24)${GRIS} Coordenada Latitude   - ${AMARILLO}"
 lat1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Latitude)
 echo -n "$lat1"
 
@@ -219,7 +219,7 @@ jitter=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter)
 echo "$jitter"
 
 # 25) Longitude=
-echo -n "${CIAN}  25)${GRIS} Coordenada Longitude   - ${AMARILLO}"
+echo -n "${CIAN}  25)${GRIS} Coordenada Longitude  - ${AMARILLO}"
 long1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Longitude)
 echo -n "$long1"
 
@@ -498,7 +498,7 @@ done;;
 R) echo ""
 while true
 do
-                          echo "Valor  actual del  RXInvert: ${AMARILLO}$rxinv1\33[1;37m"
+                          echo "Valor  actual del  RXInvert: $rxinv1\33[1;37m"
            	              read -p 'Valor óptimo para DVMEGA=1 : ' rxinv1
                           actualizar=S 
                           case $actualizar in
