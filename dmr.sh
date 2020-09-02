@@ -236,7 +236,7 @@ echo "$tipo_oled"
 
 #27)reflector DMR+=
 echo -n "${CIAN}  27)${GRIS} Entra reflector DMR+  - ${AMARILLO}"
-if [ $por = 55555 ]
+if [ $port = 55555 ]
 then
 echo "es 55555"
 else
