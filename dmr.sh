@@ -112,9 +112,9 @@ port=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port)
 echo "$port"
 
 echo -n "${CIAN}  13)${GRIS} Modificar Password    - ${AMARILLO}"
-pas=`grep -n '\<Password\>' $usuario/MMDVMHost/$DIRECTORIO`
-pas1=`expr substr $pas 5 30`
-echo "$pas1"
+ad="DMR Network"          
+pas=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password)
+echo "$pas"
 
 echo -n "${CIAN}  14)${GRIS} Modificar TXInvert    - ${AMARILLO}"
 txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
@@ -461,16 +461,13 @@ done;;
 12) echo ""
 while true
 do
-                          echo -n "Valor actual del \33[1;37m${var100port#*=}\33[1;37m"
-                          var100port= sed -n $linea2port  $usuario/MMDVMHost/$DIRECTORIO;
+                          echo -n "Valor actual del \33[1;37m$port\33[1;37m"
                           read -p 'Puerto para Brandmeister=62031 puerto para DMR+=55555 : ' miid
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          letra1=c
-                          linea4=$linea3port$letra1
-                          sed -i "$linea4 Port=$miid" $usuario/MMDVMHost/$DIRECTORIO
-                          break;;
+ad="DMR Network"          
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port $miis
                           [nN]* ) echo ""
                           break;;
 esac
@@ -478,23 +475,13 @@ done;;
 13) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $pas $buscar`
-                          echo "   Valor  actual  del Password: ${AMARILLO}${pas#*=}\33[1;37m"
+                          echo "   Valor  actual  del Password: $pas\33[1;37m"
            	              read -p '   Password para DMR+=PASSWORD: ' pas1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $pas 1 2`
-                          else
-                          linea=`expr substr $pas 1 3`
-                          fi
-                          linea=$linea$letra
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-			                    pas1=`echo "$pas1" | tr -d '[[:space:]]'`
-                          sed -i "$linea Password=$pas1" $usuario/MMDVMHost/$DIRECTORIO
+ad="DMR Network"          
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Passowrd $pas1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
