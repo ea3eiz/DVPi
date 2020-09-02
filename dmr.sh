@@ -242,8 +242,9 @@ ad="DMR Network"
 port_dmr=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Options)
 echo "$port_dmr"
 else
-ad="DMR Network"          
-port_bm=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Options)
+ad="DMR Network"
+option="# Options"       
+port_bm=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" $options)
 echo "$port_bm"
 fi
 
