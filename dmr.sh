@@ -306,13 +306,12 @@ done;;
 2) echo ""
 while true
 do
-                          echo "Valor actual del RXFrequency: ${AMARILLO}${rxf#*=}\33[1;37m"
+                          echo "Valor actual del RXFrequency: $contenido_rxf\33[1;37m"
            	              read -p 'Introduce RXFrequency:        ' rxfre
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$numero_linea_rxf RXFrequency=$rxfre" $usuario/MMDVMHost/$DIRECTORIO
-                          sed -i "$tercero RXFrequency=$rxfre" $usuario/info_panel_control.ini
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info RXFrequency $rxfre
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -321,12 +320,12 @@ done;;
 3) echo ""
 while true
 do
-                          echo "Valor actual del TXFrequency: ${AMARILLO}${rxf#*=}\33[1;37m"
+                          echo "Valor actual del TXFrequency: $contenido_txf\33[1;37m"
                           read -p 'Introduce TXFrequency:        ' txfre
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$numero_linea_txf TXFrequency=$txfre" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info TXFrequency $txfre
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -335,12 +334,12 @@ done;;
 4) echo ""
 while true
 do
-                          echo "Valor de la Ciudad: ${AMARILLO}${contenido_location#*=}\33[1;37m"
+                          echo "Valor de la Ciudad: $contenido_location\33[1;37m"
                           read -p 'Introduce tu Ciudad ' loc1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$numero_linea_letrac Location=$loc1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info Location $loc1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -349,23 +348,12 @@ done;;
 5) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $url $buscar`
-                          echo "Valor de  la  URL   Web: ${AMARILLO}${url#*=}\33[1;37m"
+                          echo "Valor de  la  URL   Web: $url1\33[1;37m"
            	              read -p 'Introduce URL de tu Web: ' ur1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $url 1 2`
-                          else
-                          linea=`expr substr $url 1 3`
-                          fi
-                          linea=$linea$letra
-                          actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
 			                    ur1=`echo "$ur1" | tr -d '[[:space:]]'`
-                          sed -i "$linea URL=$ur1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info URL $ur1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -377,9 +365,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          letrac=c
-                          numero_linea_port=$numero_linea_port$letrac
-                          sed -i "$numero_linea_port Port=/dev/ttyAMA0" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA0
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -391,9 +377,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          letrac=c
-                          numero_linea_port=$numero_linea_port$letrac
-                          sed -i "$numero_linea_port Port=/dev/ttyACM0" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM0
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -405,9 +389,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          letrac=c
-                          numero_linea_port=$numero_linea_port$letrac
-                          sed -i "$numero_linea_port Port=/dev/ttyUSB0" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB0
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -418,7 +400,7 @@ while true
 do
                           
 
-                          port_modem=$(awk "NR==$numero_linea_port" $usuario/MMDVMHost/$DIRECTORIO)
+port_modem=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
                           echo "Valor del Port: ${AMARILLO}$port_modem"
                           read -p 'Ej. /dev/ttyAMA1  /dev/ttyACM1  /dev/ttyUSB1  : ' port
                           actualizar=S 
