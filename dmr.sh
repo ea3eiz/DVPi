@@ -96,6 +96,11 @@ echo -n "                            - "
 idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
 echo "$idd1"
 
+
+echo -n "${CIAN}  10)${GRIS} Modificar ID          - ${AMARILLO}"
+idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Id)
+echo "$idd1"
+
 echo -n "${CIAN}  11)${GRIS} Modificar Address     - ${AMARILLO}"
 ad="DMR Network"          
 master1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
@@ -427,23 +432,12 @@ done;;
 10) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $idd $buscar`
-                          echo "Valor  actual  del Id: ${AMARILLO}${idd#*=}\33[1;37m"
+                          echo "Valor  actual  del Id: $idd1\33[1;37m"
            	              read -p 'Introduce un ID válido ' miid
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $idd 1 1`
-                          else
-                          linea=`expr substr $idd 1 1`
-                          fi
-                          linea=$linea$letra
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea Id=$miid" $usuario/MMDVMHost/$DIRECTORIO
-                          sed -i "$segundo Id=$miid" $usuario/info_panel_control.ini
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Id $miid
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
