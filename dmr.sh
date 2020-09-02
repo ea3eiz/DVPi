@@ -495,25 +495,29 @@ sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password $pas1
 			                    break;;
 esac
 done;;
-14) echo ""
+R) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $txinv $buscar`
-                          echo "Valor  actual del  TXInvert: ${AMARILLO}${txinv#*=}\33[1;37m"
-           	              read -p 'Valor óptimo para DVMEGA=1 : ' txinv1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $txinv 1 2`
-                          else
-                          linea=`expr substr $txinv 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "Valor  actual del  RXInvert: ${AMARILLO}$rxinv1\33[1;37m"
+           	              read -p 'Valor óptimo para DVMEGA=1 : ' rxinv1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea TXInvert=$txinv1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem RXInvert $rxinv1
+			                    break;;
+			                    [nN]* ) echo ""
+			                    break;;
+esac
+done;;
+14) echo ""
+while true
+do
+                          echo "Valor  actual del  TXInvert: ${AMARILLO}$txinv1\33[1;37m"
+           	              read -p 'Valor óptimo para DVMEGA=1 : ' txinv1
+                          actualizar=S 
+                          case $actualizar in
+			                    [sS]* ) echo ""
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert $txinv1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
