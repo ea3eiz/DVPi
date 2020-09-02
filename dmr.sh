@@ -113,8 +113,8 @@ echo "$port"
 
 echo -n "${CIAN}  13)${GRIS} Modificar Password    - ${AMARILLO}"
 ad="DMR Network"          
-pas=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password)
-echo "$pas"
+password=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password)
+echo "$password"
 
 echo -n "${CIAN}  14)${GRIS} Modificar TXInvert    - ${AMARILLO}"
 txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
@@ -479,13 +479,13 @@ done;;
 13) echo ""
 while true
 do
-                          echo "   Valor  actual  del Password: $pas\33[1;37m"
+                          echo "   Valor  actual  del Password: $pasword\33[1;37m"
            	              read -p '   Password para DMR+=PASSWORD: ' pas1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
 ad="DMR Network"          
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Passowrd $pas1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password $pas1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
