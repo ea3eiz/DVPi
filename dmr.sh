@@ -471,6 +471,7 @@ do
                           [sS]* ) echo ""
 ad="DMR Network"          
 sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port $miid
+                          break;;
                           [nN]* ) echo ""
                           break;;
 esac
