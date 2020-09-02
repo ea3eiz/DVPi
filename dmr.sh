@@ -151,7 +151,7 @@ echo -n "$txh1"
 echo -n "${CIAN}          \t\te)${GRIS} Baliza      - ${AMARILLO}"
 ad="CW Id"          
 Enable_baliza=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
-echo -n "$Enable_baliza"
+echo "$Enable_baliza"
 
 echo -n "${CIAN}  19)${GRIS} Modificar Tramas      - ${AMARILLO}"
 ad="Log"          
