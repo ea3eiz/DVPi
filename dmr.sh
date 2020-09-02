@@ -671,30 +671,12 @@ done;;
 21) echo ""
 while true
 do
-                          Display=`grep -n -m 1 -c '\<Display\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          if [ $Display = 0 ]; then
-                          echo "no existe este comando"
-                          else
-                          Display=`grep -n -m 1 '\<Display\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          Display1=`expr substr $Display 5 30`
-                          fi
-                          buscar=":"
-                          largo=`expr index $Display $buscar`
-                          echo "Valor actual del Display=: ${AMARILLO}${Display1#*=}\33[1;37m"
-                          read -p 'Introduce tipo de Display Ej. Nextion ó OLED: ' V
-                          letra=c
-                          if [ $largo = 2 ]
-                          then
-                          linea=`expr substr $Display 1 1`
-                          else
-                          linea=`expr substr $Display 1 2`
-                          fi
-                          linea=$linea$letra
+                          echo "Valor actual del Display=: $Display1\33[1;37m"
+                          read -p 'Introduce tipo de Display Ej. Nextion ó OLED: ' $Display
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`       
-                          sed -i "$linea Display=$V" $usuario/MMDVMHost/$DIRECTORIO             
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Display $Display             
                           break;;
                           [nN]* ) echo ""
                           break;;
