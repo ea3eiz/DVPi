@@ -406,9 +406,7 @@ port_modem=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          letra=c
-                          numero_linea_port=$numero_linea_port$letra
-                          sed -i "$numero_linea_port Port=$port" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port $port
                           break;;
                           [nN]* ) echo ""
                           break;;
