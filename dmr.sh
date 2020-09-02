@@ -149,11 +149,13 @@ txh1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR TXHang)
 echo -n "$txh1"
 
 echo -n "${CIAN}          \t\te)${GRIS} Baliza      - ${AMARILLO}"
-cw= sed -n "31p"  $usuario/MMDVMHost/$DIRECTORIO;
+ad="CW Id"          
+Enable_baliza=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
+echo -n "$Enable_baliza"
 
 echo -n "${CIAN}  19)${GRIS} Modificar Tramas      - ${AMARILLO}"
-lg=`grep -n -m 1 '\<DisplayLevel\>' $usuario/MMDVMHost/$DIRECTORIO`
-lg1=`expr substr $lg 4 30`
+ad="Log"          
+lg1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" DisplayLevel)
 echo -n "$lg1"
 
 echo -n "${CIAN}    \tf)${GRIS} RFModeHang  - ${AMARILLO}"
@@ -161,8 +163,8 @@ modehang1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General RFModeHang
 echo "$modehang1"
 
 echo -n "${CIAN}  20)${GRIS} Modificar Slot1       - ${AMARILLO}"
-sl=`grep -n -m 1 '\<Slot1\>' $usuario/MMDVMHost/$DIRECTORIO`
-sl1=`expr substr $sl 5 30`
+ad="DMR Network"          
+sl1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Slot1)
 echo -n "$sl1"
 
 echo -n "${CIAN}           \tg)${GRIS} Timeout     - ${AMARILLO}"
@@ -202,7 +204,7 @@ lat1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Latitude)
 echo -n "$lat1"
 
 # k) Jitter=
-echo "  ${CIAN}     \t\tk) ${GRIS}Jitter      - ${AMARILLO}$Jitter"
+echo -n "  ${CIAN}     \t\tk) ${GRIS}Jitter      - ${AMARILLO}$Jitter"
 ad="DMR Network"          
 jitter=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter)
 echo "$jitter"
