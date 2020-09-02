@@ -79,7 +79,15 @@ contenido_txf=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info TXFrequen
 echo "$contenido_txf"
 
 echo -n "${CIAN}   4)${GRIS} Modificar Location    - ${AMARILLO}"
-contenido_location=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Location)
+loc=`grep -n "^Location=" $usuario/MMDVMHost/$DIRECTORIO`
+loc1=`echo "$loc" | tr -d '[[:space:]]'`
+buscar=":"
+largo_linea=`expr index $loc1 $buscar`
+largo_linea=`expr $largo_linea - 1`
+numero_linea=`expr substr $loc1 1 $largo_linea`
+letrac=c
+numero_linea_letrac=$numero_linea$letrac
+contenido_location=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
 echo "$contenido_location"
 
 echo -n "${CIAN}   5)${GRIS} Modificar URL         - ${AMARILLO}"
@@ -350,12 +358,12 @@ done;;
 4) echo ""
 while true
 do
-                          echo "Valor de la Ciudad: $contenido_location\33[1;37m"
+                          echo "Valor de la Ciudad: ${AMARILLO}${contenido_location#*=}\33[1;37m"
                           read -p 'Introduce tu Ciudad ' loc1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info Location $loc1
+                          sed -i "$numero_linea_letrac Location=$loc1" $usuario/MMDVMHost/$DIRECTORIO
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
