@@ -106,7 +106,9 @@ case $escoger_menu in
 while true
 do
                           echo "   Valor  actual  del Indicativo: ${AMARILLO}${indicativo#*=}\33[1;37m"
+                          echo "   ej: Indicativo = EA3EIZ   Alias = DVpi"
                           read -p '   Introduce el Indicativo ' indicativo
+                          read -p '   Introduce el Indicativo ' alias
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
@@ -114,7 +116,7 @@ do
                           sed -i "2c Callsign=$indicativo" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
                          
                           mmdvmbridge="/opt/MMDVM_Bridge/DVSwitch.ini"
-                          sudo crudini --set $mmdvmbridge DMR TalkerAlias "${indicativo} DDD"
+                          sudo crudini --set $mmdvmbridge DMR TalkerAlias "${indicativo} $alias"
                           break;;
                           [nN]* ) echo ""
                           break;;
