@@ -88,7 +88,7 @@ numero_linea=`expr substr $loc1 1 $largo_linea`
 letrac=c
 numero_linea_letrac=$numero_linea$letrac
 contenido_location=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-echo "$contenido_location"
+echo "${contenido_location#*=}"
 
 echo -n "${CIAN}   5)${GRIS} Modificar URL         - ${AMARILLO}"
 url1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info URL)
