@@ -531,7 +531,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert $var2
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem RXLevel $var2
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
