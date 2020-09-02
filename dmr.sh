@@ -66,7 +66,7 @@ echo "                                       $SCRIPTS_version by EA3EIZ"
 echo -n "${VERDE}"
 echo "   ***************************************************************************************"
 
-echo -n "${CIAN}   1)${GRIS} Modificar indicativo  - ${AMARILLO}"
+echo -n "${CIAN}   1)${GRIS} Modificar Callsign    - ${AMARILLO}"
 contenido_indicativo=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Callsign)
 echo "$contenido_indicativo"
 
@@ -86,7 +86,7 @@ echo -n "${CIAN}   5)${GRIS} Modificar URL         - ${AMARILLO}"
 url1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info URL)
 echo "$url1"
 
-echo "${CIAN}   6)${GRIS} Puerto para DVMEGA pinchado en Raspberry Pi (ttyAMA0)${AMARILLO}"
+echo "${CIAN}   6)${GRIS} Puerto para DVMEGA pinchado en GPIO (ttyAMA0)${AMARILLO}"
 echo "${CIAN}   7)${GRIS} Puerto para NTH/ZUM, Hotspots, Nano, Low Cost etc.. (ttyACM0)${AMARILLO}"
 echo "${CIAN}   8)${GRIS} Puerto para DVMEGA + Bluestack conectado por USB (ttyUSB0)${AMARILLO}"
 echo "${CIAN}   9)${VERDE} Menú elegir Puerto  ${CIAN}"
@@ -97,7 +97,7 @@ idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
 echo "$idd1"
 
 
-echo -n "${CIAN}  10)${GRIS} Modificar ID          - ${AMARILLO}"
+echo -n "${CIAN}  10)${GRIS} Modificar Id          - ${AMARILLO}"
 idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Id)
 echo "$idd1"
 
@@ -106,7 +106,7 @@ ad="DMR Network"
 master1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
 echo "$master1"
 
-echo -n "${CIAN}  12)${GRIS} Modificar Puerto      - ${AMARILLO}"
+echo -n "${CIAN}  12)${GRIS} Modificar Port      - ${AMARILLO}"
 ad="DMR Network"          
 port=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port)
 echo "$port"
@@ -158,7 +158,7 @@ ad="CW Id"
 Enable_baliza=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
 echo "$Enable_baliza"
 
-echo -n "${CIAN}  19)${GRIS} Modificar Tramas      - ${AMARILLO}"
+echo -n "${CIAN}  19)${GRIS} Modificar DisplayLevel - ${AMARILLO}"
 ad="Log"          
 lg1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" DisplayLevel)
 echo -n "$lg1"
@@ -204,7 +204,7 @@ pocsag=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable)
 echo "$pocsag"
 
 # 24) Latitude=
-echo -n "${CIAN}  24)${GRIS} Coordenada Latitud    - ${AMARILLO}"
+echo -n "${CIAN}  24)${GRIS} Coordenada Latitude    - ${AMARILLO}"
 lat1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Latitude)
 echo -n "$lat1"
 
@@ -215,7 +215,7 @@ jitter=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter)
 echo "$jitter"
 
 # 25) Longitude=
-echo -n "${CIAN}  25)${GRIS} Coordenada Longitud   - ${AMARILLO}"
+echo -n "${CIAN}  25)${GRIS} Coordenada Longitude   - ${AMARILLO}"
 long1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Longitude)
 echo -n "$long1"
 
