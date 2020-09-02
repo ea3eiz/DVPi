@@ -118,7 +118,7 @@ echo "$password"
 
 echo -n "${CIAN}   R)${GRIS} Modificar RXInvert    - ${AMARILLO}"          
 rxinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem RXInvert)
-echo -n "$rxinv1
+echo -n "$rxinv1"
 
 echo -n "${CIAN}  14)${GRIS} Modificar TXInvert    - ${AMARILLO}"
 txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
