@@ -998,7 +998,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_oled Type=$oled" $usuario/MMDVMHost/$DIRECTORIO
+                          sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
                           break;;
                           [nN]* ) echo ""
                           break;;
