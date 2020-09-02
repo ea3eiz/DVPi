@@ -100,6 +100,45 @@ do
 			                break;;
 esac
 done;;
+2) echo ""
+while true
+do
+                            actualizar=S 
+                            case $actualizar in
+			                [sS]* ) echo ""
+                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM1
+                            exit
+			                break;;
+			                [nN]* ) echo ""
+			                break;;
+esac
+done;;
+3) echo ""
+while true
+do
+                            actualizar=S 
+                            case $actualizar in
+			                [sS]* ) echo ""
+                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM2
+                            exit
+			                break;;
+			                [nN]* ) echo ""
+			                break;;
+esac
+done;;
+4) echo ""
+while true
+do
+                            actualizar=S 
+                            case $actualizar in
+			                [sS]* ) echo ""
+                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM3
+                            exit
+			                break;;
+			                [nN]* ) echo ""
+			                break;;
+esac
+done;;
 5) echo ""
 while true
 do
@@ -113,6 +152,32 @@ do
 			                break;;
 esac
 done;;
+6) echo ""
+while true
+do
+                            actualizar=S 
+                            case $actualizar in
+			                [sS]* ) echo ""
+                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA1
+                            exit
+			                break;;
+			                [nN]* ) echo ""
+			                break;;
+esac
+done;;
+7) echo ""
+while true
+do
+                            actualizar=S 
+                            case $actualizar in
+			                [sS]* ) echo ""
+                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA2
+                            exit
+			                break;;
+			                [nN]* ) echo ""
+			                break;;
+esac
+done;;
 8) echo ""
 while true
 do
@@ -120,6 +185,58 @@ do
                             case $actualizar in
 			                [sS]* ) echo ""
                             sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA3
+                            exit
+			                break;;
+			                [nN]* ) echo ""
+			                break;;
+esac
+done;;
+9) echo ""
+while true
+do
+                            actualizar=S 
+                            case $actualizar in
+			                [sS]* ) echo ""
+                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB0
+                            exit
+			                break;;
+			                [nN]* ) echo ""
+			                break;;
+esac
+done;;
+10) echo ""
+while true
+do
+                            actualizar=S 
+                            case $actualizar in
+			                [sS]* ) echo ""
+                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB1
+                            exit
+			                break;;
+			                [nN]* ) echo ""
+			                break;;
+esac
+done;;
+11) echo ""
+while true
+do
+                            actualizar=S 
+                            case $actualizar in
+			                [sS]* ) echo ""
+                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB2
+                            exit
+			                break;;
+			                [nN]* ) echo ""
+			                break;;
+esac
+done;;
+12) echo ""
+while true
+do
+                            actualizar=S 
+                            case $actualizar in
+			                [sS]* ) echo ""
+                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB3
                             exit
 			                break;;
 			                [nN]* ) echo ""
