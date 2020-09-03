@@ -732,19 +732,19 @@ sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $baliza
                           break;;
 esac
 done;;
-f) echo ""
-while true
-do
-                          echo "Valor actual del RFModeHang = : $modehang1\33[1;37m"
-                          read -p 'Introduce el valor para RFModeHang (optimo=5): ' modeh        
-                          [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`       
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh             
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
+# f) echo ""
+# while true
+# do
+#                           echo "Valor actual del RFModeHang = : $modehang1\33[1;37m"
+#                           read -p 'Introduce el valor para RFModeHang (optimo=5): ' modeh        
+#                           [sS]* ) echo ""
+#                           V=`echo "$V" | tr -d '[[:space:]]'`       
+# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh             
+#                           break;;
+#                           [nN]* ) echo ""
+#                           break;;
+# esac
+# done;;
 # g) echo ""
 # while true
 # do
