@@ -732,47 +732,46 @@ sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $baliza
                           break;;
 esac
 done;;
-# f) echo ""
-# while true
-# do
-#                           echo "Valor actual del RFModeHang = : $modehang1\33[1;37m"
-#                           read -p 'Introduce el valor para RFModeHang (optimo=5): ' modeh        
-#                           [sS]* ) echo ""
-#                           V=`echo "$V" | tr -d '[[:space:]]'`       
-# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh             
-#                           break;;
-#                           [nN]* ) echo ""
-#                           break;;
-# esac
-# done;;
-# g) echo ""
-# while true
-# do
-#                           echo "Valor actual del Timeout = : $timeo1\33[1;37m"
-#                           read -p 'Introduce el valor para Timeout (valor optimo=0): ' timut
-#                           actualizar=S 
-#                           case $actualizar in                                            
-#                           [sS]* ) echo ""       
-# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timut             
-#                           break;;
-#                           [nN]* ) echo ""
-#                           break;;
-# esac
-# done;;
-# h) echo ""
-# while true
-# do
-#                           echo "Valor del Port: ${AMARILLO}$port_nextion"
-#                           read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' portn
-#                           actualizar=S 
-#                           case $actualizar in
-#                           [sS]* ) echo ""
-# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion Port $portn
-#                           break;;
-#                           [nN]* ) echo ""
-#                           break;;
-# esac
-# done;;
+f) echo ""
+while true
+do
+                          echo "Valor actual del RFModeHang = : $modehang1\33[1;37m"
+                          read -p 'Introduce el valor para RFModeHang (optimo=5): ' modeh        
+                          [sS]* ) echo ""       
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh             
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+g) echo ""
+while true
+do
+                          echo "Valor actual del Timeout = : $timeo1\33[1;37m"
+                          read -p 'Introduce el valor para Timeout (valor optimo=0): ' timut
+                          actualizar=S 
+                          case $actualizar in                                            
+                          [sS]* ) echo ""       
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timut             
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+h) echo ""
+while true
+do
+                          echo "Valor del Port: ${AMARILLO}$port_nextion"
+                          read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' portn
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion Port $portn
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
 i) echo ""
 while true
 do
