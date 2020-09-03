@@ -759,34 +759,34 @@ done;;
 #                           break;;
 # esac
 # done;;
-# h) echo ""
-# while true
-# do
-#                           echo "Valor del Port: ${AMARILLO}$port_nextion"
-#                           read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' portn
-#                           actualizar=S 
-#                           case $actualizar in
-#                           [sS]* ) echo ""
-# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion Port $portn
-#                           break;;
-#                           [nN]* ) echo ""
-#                           break;;
-# esac
-# done;;
-# i) echo ""
-# while true
-# do
-#                           echo "Valor actual NXDN: ${AMARILLO}$Enable_nxdn"
-#                           read -p 'Desactivado=0 Activado=1: '   NXDN1
-#                           actualizar=S 
-#                           case $actualizar in
-#                           [sS]* ) echo ""
-# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO NXDN Enable $NXDN1
-#                           break;;
-#                           [nN]* ) echo ""
-#                           break;;
-# esac
-# done;;
+h) echo ""
+while true
+do
+                          echo "Valor del Port: ${AMARILLO}$port_nextion"
+                          read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' portn
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion Port $portn
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+i) echo ""
+while true
+do
+                          echo "Valor actual NXDN: ${AMARILLO}$Enable_nxdn"
+                          read -p 'Desactivado=0 Activado=1: '   NXDN1
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO NXDN Enable $NXDN1
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
 j) echo ""
 while true
 do
