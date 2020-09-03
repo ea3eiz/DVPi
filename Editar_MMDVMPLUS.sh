@@ -664,13 +664,12 @@ done;;
 a) echo ""
 while true
 do
-                          echo -n "Valor actual D-STAR ${AMARILLO}${presentar_valor#*=}\33[1;37m"
-                          presenta_valor= sed -n $numero_linea_dstar_letrap  $usuario/MMDVMHost/$DIRECTORIO;
+                          echo -n "Valor actual D-STAR ${AMARILLO}$dstar_enable\33[1;37m"
                           read -p 'Desactivado=0 Activado=1:  '   dmrac1
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$numero_linea_dstar_letrac Enable=$dmrac1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO D-Star Enable $dmrac1 
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -680,12 +679,11 @@ b) echo ""
 while true
 do
                           echo -n "Valor  actual  DMR ${AMARILLO}${presentar_valor#*=}\33[1;37m"
-                          presenta_valor= sed -n $numero_linea_dmr_letrap  $usuario/MMDVMHost/$DIRECTORIO;
-           	              read -p 'Desactivado=0 Activado=1: '   dmrac1
+           	              read -p 'Desactivado=0 Activado=1: '   dmr
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$numero_linea_dmr_letrac Enable=$dmrac1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO DMR Enable $dmr
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -694,13 +692,13 @@ done;;
 c) echo ""
 while true
 do
-                          echo -n "Valor actual FUSION ${AMARILLO}${presentar_valor#*=}\33[1;37m"
-                          presenta_valor= sed -n $numero_linea_fusion_letrap  $usuario/MMDVMHost/$DIRECTORIO;
-                          read -p 'Desactivado=0 Activado=1:  '   dmrac1
+                          echo -n "Valor actual FUSION $Enable_fusion\33[1;37m"
+                          read -p 'Desactivado=0 Activado=1:  '   fusion
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$numero_linea_fusion_letrac Enable=$dmrac1" $usuario/MMDVMHost/$DIRECTORIO
+ad="System Fusion Network"                          
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $fusion
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -709,13 +707,12 @@ done;;
 d) echo ""
 while true
 do
-                          echo -n "Valor  actual  P25 ${AMARILLO}${presentar_valor#*=}\33[1;37m"
-                          presenta_valor= sed -n $numero_linea_p25_letrap  $usuario/MMDVMHost/$DIRECTORIO;
-                          read -p 'Desactivado=0 Activado=1: '   dmrac1
+                          echo -n "Valor  actual  P25 ${AMARILLO}$p25_enable\33[1;37m"
+                          read -p 'Desactivado=0 Activado=1: '   p25
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$numero_linea_p25_letrac Enable=$dmrac1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO P25 Enable $p25
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -728,7 +725,8 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "31c Enable=$baliza" $usuario/MMDVMHost/$DIRECTORIO
+ad="CW Id"                         
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $baliza
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -737,30 +735,11 @@ done;;
 f) echo ""
 while true
 do
-                          modehang=`grep -n -m 1 -c '\<RFModeHang\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          if [ $modehang = 0 ]; then
-                          echo "no existe este comando"
-                          else
-                          modehang=`grep -n -m 1 '\<RFModeHang\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          modehang1=`expr substr $modehang 5 30`
-                          fi
-                          buscar=":"
-                          largo=`expr index $modehang $buscar`
-                          echo "Valor actual del RFModeHang = : ${AMARILLO}${modehang1#*=}\33[1;37m"
-                          read -p 'Introduce el valor para RFModeHang (optimo=5): ' V
-                          letra=c
-                          if [ $largo = 2 ]
-                          then
-                          linea=`expr substr $modehang 1 1`
-                          else
-                          linea=`expr substr $modehang 1 2`
-                          fi
-                          linea=$linea$letra
-                          actualizar=S 
-                          case $actualizar in                                            
+                          echo "Valor actual del RFModeHang = : $modehang1\33[1;37m"
+                          read -p 'Introduce el valor para RFModeHang (optimo=5): ' modeh        
                           [sS]* ) echo ""
                           V=`echo "$V" | tr -d '[[:space:]]'`       
-                          sed -i "$linea RFModeHang=$V" $usuario/MMDVMHost/$DIRECTORIO             
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -769,30 +748,12 @@ done;;
 g) echo ""
 while true
 do
-                          timeo=`grep -n -m 1 -c '\<Timeout\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          if [ $timeo = 0 ]; then
-                          echo "no existe este comando"
-                          else
-                          timeo=`grep -n -m 1 '\<Timeout\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          timeo1=`expr substr $timeo 5 30`
-                          fi
-                          buscar=":"
-                          largo=`expr index $timeo $buscar`
-                          echo "Valor actual del Timeout = : ${AMARILLO}${timeo1#*=}\33[1;37m"
-                          read -p 'Introduce el valor para Timeout (valor optimo=0): ' V
-                          letra=c
-                          if [ $largo = 2 ]
-                          then
-                          linea=`expr substr $timeo 1 1`
-                          else
-                          linea=`expr substr $timeo 1 2`
-                          fi
-                          linea=$linea$letra
+                          echo "Valor actual del Timeout = : $timeo1\33[1;37m"
+                          read -p 'Introduce el valor para Timeout (valor optimo=0): ' timeout
                           actualizar=S 
                           case $actualizar in                                            
-                          [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`       
-                          sed -i "$linea Timeout=$V" $usuario/MMDVMHost/$DIRECTORIO             
+                          [sS]* ) echo ""       
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timeout             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -801,12 +762,12 @@ done;;
 h) echo ""
 while true
 do
-                          echo "Valor del Port: ${AMARILLO}$MODEMNEXTION"
-                          read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' lat1
+                          echo "Valor del Port: ${AMARILLO}$port_nextion"
+                          read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' portn
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_MN Port=$lat1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion Port $portn
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -815,12 +776,12 @@ done;;
 i) echo ""
 while true
 do
-                          echo "Valor actual NXDN: ${AMARILLO}$NXDN"
+                          echo "Valor actual NXDN: ${AMARILLO}$Enable_nxdn"
                           read -p 'Desactivado=0 Activado=1: '   NXDN1
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_NXDN Enable=$NXDN1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO NXDN Enable $NXDN1
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -829,12 +790,27 @@ done;;
 j) echo ""
 while true
 do
-                          echo "Valor actual POCSAG: ${AMARILLO}$POCSAG"
+                          echo "Valor actual POCSAG: ${AMARILLO}$pocsag"
                           read -p 'Desactivado=0 Activado=1: '   POCSAG1
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_POCSAG Enable=$POCSAG1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable $POCSAG1
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+k) echo ""
+while true
+do                         
+                          echo "Valor actual  del Jitter: ${AMARILLO}$Jitter"
+                          read -p 'Introduce valor entre 360 a 600: '   JITTER
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+ad="DMR Network"
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter $JITTER
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -843,12 +819,12 @@ done;;
 l) echo ""
 while true
 do                         
-                          echo "   Valor  actual  FM: ${AMARILLO}$FM"
+                          echo "   Valor  actual  FM: ${AMARILLO}$Enable_fm"
                           read -p '   Desactivado=0 Activado=1: '   fm
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_FM Enable=$fm" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO FM Enable $fm
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -863,20 +839,6 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
                           sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
-k) echo ""
-while true
-do                         
-                          echo "Valor actual  del Jitter: ${AMARILLO}$Jitter"
-                          read -p 'Introduce valor entre 360 a 600: '   JITTER
-                          actualizar=S 
-                          case $actualizar in
-                          [sS]* ) echo ""
-                          sed -i "$numero_linea_jiter_letrac Jitter=$JITTER" $usuario/MMDVMHost/$DIRECTORIO
                           break;;
                           [nN]* ) echo ""
                           break;;
