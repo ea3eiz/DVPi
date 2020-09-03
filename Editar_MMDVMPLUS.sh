@@ -749,11 +749,11 @@ g) echo ""
 while true
 do
                           echo "Valor actual del Timeout = : $timeo1\33[1;37m"
-                          read -p 'Introduce el valor para Timeout (valor optimo=0): ' timeout
+                          read -p 'Introduce el valor para Timeout (valor optimo=0): ' timut
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""       
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timeout             
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timut             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -838,7 +838,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
+  sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
                           break;;
                           [nN]* ) echo ""
                           break;;
