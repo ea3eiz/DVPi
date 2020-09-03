@@ -306,8 +306,8 @@ case $escoger_menu in
 1) echo ""
 while true
 do
-                          echo "Valor actual Indicativo: $contenido_indicativo\33[1;37m"
-           	              read -p 'Introduce tu indicativo: ' indicativo
+                          echo "   Valor actual Indicativo: $contenido_indicativo\33[1;37m"
+           	              read -p '   Introduce tu indicativo: ' indicativo
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -325,8 +325,8 @@ done;;
 2) echo ""
 while true
 do
-                          echo "Valor actual del RXFrequency: $contenido_rxf\33[1;37m"
-           	              read -p 'Introduce RXFrequency:        ' rxfre
+                          echo "   Valor actual del RXFrequency: $contenido_rxf\33[1;37m"
+           	              read -p '   Introduce RXFrequency:        ' rxfre
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -339,8 +339,8 @@ done;;
 3) echo ""
 while true
 do
-                          echo "Valor actual del TXFrequency: $contenido_txf ${VERDE} Enter (Volver sin modificar)${BLANCO}"
-                          read -p 'Introduce TXFrequency:        ' txfre
+                          echo "   Valor actual del TXFrequency: $contenido_txf ${VERDE} Enter (Volver sin modificar)${BLANCO}"
+                          read -p '   Introduce TXFrequency:        ' txfre
                           if [ $txfre="" ]
                           then
                           actualizar=N
@@ -358,8 +358,8 @@ done;;
 4) echo ""
 while true
 do
-                          echo "Valor de la Ciudad: ${AMARILLO}${contenido_location#*=}\33[1;37m"
-                          read -p 'Introduce tu Ciudad ' loc1
+                          echo "   Valor de la Ciudad: ${AMARILLO}${contenido_location#*=}\33[1;37m"
+                          read -p '   Introduce tu Ciudad ' loc1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -372,8 +372,8 @@ done;;
 5) echo ""
 while true
 do
-                          echo "Valor de  la  URL   Web: $url1\33[1;37m"
-           	              read -p 'Introduce URL de tu Web: ' ur1
+                          echo "   Valor de  la  URL   Web: $url1\33[1;37m"
+           	              read -p '   Introduce URL de tu Web: ' ur1
                           case $actualizar in
 			                    [sS]* ) echo ""
 			                    ur1=`echo "$ur1" | tr -d '[[:space:]]'`
@@ -451,8 +451,8 @@ done;;
 10) echo ""
 while true
 do
-                          echo "Valor  actual  del Id: $idd1\33[1;37m"
-           	              read -p 'Introduce un ID válido ' miid
+                          echo "   Valor  actual  del Id: $idd1\33[1;37m"
+           	              read -p '   Introduce un ID válido ' miid
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -510,8 +510,8 @@ done;;
 R) echo ""
 while true
 do
-                          echo "Valor  actual del  RXInvert: $rxinv1\33[1;37m"
-           	              read -p 'Valor óptimo para DVMEGA=1 : ' rxinv1
+                          echo "   Valor  actual del  RXInvert: $rxinv1\33[1;37m"
+           	              read -p '   Valor óptimo para DVMEGA=1 : ' rxinv1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -524,8 +524,8 @@ done;;
 14) echo ""
 while true
 do
-                          echo "Valor  actual del  TXInvert: ${AMARILLO}$txinv1\33[1;37m"
-           	              read -p 'Valor óptimo para DVMEGA=1 : ' txinv1
+                          echo "   Valor  actual del  TXInvert: ${AMARILLO}$txinv1\33[1;37m"
+           	              read -p '   Valor óptimo para DVMEGA=1 : ' txinv1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -538,8 +538,8 @@ done;;
 15) echo ""
 while true
 do
-                          echo "Valor  actual  del  RXLevel : $rx1\33[1;37m"
-                          read -p 'Valor óptimo (en mi caso) para DVMEGA=45, Low cost EA4AOJ=45, NANO BLAS=60 : ' var2
+                          echo "   Valor  actual  del  RXLevel : $rx1\33[1;37m"
+                          read -p '   Valor óptimo (en mi caso) para DVMEGA=45, Low cost EA4AOJ=45, NANO BLAS=60 : ' var2
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -552,8 +552,8 @@ done;;
 16) echo ""
 while true
 do
-                          echo "Valor  actual  del  TXLevel : $tx1\33[1;37m"
-           	              read -p 'Valor óptimo=50 : ' vartx
+                          echo "   Valor  actual  del  TXLevel : $tx1\33[1;37m"
+           	              read -p '   Valor óptimo=50 : ' vartx
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -566,8 +566,8 @@ done;;
 17) echo ""
 while true
 do
-                          echo "Valor actual del Duplex: $dup1\33[1;37m"
-           	              read -p 'Para un repetidor Duplex=1 Para un DVMEGA Duplex=0: ' dup1
+                          echo "   Valor actual del Duplex: $dup1\33[1;37m"
+           	              read -p '   Para un repetidor Duplex=1 Para un DVMEGA Duplex=0: ' dup1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -580,8 +580,8 @@ done;;
 18) echo ""
 while true
 do
-                          echo "Valor actual del TXHang: $txh1\33[1;37m"
-           	              read -p 'Para un repetidor TXHang=4 Para un DVMEGA TXHang=0: ' txh1
+                          echo "   Valor actual del TXHang: $txh1\33[1;37m"
+           	              read -p '   Para un repetidor TXHang=4 Para un DVMEGA TXHang=0: ' txh1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -594,8 +594,8 @@ done;;
 19) echo ""
 while true
 do
-                          echo "Valor actual del DisplayLevel: $lg1\33[1;37m"
-           	              read -p 'Para visualizar tramas seguidas introduce 1, para una sola trama introduce 2:' lg1
+                          echo "   Valor actual del DisplayLevel: $lg1\33[1;37m"
+           	              read -p '   Para visualizar tramas seguidas introduce 1, para una sola trama introduce 2:' lg1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -608,8 +608,8 @@ done;;
 20) echo ""
 while true
 do
-                          echo "Valor actual del Slot1=: $sl1\33[1;37m"
-           	              read -p 'Para DVMEGA Modificar el valor del Slot1=0: ' slot
+                          echo "   Valor actual del Slot1=: $sl1\33[1;37m"
+           	              read -p '   Para DVMEGA Modificar el valor del Slot1=0: ' slot
                           actualizar=S 
                           case $actualizar in                                            
 			                    [sS]* ) echo ""
@@ -623,8 +623,8 @@ done;;
 21) echo ""
 while true
 do
-                          echo "Valor actual del Display=: $Display1\33[1;37m"
-                          read -p 'Introduce tipo de Display Ej. Nextion ó OLED: ' Display
+                          echo "   Valor actual del Display=: $Display1\33[1;37m"
+                          read -p '   Introduce tipo de Display Ej. Nextion ó OLED: ' Display
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""
@@ -637,8 +637,8 @@ done;;
 22) echo ""
 while true
 do
-                          echo "Valor actual del ScreenLayout=: ${AMARILLO}${ScreenLayout1#*=}\33[1;37m"
-                          read -p 'Este parametro debe ser 3: ' V1
+                          echo "   Valor actual del ScreenLayout=: ${AMARILLO}${ScreenLayout1#*=}\33[1;37m"
+                          read -p '   Este parametro debe ser 3: ' V1
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""
@@ -651,7 +651,7 @@ done;;
 23) echo ""
 while true
 do
-                          read -p 'Introduce el brillo IdleBrightness: ' V
+                          read -p '   Introduce el brillo IdleBrightness: ' V
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""     
@@ -664,8 +664,8 @@ done;;
 a) echo ""
 while true
 do
-                          echo -n "Valor actual D-STAR ${AMARILLO}$dstar_enable\33[1;37m"
-                          read -p 'Desactivado=0 Activado=1:  '   dmrac1
+                          echo -n "   Valor actual D-STAR ${AMARILLO}$dstar_enable\33[1;37m"
+                          read -p '   Desactivado=0 Activado=1:  '   dmrac1
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
@@ -678,8 +678,8 @@ done;;
 b) echo ""
 while true
 do
-                          echo -n "Valor  actual  DMR ${AMARILLO}${presentar_valor#*=}\33[1;37m"
-           	              read -p 'Desactivado=0 Activado=1: '   dmr
+                          echo -n "   Valor  actual  DMR ${AMARILLO}${presentar_valor#*=}\33[1;37m"
+           	              read -p '   Desactivado=0 Activado=1: '   dmr
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -692,8 +692,8 @@ done;;
 c) echo ""
 while true
 do
-                          echo -n "Valor actual FUSION $Enable_fusion\33[1;37m"
-                          read -p 'Desactivado=0 Activado=1:  '   fusion
+                          echo -n "   Valor actual FUSION $Enable_fusion\33[1;37m"
+                          read -p '   Desactivado=0 Activado=1:  '   fusion
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
@@ -707,8 +707,8 @@ done;;
 d) echo ""
 while true
 do
-                          echo -n "Valor  actual  P25 ${AMARILLO}$p25_enable\33[1;37m"
-                          read -p 'Desactivado=0 Activado=1: '   p25
+                          echo -n "   Valor  actual  P25 ${AMARILLO}$p25_enable\33[1;37m"
+                          read -p '   Desactivado=0 Activado=1: '   p25
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
@@ -721,7 +721,7 @@ done;;
 e) echo ""
 while true
 do
-                          read -p 'Introduce el valor de la Baliza (Ej. 1-activada 0-desactivada) : ' baliza
+                          read -p '   Introduce el valor de la Baliza (Ej. 1-activada 0-desactivada) : ' baliza
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
@@ -735,8 +735,8 @@ done;;
 f) echo ""
 while true
 do
-                          echo "Valor actual del RFModeHang = : $modehang1\33[1;37m"
-                          read -p 'Introduce el valor para RFModeHang (optimo=5): ' modeh 
+                          echo "   Valor actual del RFModeHang = : $modehang1\33[1;37m"
+                          read -p '   Introduce el valor para RFModeHang (optimo=5): ' modeh 
                           actualizar=S 
                           case $actualizar in        
                           [sS]* ) echo ""       
@@ -749,8 +749,8 @@ done;;
 g) echo ""
 while true
 do
-                          echo "Valor actual del Timeout = : $timeo1\33[1;37m"
-                          read -p 'Introduce el valor para Timeout (valor optimo=0): ' timut
+                          echo "   Valor actual del Timeout = : $timeo1\33[1;37m"
+                          read -p '   Introduce el valor para Timeout (valor optimo=0): ' timut
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""       
@@ -763,8 +763,8 @@ done;;
 h) echo ""
 while true
 do
-                          echo "Valor del Port: ${AMARILLO}$port_nextion"
-                          read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' portn
+                          echo "   Valor del Port: ${AMARILLO}$port_nextion"
+                          read -p '   Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' portn
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
@@ -777,8 +777,8 @@ done;;
 i) echo ""
 while true
 do
-                          echo "Valor actual NXDN: ${AMARILLO}$Enable_nxdn"
-                          read -p 'Desactivado=0 Activado=1: '   NXDN1
+                          echo "   Valor actual NXDN: ${AMARILLO}$Enable_nxdn"
+                          read -p '   Desactivado=0 Activado=1: '   NXDN1
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
@@ -791,8 +791,8 @@ done;;
 j) echo ""
 while true
 do
-                          echo "Valor actual POCSAG: ${AMARILLO}$pocsag"
-                          read -p 'Desactivado=0 Activado=1: '   POCSAG1
+                          echo "   Valor actual POCSAG: ${AMARILLO}$pocsag"
+                          read -p '   Desactivado=0 Activado=1: '   POCSAG1
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
@@ -805,8 +805,8 @@ done;;
 k) echo ""
 while true
 do                         
-                          echo "Valor actual  del Jitter: ${AMARILLO}$Jitter"
-                          read -p 'Introduce valor entre 360 a 600: '   JITTER
+                          echo "   Valor actual  del Jitter: ${AMARILLO}$Jitter"
+                          read -p '   Introduce valor entre 360 a 600: '   JITTER
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
@@ -848,8 +848,8 @@ done;;
 24) echo ""
 while true
 do
-                          echo "Valor de la Latitud: $lat1\33[1;37m"
-           	              read -p 'Introduce la Latitud ' lat1
+                          echo "   Valor de la Latitud: $lat1\33[1;37m"
+           	              read -p '   Introduce la Latitud ' lat1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -862,8 +862,8 @@ done;;
 25) echo ""
 while true
 do
-                          echo "Valor de la Longitud: $long1\33[1;37m"
-           	              read -p 'Introduce la Longitud ' long1
+                          echo "   Valor de la Longitud: $long1\33[1;37m"
+           	              read -p '   Introduce la Longitud ' long1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -876,8 +876,8 @@ done;;
 26) echo ""
 while true
 do
-                          echo "Valor  actual  del  Module: ${AMARILLO}$modu1\33[1;37m"
-           	              read -p 'Valor óptimo para D-STAR=B: '  modu1
+                          echo "   Valor  actual  del  Module: ${AMARILLO}$modu1\33[1;37m"
+           	              read -p '   Valor óptimo para D-STAR=B: '  modu1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -895,7 +895,7 @@ do
                           read -p '   Estas en DMR+ ? S/N ' actualizar                                          
                           case $actualizar in
                           [sS]* ) echo ""
-                          read -p 'Intruduce reflector DMR+ al que se conectara (ej:4370) ' opcion
+                          read -p '   Intruduce reflector DMR+ al que se conectara (ej:4370) ' opcion
                           letra1=c
                           linea4=$linea33port$letra1
                           if [ $opcion = 21465 ]
@@ -931,7 +931,7 @@ do
                         case $actualizar in
 			                  [sS]* ) echo ""
                         clear
-                        echo "Introduce nombre memoria máximo 10 caracteres"
+                        echo "   Introduce nombre memoria máximo 10 caracteres"
                         read memoria1
                         echo "<<<<<< Haciendo copia de seguridad de la M1 >>>>>"
                         sleep 3
@@ -966,7 +966,7 @@ do
                         case $actualizar in
 			                  [sS]* ) echo ""
                         clear
-                        echo "Introduce nombre memoria máximo 10 caracteres"
+                        echo "   Introduce nombre memoria máximo 10 caracteres"
                         read memoria2
                         echo "<<<<<< Haciendo copia de seguridad de la M2 >>>>>"
                         sleep 3
@@ -1000,7 +1000,7 @@ do
                         case $actualizar in
 			                  [sS]* ) echo ""
                         clear
-                        echo "Introduce nombre memoria máximo 10 caracteres"
+                        echo "   Introduce nombre memoria máximo 10 caracteres"
                         read memoria3
                         echo "<<<<<< Haciendo copia de seguridad de la M3 >>>>>"
                         sleep 3
@@ -1031,7 +1031,7 @@ done;;
 while true
 do
           	        
-           	            read -p 'Quieres restaurar el fichero original MMDVM.ini ? S/N ' restaurar1   
+           	            read -p '   Quieres restaurar el fichero original MMDVM.ini ? S/N ' restaurar1   
                         case $restaurar1 in
 			                  [sS]* ) echo ""
                         clear
