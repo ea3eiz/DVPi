@@ -745,20 +745,20 @@ sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh
                           break;;
 esac
 done;;
-g) echo ""
-while true
-do
-                          echo "Valor actual del Timeout = : $timeo1\33[1;37m"
-                          read -p 'Introduce el valor para Timeout (valor optimo=0): ' timut
-                          actualizar=S 
-                          case $actualizar in                                            
-                          [sS]* ) echo ""       
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timut             
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
+# g) echo ""
+# while true
+# do
+#                           echo "Valor actual del Timeout = : $timeo1\33[1;37m"
+#                           read -p 'Introduce el valor para Timeout (valor optimo=0): ' timut
+#                           actualizar=S 
+#                           case $actualizar in                                            
+#                           [sS]* ) echo ""       
+# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timut             
+#                           break;;
+#                           [nN]* ) echo ""
+#                           break;;
+# esac
+# done;;
 # h) echo ""
 # while true
 # do
