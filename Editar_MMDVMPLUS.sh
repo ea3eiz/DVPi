@@ -3,8 +3,8 @@ clear
 while true
 do
 clear
-# path usuario
-usuario=$(awk "NR==1" ~/usuario)
+# path usuario 
+usuario=$(awk "NR==1" /home/pi/.config/autostart/usuario)
 
 # path Versión
 SCRIPTS_version=$(awk "NR==1" $usuario/.config/autostart/version)
