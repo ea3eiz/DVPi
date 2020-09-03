@@ -787,63 +787,63 @@ sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO NXDN Enable $NXDN1
                           break;;
 esac
 done;;
-j) echo ""
-while true
-do
-                          echo "Valor actual POCSAG: ${AMARILLO}$pocsag"
-                          read -p 'Desactivado=0 Activado=1: '   POCSAG1
-                          actualizar=S 
-                          case $actualizar in
-                          [sS]* ) echo ""
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable $POCSAG1
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
-k) echo ""
-while true
-do                         
-                          echo "Valor actual  del Jitter: ${AMARILLO}$Jitter"
-                          read -p 'Introduce valor entre 360 a 600: '   JITTER
-                          actualizar=S 
-                          case $actualizar in
-                          [sS]* ) echo ""
-ad="DMR Network"
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter $JITTER
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
-l) echo ""
-while true
-do                         
-                          echo "   Valor  actual  FM: ${AMARILLO}$Enable_fm"
-                          read -p '   Desactivado=0 Activado=1: '   fm
-                          actualizar=S 
-                          case $actualizar in
-                          [sS]* ) echo ""
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO FM Enable $fm
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
-m) echo ""
-while true
-do                         
-                          echo "   Valor  actual  tipo OLED: ${AMARILLO}$tipo_oled"
-                          read -p '   Para OLED 0.96 Type=3 / Para OLED 1.3 Type=6: '   oled
-                          actualizar=S 
-                          case $actualizar in
-                          [sS]* ) echo ""
-  sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
+# j) echo ""
+# while true
+# do
+#                           echo "Valor actual POCSAG: ${AMARILLO}$pocsag"
+#                           read -p 'Desactivado=0 Activado=1: '   POCSAG1
+#                           actualizar=S 
+#                           case $actualizar in
+#                           [sS]* ) echo ""
+# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable $POCSAG1
+#                           break;;
+#                           [nN]* ) echo ""
+#                           break;;
+# esac
+# done;;
+# k) echo ""
+# while true
+# do                         
+#                           echo "Valor actual  del Jitter: ${AMARILLO}$Jitter"
+#                           read -p 'Introduce valor entre 360 a 600: '   JITTER
+#                           actualizar=S 
+#                           case $actualizar in
+#                           [sS]* ) echo ""
+# ad="DMR Network"
+# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter $JITTER
+#                           break;;
+#                           [nN]* ) echo ""
+#                           break;;
+# esac
+# done;;
+# l) echo ""
+# while true
+# do                         
+#                           echo "   Valor  actual  FM: ${AMARILLO}$Enable_fm"
+#                           read -p '   Desactivado=0 Activado=1: '   fm
+#                           actualizar=S 
+#                           case $actualizar in
+#                           [sS]* ) echo ""
+# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO FM Enable $fm
+#                           break;;
+#                           [nN]* ) echo ""
+#                           break;;
+# esac
+# done;;
+# m) echo ""
+# while true
+# do                         
+#                           echo "   Valor  actual  tipo OLED: ${AMARILLO}$tipo_oled"
+#                           read -p '   Para OLED 0.96 Type=3 / Para OLED 1.3 Type=6: '   oled
+#                           actualizar=S 
+#                           case $actualizar in
+#                           [sS]* ) echo ""
+#   sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
+#                           break;;
+#                           [nN]* ) echo ""
+#                           break;;
+# esac
+# done;;
 24) echo ""
 while true
 do
