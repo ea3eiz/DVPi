@@ -732,118 +732,118 @@ sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $baliza
                           break;;
 esac
 done;;
-f) echo ""
-while true
-do
-                          echo "Valor actual del RFModeHang = : $modehang1\33[1;37m"
-                          read -p 'Introduce el valor para RFModeHang (optimo=5): ' modeh        
-                          [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`       
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh             
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
-g) echo ""
-while true
-do
-                          echo "Valor actual del Timeout = : $timeo1\33[1;37m"
-                          read -p 'Introduce el valor para Timeout (valor optimo=0): ' timut
-                          actualizar=S 
-                          case $actualizar in                                            
-                          [sS]* ) echo ""       
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timut             
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
-h) echo ""
-while true
-do
-                          echo "Valor del Port: ${AMARILLO}$port_nextion"
-                          read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' portn
-                          actualizar=S 
-                          case $actualizar in
-                          [sS]* ) echo ""
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion Port $portn
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
-i) echo ""
-while true
-do
-                          echo "Valor actual NXDN: ${AMARILLO}$Enable_nxdn"
-                          read -p 'Desactivado=0 Activado=1: '   NXDN1
-                          actualizar=S 
-                          case $actualizar in
-                          [sS]* ) echo ""
-sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO NXDN Enable $NXDN1
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
-# j) echo ""
+# f) echo ""
 # while true
 # do
-#                           echo "Valor actual POCSAG: ${AMARILLO}$pocsag"
-#                           read -p 'Desactivado=0 Activado=1: '   POCSAG1
-#                           actualizar=S 
-#                           case $actualizar in
+#                           echo "Valor actual del RFModeHang = : $modehang1\33[1;37m"
+#                           read -p 'Introduce el valor para RFModeHang (optimo=5): ' modeh        
 #                           [sS]* ) echo ""
-# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable $POCSAG1
+#                           V=`echo "$V" | tr -d '[[:space:]]'`       
+# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh             
 #                           break;;
 #                           [nN]* ) echo ""
 #                           break;;
 # esac
 # done;;
-# k) echo ""
+# g) echo ""
 # while true
-# do                         
-#                           echo "Valor actual  del Jitter: ${AMARILLO}$Jitter"
-#                           read -p 'Introduce valor entre 360 a 600: '   JITTER
+# do
+#                           echo "Valor actual del Timeout = : $timeo1\33[1;37m"
+#                           read -p 'Introduce el valor para Timeout (valor optimo=0): ' timut
 #                           actualizar=S 
-#                           case $actualizar in
-#                           [sS]* ) echo ""
-# ad="DMR Network"
-# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter $JITTER
+#                           case $actualizar in                                            
+#                           [sS]* ) echo ""       
+# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timut             
 #                           break;;
 #                           [nN]* ) echo ""
 #                           break;;
 # esac
 # done;;
-# l) echo ""
+# h) echo ""
 # while true
-# do                         
-#                           echo "   Valor  actual  FM: ${AMARILLO}$Enable_fm"
-#                           read -p '   Desactivado=0 Activado=1: '   fm
+# do
+#                           echo "Valor del Port: ${AMARILLO}$port_nextion"
+#                           read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' portn
 #                           actualizar=S 
 #                           case $actualizar in
 #                           [sS]* ) echo ""
-# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO FM Enable $fm
+# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion Port $portn
 #                           break;;
 #                           [nN]* ) echo ""
 #                           break;;
 # esac
 # done;;
-# m) echo ""
+# i) echo ""
 # while true
-# do                         
-#                           echo "   Valor  actual  tipo OLED: ${AMARILLO}$tipo_oled"
-#                           read -p '   Para OLED 0.96 Type=3 / Para OLED 1.3 Type=6: '   oled
+# do
+#                           echo "Valor actual NXDN: ${AMARILLO}$Enable_nxdn"
+#                           read -p 'Desactivado=0 Activado=1: '   NXDN1
 #                           actualizar=S 
 #                           case $actualizar in
 #                           [sS]* ) echo ""
-#   sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
+# sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO NXDN Enable $NXDN1
 #                           break;;
 #                           [nN]* ) echo ""
 #                           break;;
 # esac
 # done;;
+j) echo ""
+while true
+do
+                          echo "Valor actual POCSAG: ${AMARILLO}$pocsag"
+                          read -p 'Desactivado=0 Activado=1: '   POCSAG1
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable $POCSAG1
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+k) echo ""
+while true
+do                         
+                          echo "Valor actual  del Jitter: ${AMARILLO}$Jitter"
+                          read -p 'Introduce valor entre 360 a 600: '   JITTER
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+ad="DMR Network"
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter $JITTER
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+l) echo ""
+while true
+do                         
+                          echo "   Valor  actual  FM: ${AMARILLO}$Enable_fm"
+                          read -p '   Desactivado=0 Activado=1: '   fm
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO FM Enable $fm
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+m) echo ""
+while true
+do                         
+                          echo "   Valor  actual  tipo OLED: ${AMARILLO}$tipo_oled"
+                          read -p '   Para OLED 0.96 Type=3 / Para OLED 1.3 Type=6: '   oled
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+  sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
 24) echo ""
 while true
 do
