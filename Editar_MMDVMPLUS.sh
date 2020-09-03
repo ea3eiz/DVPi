@@ -465,8 +465,8 @@ done;;
 11) echo ""
 while true
 do
-                      echo "Valor actual del Master: $master1\33[1;37m"
-                      read -p 'Brandmeister=master.spain-dmr.es / DMR+=212.237.3.141: ' master1
+                      echo "   Valor actual del Master: $master1\33[1;37m"
+                      read -p '   Brandmeister=master.spain-dmr.es / DMR+=212.237.3.141: ' master1
                       actualizar=S 
                       case $actualizar in
                       [sS]* ) echo ""
@@ -480,8 +480,8 @@ done;;
 12) echo ""
 while true
 do
-                          echo -n "Valor actual del \33[1;37m$port\33[1;37m"
-                          read -p 'Puerto para Brandmeister=62031 puerto para DMR+=55555 : ' miid
+                          echo "   Valor actual del \33[1;37m$port\33[1;37m"
+                          read -p '   Puerto para Brandmeister=62031 puerto para DMR+=55555 : ' miid
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
@@ -892,7 +892,7 @@ done;;
 27) echo ""
 while true
 do
-                          read -p 'Estas en DMR+ ? S/N ' actualizar                                          
+                          read -p '   Estas en DMR+ ? S/N ' actualizar                                          
                           case $actualizar in
                           [sS]* ) echo ""
                           read -p 'Intruduce reflector DMR+ al que se conectara (ej:4370) ' opcion
