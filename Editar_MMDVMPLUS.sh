@@ -144,57 +144,71 @@ echo -n "${CIAN}        \t\tb)${GRIS} DMR         - ${AMARILLO}"
 dmr_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR Enable)
 echo "$dmr_enable"
 
+#16) TXLevel
 echo -n "${CIAN}  16)${GRIS} Modificar TXLevel     - ${AMARILLO}"
 tx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel)
 echo -n "$tx1"
 
+#c) Fusion Enable=
 echo -n "${CIAN}        \t\tc)${GRIS} FUSION      - ${AMARILLO}"
 ad="System Fusion Network"          
 Enable_fusion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
 echo "$Enable_fusion"
 
+#17) Duplex
 echo -n "${CIAN}  17)${GRIS} Modificar Duplex      - ${AMARILLO}"
 dup1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Duplex)
 echo -n "$dup1"
 
+
+#d) P25 Enable=
 echo -n "${CIAN}          \t\td)${GRIS} P25         - ${AMARILLO}"
 p25_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO P25 Enable)
 echo "$p25_enable"
 
+#18) TXHang
 echo -n "${CIAN}  18)${GRIS} Modificar TXHang      - ${AMARILLO}"
 txh1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR TXHang)
 echo -n "$txh1"
 
+#e) Baliza
 echo -n "${CIAN}          \t\te)${GRIS} Baliza      - ${AMARILLO}"
 ad="CW Id"          
 Enable_baliza=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
 echo "$Enable_baliza"
 
+#19) DisplayLevel
 echo -n "${CIAN}  19)${GRIS} Modificar DisplayLevel- ${AMARILLO}"          
 lg1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Log DisplayLevel)
 echo -n "$lg1"
 
+#f) RFModeHang
 echo -n "${CIAN}    \t\t\tf)${GRIS} RFModeHang  - ${AMARILLO}"
 modehang1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General RFModeHang)
 echo "$modehang1"
 
+#20) Slot 1
 echo -n "${CIAN}  20)${GRIS} Modificar Slot1       - ${AMARILLO}"
 ad="DMR Network"          
 sl1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Slot1)
 echo -n "$sl1"
 
+#g) Timeout
 echo -n "${CIAN}           \t\tg)${GRIS} Timeout     - ${AMARILLO}"
 timeo1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Timeout)
 echo "$timeo1"
 
+#21) Display
 echo -n "${CIAN}  21)${GRIS} Tipo Pantalla Display - ${AMARILLO}"
 Display1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Display)
 echo -n "$Display1"
 
+#h) Nextion Port
 echo -n " ${CIAN}\t\t\th) ${GRIS}Port Nextion- ${AMARILLO}$MODEMNEXTION"
 port_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Port)
 echo "$port_nextion"
 
+#22) Versión Display
 echo -n "${CIAN}  22)${GRIS} Version Display       - ${AMARILLO}"
 ScreenLayout1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion ScreenLayout)
 echo -n "$ScreenLayout1"
@@ -245,10 +259,8 @@ echo -n "${CIAN}     \t\t\tm) ${GRIS}Tipo OLED   - ${AMARILLO}"
 tipo_oled=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO OLED Type)
 echo "$tipo_oled"
 
-#27)reflector DMR+=
-
+#27)Options DMR+=
 pas=`grep -n '\<Password\>' $usuario/MMDVMHost/$DIRECTORIO`
-
 echo -n "${CIAN}  27)${GRIS} Entra reflector DMR+  - ${AMARILLO}"
 OPCION=`expr substr $pas 1 $largo1`
 OPCION=`expr $OPCION + 1`
@@ -257,10 +269,14 @@ letra=p
 linea22port=$OPCION$letra
 var300port= sed -n $linea22port  $usuario/MMDVMHost/$DIRECTORIO;
 
+#28) Abrir fichero 
 echo ""
 echo "${CIAN}  28)${AMARILLO} Abrir fichero $DIRECTORIO para hacer cualquier cambio${AMARILLO}"
 
+#29) Guardar  fichero de Configuración en M1
 echo "${CIAN}  29)\33[1;37m Guardar  fichero de Configuración en M1 ${CIAN}"
+
+#30) Utilizar fichero de Configuración de M1
 echo -n "${CIAN}  30)\33[1;32m Utilizar fichero de Configuración de M1: ${CIAN}"
 master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia`
 buscar=":"
@@ -271,7 +287,10 @@ echo -n "$copia1"
 memoria1=$(awk "NR==$primer1" $usuario/info_panel_control.ini)
 echo " - $memoria1"
 
+#31) Guardar  fichero de Configuración en M2
 echo "${CIAN}  31)\33[1;37m Guardar  fichero de Configuración en M2: ${CIAN}"
+
+#32) Utilizar fichero de Configuración en M2
 echo -n "${CIAN}  32)\33[1;32m Utilizar fichero de Configuración en M2: ${CIAN}"
 master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia2`
 buscar=":"
@@ -282,7 +301,10 @@ echo -n "$copia2"
 memoria2=$(awk "NR==$segun1" $usuario/info_panel_control.ini)
 echo " - $memoria2"
 
+#33) Guardar  fichero de Configuración en M3
 echo "${CIAN}  33)\33[1;37m Guardar  fichero de Configuración en M3: ${CIAN}"
+
+#34) Utilizar fichero de Configuración en M3
 echo -n "${CIAN}  34)\33[1;32m Utilizar fichero de Configuración en M3: ${CIAN}"
 master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia3`
 buscar=":"
@@ -293,9 +315,11 @@ echo -n "$copia3"
 memoria3=$(awk "NR==$tercer1" $usuario/info_panel_control.ini)
 echo " - $memoria3"
 
+#35) Recuperar el fichero original MMDVM.ini
 echo ""
 echo "${CIAN}  35)\33[1;31m Recuperar el fichero original MMDVM.ini${AMARILLO}"
 
+#0) Salir
 echo ""
 echo "   ${ROJO}0) Salir"
 echo ""
