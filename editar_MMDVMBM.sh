@@ -6,28 +6,125 @@ clear
 # path usuario 
 usuario=$(awk "NR==1" /home/pi/.config/autostart/usuario)
 
-# Versión
+# path Versión
 SCRIPTS_version=$(awk "NR==1" $usuario/.config/autostart/version)
 
-#Editor MMDVMBM.ini
-DIRECTORIO="MMDVMBM.ini"
-DIRECTORIO_copia="MMDVMBM.ini_copia"
-DIRECTORIO_copia2="MMDVMBM.ini_copia2"
-DIRECTORIO_copia3="MMDVMBM.ini_copia3"
-
+# **********************************************************************************************
+#Editor MMDVMPLUS.ini
+DIRECTORIO="MMDVMPLUS.ini"
+DIRECTORIO_copia="MMDVMPLUS.ini_copia"
+DIRECTORIO_copia2="MMDVMPLUS.ini_copia2"
+DIRECTORIO_copia3="MMDVMPLUS.ini_copia3"
 #Escribe datos en el fichero $usuario/info_panel_control.ini para leer desde el panel de control
-primero="1c"
-segundo="2c"
-tercero="3c"
-cuarto="4c"
+primero="11c"
+segundo="12c"
+tercero="13c"
+cuarto="14c"
   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
-primer="34c"
-segun="35c"
-tercer="36c"
-  #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
-primer1="34c"
-segun1="35c"
-tercer1="36c"
+primer="31c"
+segun="32c"
+tercer="33c"
+  #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3 
+primer1="31c"
+segun1="32c"
+tercer1="33c"
+# **********************************************************************************************
+
+# **********************************************************************************************
+# #Editor MMDVMBM.ini
+# DIRECTORIO="MMDVMBM.ini"
+# DIRECTORIO_copia="MMDVMBM.ini_copia"
+# DIRECTORIO_copia2="MMDVMBM.ini_copia2"
+# DIRECTORIO_copia3="MMDVMBM.ini_copia3"
+# #Escribe datos en el fichero $usuario/info_panel_control.ini para leer desde el panel de control
+# primero="1c"
+# segundo="2c"
+# tercero="3c"
+# cuarto="4c"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer="34c"
+# segun="35c"
+# tercer="36c"
+#   #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer1="34c"
+# segun1="35c"
+# tercer1="36c"
+# **********************************************************************************************
+
+# **********************************************************************************************
+# #Editor MMDVM.ini
+# DIRECTORIO="MMDVM.ini"
+# DIRECTORIO_copia="MMDVM.ini_copia"
+# DIRECTORIO_copia2="MMDVM.ini_copia2"
+# DIRECTORIO_copia3="MMDVM.ini_copia3"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para leer desde el panel de control
+# primero="6c"
+# segundo="7c"
+# tercero="8c"
+# cuarto="9c"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer="37c"
+# segun="38c"
+# tercer="39c"
+#   #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer1="37c"
+# segun1="38c"
+# tercer1="39c"
+# **********************************************************************************************
+
+# **********************************************************************************************
+# #MMDVMDSTAR.ini
+# DIRECTORIO="MMDVMDSTAR.ini"
+# DIRECTORIO_copia="MMDVMDSTAR.ini_copia"
+# DIRECTORIO_copia2="MMDVMDSTAR.ini_copia2"
+# DIRECTORIO_copia3="MMDVMDSTAR.ini_copia3"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer="15c"
+# segun="16c"
+# tercer="17c"
+#   #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer1="15c"
+# segun1="16c"
+# tercer1="17c"
+# **********************************************************************************************
+
+# **********************************************************************************************
+# #Editor MMDVMESPECIAL.ini
+# DIRECTORIO="MMDVMESPECIAL.ini"
+# DIRECTORIO_copia="MMDVMESPECIAL.ini_copia"
+# DIRECTORIO_copia2="MMDVMESPECIAL.ini_copia2"
+# DIRECTORIO_copia3="MMDVMESPECIAL.ini_copia3"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para leer desde el panel de control
+# primero="11c"
+# segundo="12c"
+# tercero="13c"
+# cuarto="14c"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer="41c"
+# segun="42c"
+# tercer="43c"
+#   #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3 
+# primer1="41c"
+# segun1="42c"
+# tercer1="43c"
+# **********************************************************************************************
+
+# **********************************************************************************************
+# #Editor MMDVMFUSION.ini
+# DIRECTORIO="MMDVMFUSION.ini"
+# DIRECTORIO_copia="MMDVMFUSION.ini_copia"
+# DIRECTORIO_copia2="MMDVMFUSION.ini_copia2"
+# DIRECTORIO_copia3="MMDVMFUSION.ini_copia3"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer="18c"
+# segun="19c"
+# tercer="20c"
+#   #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer1="18c"
+# segun1="19c"
+# tercer1="20c"
+# **********************************************************************************************
+
 # Recoge datos para leer desde el panel de control
 indi=$(awk "NR==2" $usuario/MMDVMHost/$DIRECTORIO)
 sed -i "$primero $indi" $usuario/info_panel_control.ini
@@ -55,7 +152,7 @@ CIAN="\033[1;36m"
 GRIS="\033[0m"
 MARRON="\33[38;5;138m"
 
-linea_info_memoria="313c" #Linea del MMDVM donde guardamos el nombre de la memoria
+#linea_info_memoria="313c" #Linea del MMDVM donde guardamos el nombre de la memoria
 
 echo "${VERDE}"
 echo "   ***************************************************************************************"
@@ -66,40 +163,16 @@ echo "                                       $SCRIPTS_version by EA3EIZ"
 echo -n "${VERDE}"
 echo "   ***************************************************************************************"
 
-echo -n "${CIAN}   1)${GRIS} Modificar indicativo  - ${AMARILLO}"
-ind=`grep -n "^Callsign=" $usuario/MMDVMHost/$DIRECTORIO`
-indi1=`echo "$ind" | tr -d '[[:space:]]'`
-buscar=":"
-largo_linea=`expr index $indi1 $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $indi1 1 $largo_linea`
-letrac=c
-numero_linea_indi=$numero_linea$letrac
-contenido_indicativo=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
+echo -n "${CIAN}   1)${GRIS} Modificar Callsign    - ${AMARILLO}"
+contenido_indicativo=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Callsign)
 echo "$contenido_indicativo"
 
 echo -n "${CIAN}   2)${GRIS} Modificar RXFrequency - ${AMARILLO}"
-rxf=`grep -n "^RXFrequency=" $usuario/MMDVMHost/$DIRECTORIO`
-rxf1=`echo "$rxf" | tr -d '[[:space:]]'`
-buscar=":"
-largo_linea=`expr index $rxf1 $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $rxf1 1 $largo_linea`
-letrac=c
-numero_linea_rxf=$numero_linea$letrac
-contenido_rxf=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
+contenido_rxf=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info RXFrequency)
 echo "$contenido_rxf"
 
 echo -n "${CIAN}   3)${GRIS} Modificar TXFrequency - ${AMARILLO}"
-txf=`grep -n "^TXFrequency=" $usuario/MMDVMHost/$DIRECTORIO`
-txf1=`echo "$txf" | tr -d '[[:space:]]'`
-buscar=":"
-largo_linea=`expr index $txf1 $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $txf1 1 $largo_linea`
-letrac=c
-numero_linea_txf=$numero_linea$letrac
-contenido_txf=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
+contenido_txf=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info TXFrequency)
 echo "$contenido_txf"
 
 echo -n "${CIAN}   4)${GRIS} Modificar Location    - ${AMARILLO}"
@@ -112,289 +185,180 @@ numero_linea=`expr substr $loc1 1 $largo_linea`
 letrac=c
 numero_linea_letrac=$numero_linea$letrac
 contenido_location=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-echo "$contenido_location"
+echo "${contenido_location#*=}"
 
 echo -n "${CIAN}   5)${GRIS} Modificar URL         - ${AMARILLO}"
-url=`grep -n "URL" $usuario/MMDVMHost/$DIRECTORIO`
-url1=`expr substr $url 4 30`
+url1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info URL)
 echo "$url1"
 
-echo "${CIAN}   6)${GRIS} Puerto para DVMEGA pinchado en Raspberry Pi (ttyAMA0)${AMARILLO}"
+echo "${CIAN}   6)${GRIS} Puerto para DVMEGA pinchado en GPIO (ttyAMA0)${AMARILLO}"
 echo "${CIAN}   7)${GRIS} Puerto para NTH/ZUM, Hotspots, Nano, Low Cost etc.. (ttyACM0)${AMARILLO}"
 echo "${CIAN}   8)${GRIS} Puerto para DVMEGA + Bluestack conectado por USB (ttyUSB0)${AMARILLO}"
-echo "${CIAN}   9)${GRIS} Entrar Puerto manual  ${CIAN}"
+echo "${CIAN}   9)${VERDE} Menú elegir Puerto  ${CIAN}"
 
 echo -n "                            - "
 
-mode=`grep -n -m 1 "^Port=" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-caracteres=`expr index $mode $buscar`
-caracteres_linea=`expr $caracteres - 1`
-numero_linea_port=`expr substr $mode 1 $caracteres_linea`
-mode=$(awk "NR==$numero_linea_port" $usuario/MMDVMHost/$DIRECTORIO)
-echo "$mode"
-echo ""
-echo -n "${CIAN}  10)${GRIS} Modificar ID          - ${AMARILLO}"
-idd=`grep -n "^Id=" $usuario/MMDVMHost/$DIRECTORIO`
-idd1=`expr substr $idd 3 30`
+idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
 echo "$idd1"
 
+
+echo -n "${CIAN}  10)${GRIS} Modificar Id          - ${AMARILLO}"
+idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Id)
+echo "$idd1"
+
+#11) Modificar Address
 echo -n "${CIAN}  11)${GRIS} Modificar Address     - ${AMARILLO}"
-master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo=`expr index $master $buscar`
-largo=`expr $largo + 1`
-largo1=`expr $largo - 2`
-master1=`expr substr $master $largo 40`
-largo=`expr substr $master 1 $largo1`
-letra=c            
-linea_master=$largo$letra
+ad="DMR Network"          
+master1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
 echo "$master1"
 
-echo -n "${CIAN}  12)${GRIS} Modificar Puerto      - ${AMARILLO}"
-lineaport=`expr substr $master 1 $largo1`
-lineaport=`expr $lineaport + 1`
-linea3port=$lineaport
-letra=p
-linea2port=$lineaport$letra
-var100port= sed -n $linea2port  $usuario/MMDVMHost/$DIRECTORIO;
+echo -n "${CIAN}  12)${GRIS} Modificar Port        - ${AMARILLO}"
+ad="DMR Network"          
+port=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port)
+echo "$port"
 
 echo -n "${CIAN}  13)${GRIS} Modificar Password    - ${AMARILLO}"
-pas=`grep -n '\<Password\>' $usuario/MMDVMHost/$DIRECTORIO`
-pas1=`expr substr $pas 5 30`
-echo "$pas1"
+ad="DMR Network"          
+password=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password)
+echo "$password"
+
+echo -n "${CIAN}   R)${GRIS} Modificar RXInvert    - ${AMARILLO}"          
+rxinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem RXInvert)
+echo "$rxinv1"
 
 echo -n "${CIAN}  14)${GRIS} Modificar TXInvert    - ${AMARILLO}"
-txinv=`grep -n '\<TXInvert\>' $usuario/MMDVMHost/$DIRECTORIO`
-txinv1=`expr substr $txinv 4 30`
+txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
 echo -n "$txinv1"
 
-echo -n "${CIAN}        \ta)${GRIS} D-STAR      - ${AMARILLO}"
-dstar=`grep -n "\[D-Star\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $dstar $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $dstar 1 $largo_linea`
-numero_linea_dstar=`expr $numero_linea + 1`
-letra=p
-numero_linea_dstar_letrap=$numero_linea_dstar$letra
-letrac=c
-numero_linea_dstar_letrac=$numero_linea_dstar$letrac
-presentar_valo= sed -n $numero_linea_dstar_letrap  $usuario/MMDVMHost/$DIRECTORIO;
+echo -n "${CIAN}        \t\t\ta)${GRIS} D-STAR      - ${AMARILLO}"
+dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-Star Enable)
+echo "$dstar_enable"
 
 echo -n "${CIAN}  15)${GRIS} Modificar RXLevel     - ${AMARILLO}"
-rx=`grep -n '\<RXLevel\>' $usuario/MMDVMHost/$DIRECTORIO`
-rx1=`expr substr $rx 4 30`
+rx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem RXLevel)
 echo -n "$rx1"
 
-echo -n "${CIAN}        \tb)${GRIS} DMR         - ${AMARILLO}"
-dmr=`grep -n "\[DMR\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $dmr $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $dmr 1 $largo_linea`
-numero_linea_dmr=`expr $numero_linea + 1`
-letra=p
-numero_linea_dmr_letrap=$numero_linea_dmr$letra #crea 74p
-letrac=c
-numero_linea_dmr_letrac=$numero_linea_dmr$letrac #crea 74c
-presentar_valor= sed -n $numero_linea_dmr_letrap  $usuario/MMDVMHost/$DIRECTORIO;
+echo -n "${CIAN}        \t\tb)${GRIS} DMR         - ${AMARILLO}"
+dmr_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR Enable)
+echo "$dmr_enable"
 
+#16) TXLevel
 echo -n "${CIAN}  16)${GRIS} Modificar TXLevel     - ${AMARILLO}"
-tx=`grep -n -m 1 '\<TXLevel\>' $usuario/MMDVMHost/$DIRECTORIO`
-tx1=`expr substr $tx 4 30`
+tx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel)
 echo -n "$tx1"
 
-echo -n "${CIAN}        \tc)${GRIS} FUSION      - ${AMARILLO}"
-fusion=`grep -n "LowDeviation" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $fusion $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $fusion 1 $largo_linea`
-numero_linea_fusion=`expr $numero_linea - 1`
-letra=p
-numero_linea_fusion_letrap=$numero_linea_fusion$letra
-letrac=c
-numero_linea_fusion_letrac=$numero_linea_fusion$letrac
-presentar_valor= sed -n $numero_linea_fusion_letrap  $usuario/MMDVMHost/$DIRECTORIO;
+#c) Fusion Enable=
+echo -n "${CIAN}        \t\tc)${GRIS} FUSION      - ${AMARILLO}"
+ad="System Fusion Network"          
+Enable_fusion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
+echo "$Enable_fusion"
 
+#17) Duplex
 echo -n "${CIAN}  17)${GRIS} Modificar Duplex      - ${AMARILLO}"
-dup=`grep -n -m 1 '\<Duplex\>' $usuario/MMDVMHost/$DIRECTORIO`
-dup1=`expr substr $dup 3 30`
+dup1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Duplex)
 echo -n "$dup1"
 
-echo -n "${CIAN}          \td)${GRIS} P25         - ${AMARILLO}"
-p25=`grep -n "\[P25\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $p25 $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $p25 1 $largo_linea`
-numero_linea_p25=`expr $numero_linea + 1`
-letra=p
-numero_linea_p25_letrap=$numero_linea_p25$letra
-letrac=c
-numero_linea_p25_letrac=$numero_linea_p25$letrac
-presentar_valor= sed -n $numero_linea_p25_letrap  $usuario/MMDVMHost/$DIRECTORIO;
 
+#d) P25 Enable=
+echo -n "${CIAN}          \t\td)${GRIS} P25         - ${AMARILLO}"
+p25_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO P25 Enable)
+echo "$p25_enable"
+
+#18) TXHang
 echo -n "${CIAN}  18)${GRIS} Modificar TXHang      - ${AMARILLO}"
-txh=`grep -n -m 1 '\<TXHang\>' $usuario/MMDVMHost/$DIRECTORIO`
-txh1=`expr substr $txh 5 30`
+txh1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR TXHang)
 echo -n "$txh1"
 
-echo -n "${CIAN}          \te)${GRIS} Baliza      - ${AMARILLO}"
-cw= sed -n "31p"  $usuario/MMDVMHost/$DIRECTORIO;
+#e) Baliza
+echo -n "${CIAN}          \t\te)${GRIS} Baliza      - ${AMARILLO}"
+ad="CW Id"          
+Enable_baliza=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
+echo "$Enable_baliza"
 
-echo -n "${CIAN}  19)${GRIS} Modificar Tramas      - ${AMARILLO}"
-lg=`grep -n -m 1 '\<DisplayLevel\>' $usuario/MMDVMHost/$DIRECTORIO`
-lg1=`expr substr $lg 4 30`
+#19) DisplayLevel
+echo -n "${CIAN}  19)${GRIS} Modificar DisplayLevel- ${AMARILLO}"          
+lg1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Log DisplayLevel)
 echo -n "$lg1"
 
-echo -n "${CIAN}    \tf)${GRIS} RFModeHang  - ${AMARILLO}"
-modehang=`grep -n -m 1 -c '\<RFModeHang\>' $usuario/MMDVMHost/$DIRECTORIO`
-if [ $modehang = 0 ]; then
-echo "\33[1;31mEsta versión MMDVMHost no trae este parámetro"
-else
-modehang=`grep -n -m 1 '\<RFModeHang\>' $usuario/MMDVMHost/$DIRECTORIO`
-modehang1=`expr substr $modehang 3 30`
+#f) RFModeHang
+echo -n "${CIAN}    \t\t\tf)${GRIS} RFModeHang  - ${AMARILLO}"
+modehang1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General RFModeHang)
 echo "$modehang1"
-fi
 
+#20) Slot 1
 echo -n "${CIAN}  20)${GRIS} Modificar Slot1       - ${AMARILLO}"
-sl=`grep -n -m 1 '\<Slot1\>' $usuario/MMDVMHost/$DIRECTORIO`
-sl1=`expr substr $sl 5 30`
+ad="DMR Network"          
+sl1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Slot1)
 echo -n "$sl1"
 
-echo -n "${CIAN}           \tg)${GRIS} Timeout     - ${AMARILLO}"
-timeo=`grep -n -m 1 -c '\<Timeout\>' $usuario/MMDVMHost/$DIRECTORIO`
-if [ $timeo = 0 ]; then
-echo "\33[1;31mEsta versión MMDVMHost no trae este parámetro"
-else
-timeo=`grep -n -m 1 '\<Timeout\>' $usuario/MMDVMHost/$DIRECTORIO`
-timeo1=`expr substr $timeo 3 30`
+#g) Timeout
+echo -n "${CIAN}           \t\tg)${GRIS} Timeout     - ${AMARILLO}"
+timeo1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Timeout)
 echo "$timeo1"
-fi
 
+#21) Display
 echo -n "${CIAN}  21)${GRIS} Tipo Pantalla Display - ${AMARILLO}"
-Display=`grep -n -m 1 -c '\<Display\>' $usuario/MMDVMHost/$DIRECTORIO`
-if [ $Display = 0 ]; then
-echo "\33[1;31mEsta versión MMDVMHost no trae este parámetro"
-else
-Display=`grep -n -m 1 '\<Display\>' $usuario/MMDVMHost/$DIRECTORIO`
-Display1=`expr substr $Display 3 30`
+Display1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Display)
 echo -n "$Display1"
-fi
 
-var=`grep -n -m 1 "\[Nextion\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-numero_linea=`expr $numero_linea + 2`
-MODEMNEXTION=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letra=c
-linea_sed_MN=$numero_linea$letra
-echo " ${CIAN}\t\th) ${GRIS}Port Nextion- ${AMARILLO}$MODEMNEXTION"
+#h) Nextion Port
+echo -n " ${CIAN}\t\t\th) ${GRIS}Port Nextion- ${AMARILLO}$MODEMNEXTION"
+port_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Port)
+echo "$port_nextion"
 
+#22) Versión Display
 echo -n "${CIAN}  22)${GRIS} Version Display       - ${AMARILLO}"
-ScreenLayout=`grep -n -m 1 -c '\<ScreenLayout\>' $usuario/MMDVMHost/$DIRECTORIO`
-if [ $ScreenLayout = 0 ]; then
-echo "\33[1;31mEsta versión MMDVMHost no trae este parámetro"
-else
-ScreenLayout=`grep -n -m 1 '\<ScreenLayout\>' $usuario/MMDVMHost/$DIRECTORIO`
-ScreenLayout1=`expr substr $ScreenLayout 5 30`
+ScreenLayout1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion ScreenLayout)
 echo -n "$ScreenLayout1"
-fi
 
 # i) NXDN Enable=
-var=`grep -n -m 1 "\[NXDN\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-numero_linea=`expr $numero_linea + 1`
-NXDN=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letra=c
-linea_sed_NXDN=$numero_linea$letra
-echo "  ${CIAN}  \ti) ${GRIS}NXDN        - ${AMARILLO}$NXDN"
+echo -n "  ${CIAN}  \t\t\ti) ${GRIS}NXDN        - ${AMARILLO}$NXDN"
+Enable_nxdn=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO NXDN Enable)
+echo "$Enable_nxdn"
 
 # 23) IdleBrightness=
-var=`grep -n -m 1 "^IdleBrightness=" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-IdleBrightness=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-IdleBrightness_CORTO=`expr substr $IdleBrightness 3 22`
-letra=c
-linea_sed_IdleBrightness=$numero_linea$letra
 echo -n "  ${CIAN}23) ${GRIS}Brillo reposo Nextion - ${AMARILLO}$IdleBrightness_CORTO"
+brillo_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion IdleBrightness)
+echo -n "$brillo_nextion"
 
 # j) POCSAG Enable=
-var=`grep -n -m 1 "\[POCSAG\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-numero_linea=`expr $numero_linea + 1`
-POCSAG=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letra=c
-linea_sed_POCSAG=$numero_linea$letra
-echo "${CIAN}    \tj) ${GRIS}POCSAG      - ${AMARILLO}$POCSAG"
+echo -n "${CIAN}   \t\t\tj) ${GRIS}POCSAG      - ${AMARILLO}$POCSAG"
+pocsag=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable)
+echo "$pocsag"
 
 # 24) Latitude=
-echo -n "${CIAN}  24)${GRIS} Coordenada Latitud    - ${AMARILLO}"
-lat=`grep -n "Latitude" $usuario/MMDVMHost/$DIRECTORIO`
-lat1=`expr substr $lat 4 30`
+echo -n "${CIAN}  24)${GRIS} Coordenada Latitude   - ${AMARILLO}"
+lat1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Latitude)
 echo -n "$lat1"
 
 # k) Jitter=
-Jitter=`grep -n "Jitter" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $Jitter $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $Jitter 1 $largo_linea`
-Jitter=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letrac=c
-numero_linea_jiter_letrac=$numero_linea$letrac
-echo "  ${CIAN}     \tk) ${GRIS}Jitter      - ${AMARILLO}$Jitter"
+echo -n "  ${CIAN}     \t\tk) ${GRIS}Jitter      - ${AMARILLO}$Jitter"
+ad="DMR Network"          
+jitter=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter)
+echo "$jitter"
 
 # 25) Longitude=
-echo -n "${CIAN}  25)${GRIS} Coordenada Longitud   - ${AMARILLO}"
-long=`grep -n "Longitude" $usuario/MMDVMHost/$DIRECTORIO`
-long1=`expr substr $long 4 30`
+echo -n "${CIAN}  25)${GRIS} Coordenada Longitude  - ${AMARILLO}"
+long1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Longitude)
 echo -n "$long1"
 
 # l) FM Enable=
-var=`grep -n -m 1 "\[FM\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-numero_linea=`expr $numero_linea + 1`
-FM=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letra=c
-linea_sed_FM=$numero_linea$letra
-echo "${CIAN}     \tl) ${GRIS}FM          - ${AMARILLO}$FM"
+echo -n "${CIAN}     \t\tl) ${GRIS}FM          - ${AMARILLO}$FM"
+Enable_fm=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO FM Enable)
+echo "$Enable_fm"
 
 # 26) Modulo D-STAR=
 echo -n "${CIAN}  26)${GRIS} Modulo D-STAR         - ${AMARILLO}"
-modu=`grep -n -m 1 '\<Module\>' $usuario/MMDVMHost/$DIRECTORIO`
-modu1=`expr substr $modu 4 30`
+modu1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-Star Module)
 echo -n "$modu1"
 
 # M) OLED Type=
-var=`grep -n -m 1 "\[OLED\]" $usuario/MMDVMHost/$DIRECTORIO`
-buscar=":"
-largo_linea=`expr index $var $buscar`
-largo_linea=`expr $largo_linea - 1`
-numero_linea=`expr substr $var 1 $largo_linea`
-numero_linea=`expr $numero_linea + 1`
-tipo_oled=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
-letra=c
-linea_sed_oled=$numero_linea$letra
-echo "${CIAN}     \t\tm) ${GRIS}Tipo OLED   - ${AMARILLO}$tipo_oled"
+echo -n "${CIAN}     \t\t\tm) ${GRIS}Tipo OLED   - ${AMARILLO}"
+tipo_oled=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO OLED Type)
+echo "$tipo_oled"
 
-#27)reflector DMR+=
+#27)Options DMR+=
+pas=`grep -n '\<Password\>' $usuario/MMDVMHost/$DIRECTORIO`
 echo -n "${CIAN}  27)${GRIS} Entra reflector DMR+  - ${AMARILLO}"
 OPCION=`expr substr $pas 1 $largo1`
 OPCION=`expr $OPCION + 1`
@@ -403,45 +367,59 @@ letra=p
 linea22port=$OPCION$letra
 var300port= sed -n $linea22port  $usuario/MMDVMHost/$DIRECTORIO;
 
+#28) Abrir fichero 
 echo ""
 echo "${CIAN}  28)${AMARILLO} Abrir fichero $DIRECTORIO para hacer cualquier cambio${AMARILLO}"
 
+#29) Guardar  fichero de Configuración en M1
 echo "${CIAN}  29)\33[1;37m Guardar  fichero de Configuración en M1 ${CIAN}"
+
+#30) Utilizar fichero de Configuración de M1
 echo -n "${CIAN}  30)\33[1;32m Utilizar fichero de Configuración de M1: ${CIAN}"
-master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia`
-buscar=":"
-largo=`expr index $master $buscar`
-largo=`expr $largo + 9`
-copia1=`expr substr $master $largo 40`
-echo -n "$copia1"
 memoria1=$(awk "NR==$primer1" $usuario/info_panel_control.ini)
+ad="DMR Network"          
+master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia "${ad}" Address)
+copia1=$master
+echo -n "$copia1"
 echo " - $memoria1"
 
+
+
+
+
+
+
+
+
+#31) Guardar  fichero de Configuración en M2
 echo "${CIAN}  31)\33[1;37m Guardar  fichero de Configuración en M2: ${CIAN}"
+
+#32) Utilizar fichero de Configuración en M2
 echo -n "${CIAN}  32)\33[1;32m Utilizar fichero de Configuración en M2: ${CIAN}"
-master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia2`
-buscar=":"
-largo=`expr index $master $buscar`
-largo=`expr $largo + 9`
-copia2=`expr substr $master $largo 40`
-echo -n "$copia2"
 memoria2=$(awk "NR==$segun1" $usuario/info_panel_control.ini)
+ad="DMR Network"          
+master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia2 "${ad}" Address)
+copia2=$master
+echo -n "$copia2"
 echo " - $memoria2"
 
+#33) Guardar  fichero de Configuración en M3
 echo "${CIAN}  33)\33[1;37m Guardar  fichero de Configuración en M3: ${CIAN}"
+
+#34) Utilizar fichero de Configuración en M3
 echo -n "${CIAN}  34)\33[1;32m Utilizar fichero de Configuración en M3: ${CIAN}"
-master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia3`
-buscar=":"
-largo=`expr index $master $buscar`
-largo=`expr $largo + 9`
-copia3=`expr substr $master $largo 40`
-echo -n "$copia3"
 memoria3=$(awk "NR==$tercer1" $usuario/info_panel_control.ini)
+ad="DMR Network"          
+master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia3 "${ad}" Address)
+copia3=$master
+echo -n "$copia3"
 echo " - $memoria3"
 
+#35) Recuperar el fichero original MMDVM.ini
 echo ""
 echo "${CIAN}  35)\33[1;31m Recuperar el fichero original MMDVM.ini${AMARILLO}"
 
+#0) Salir
 echo ""
 echo "   ${ROJO}0) Salir"
 echo ""
@@ -452,14 +430,16 @@ case $escoger_menu in
 1) echo ""
 while true
 do
-                          echo "Valor actual Indicativo: ${AMARILLO}${ind#*=}\33[1;37m"
-           	              read -p 'Introduce tu indicativo: ' indicativo
+                          echo "   Valor actual Indicativo: $contenido_indicativo\33[1;37m"
+           	              read -p '   Introduce tu indicativo: ' indicativo
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
                           indicativo=`echo "$indicativo" | tr [:lower:] [:upper:]`
 			                    indicativo=`echo "$indicativo" | tr -d '[[:space:]]'`
-                          sed -i "$numero_linea_indi Callsign=$indicativo" $usuario/MMDVMHost/$DIRECTORIO
+                      
+                          sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Callsign $indicativo
+                          #sed -i "$numero_linea_indi Callsign=$indicativo" $usuario/MMDVMHost/$DIRECTORIO
                           sed -i "$primero $contenido_indicativo" $usuario/info_panel_control.ini
 			                    break;;
 			                    [nN]* ) echo ""
@@ -469,13 +449,12 @@ done;;
 2) echo ""
 while true
 do
-                          echo "Valor actual del RXFrequency: ${AMARILLO}${rxf#*=}\33[1;37m"
-           	              read -p 'Introduce RXFrequency:        ' rxfre
+                          echo "   Valor actual del RXFrequency: $contenido_rxf\33[1;37m"
+           	              read -p '   Introduce RXFrequency:        ' rxfre
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$numero_linea_rxf RXFrequency=$rxfre" $usuario/MMDVMHost/$DIRECTORIO
-                          sed -i "$tercero RXFrequency=$rxfre" $usuario/info_panel_control.ini
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info RXFrequency $rxfre
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -484,12 +463,17 @@ done;;
 3) echo ""
 while true
 do
-                          echo "Valor actual del TXFrequency: ${AMARILLO}${rxf#*=}\33[1;37m"
-                          read -p 'Introduce TXFrequency:        ' txfre
+                          echo "   Valor actual del TXFrequency: $contenido_txf ${VERDE} Enter (Volver sin modificar)${BLANCO}"
+                          read -p '   Introduce TXFrequency:        ' txfre
+                          if [ $txfre = "" ]
+                          then
+                          actualizar=N
+                          else
                           actualizar=S 
+                          fi
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$numero_linea_txf TXFrequency=$txfre" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info TXFrequency $txfre
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -498,8 +482,8 @@ done;;
 4) echo ""
 while true
 do
-                          echo "Valor de la Ciudad: ${AMARILLO}${contenido_location#*=}\33[1;37m"
-                          read -p 'Introduce tu Ciudad ' loc1
+                          echo "   Valor de la Ciudad: ${AMARILLO}${contenido_location#*=}\33[1;37m"
+                          read -p '   Introduce tu Ciudad ' loc1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
@@ -512,23 +496,12 @@ done;;
 5) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $url $buscar`
-                          echo "Valor de  la  URL   Web: ${AMARILLO}${url#*=}\33[1;37m"
-           	              read -p 'Introduce URL de tu Web: ' ur1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $url 1 2`
-                          else
-                          linea=`expr substr $url 1 3`
-                          fi
-                          linea=$linea$letra
-                          actualizar=S 
+                          echo "   Valor de  la  URL   Web: $url1\33[1;37m"
+           	              read -p '   Introduce URL de tu Web: ' ur1
                           case $actualizar in
 			                    [sS]* ) echo ""
 			                    ur1=`echo "$ur1" | tr -d '[[:space:]]'`
-                          sed -i "$linea URL=$ur1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info URL $ur1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -540,9 +513,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          letrac=c
-                          numero_linea_port=$numero_linea_port$letrac
-                          sed -i "$numero_linea_port Port=/dev/ttyAMA0" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA0
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -554,9 +525,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          letrac=c
-                          numero_linea_port=$numero_linea_port$letrac
-                          sed -i "$numero_linea_port Port=/dev/ttyACM0" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM0
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -568,9 +537,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          letrac=c
-                          numero_linea_port=$numero_linea_port$letrac
-                          sed -i "$numero_linea_port Port=/dev/ttyUSB0" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB0
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -579,16 +546,27 @@ done;;
 9) echo ""
 while true
 do
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+sh Puertos_MMDVMPLUS.sh
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+9copia) echo ""
+while true
+do
                           
-                          port_modem=$(awk "NR==$numero_linea_port" $usuario/MMDVMHost/$DIRECTORIO)
+
+port_modem=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
                           echo "Valor del Port: ${AMARILLO}$port_modem"
                           read -p 'Ej. /dev/ttyAMA1  /dev/ttyACM1  /dev/ttyUSB1  : ' port
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          letra=c
-                          numero_linea_port=$numero_linea_port$letra
-                          sed -i "$numero_linea_port Port=$port" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port $port
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -597,23 +575,12 @@ done;;
 10) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $idd $buscar`
-                          echo "Valor  actual  del Id: ${AMARILLO}${idd#*=}\33[1;37m"
-           	              read -p 'Introduce un ID válido ' miid
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $idd 1 1`
-                          else
-                          linea=`expr substr $idd 1 1`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor  actual  del Id: $idd1\33[1;37m"
+           	              read -p '   Introduce un ID válido ' miid
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea Id=$miid" $usuario/MMDVMHost/$DIRECTORIO
-                          sed -i "$segundo Id=$miid" $usuario/info_panel_control.ini
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Id $miid
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -622,15 +589,13 @@ done;;
 11) echo ""
 while true
 do
-                      echo "Valor actual del Master: ${AMARILLO}${master#*=}\33[1;37m"
-                      read -p 'Brandmeister=master.spain-dmr.es / DMR+=212.237.3.141: ' master1
+                      echo "   Valor actual del Master: $master1\33[1;37m"
+                      read -p '   Brandmeister=master.spain-dmr.es / DMR+=212.237.3.141: ' master1
                       actualizar=S 
                       case $actualizar in
                       [sS]* ) echo ""
-                      master1=`echo "$master1" | tr -d '[[:space:]]'`
-                      master1=`echo "$master1" | tr [:upper:] [:lower:]`
-                      sed -i "$linea_master Address=$master1" $usuario/MMDVMHost/$DIRECTORIO
-                      sed -i "$cuarto Address=$master1" $usuario/info_panel_control.ini
+ad="DMR Network"          
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address $master1
                       break;;
                       [nN]* ) echo ""
                       break;;
@@ -639,15 +604,13 @@ done;;
 12) echo ""
 while true
 do
-                          echo -n "Valor actual del \33[1;37m${var100port#*=}\33[1;37m"
-                          var100port= sed -n $linea2port  $usuario/MMDVMHost/$DIRECTORIO;
-                          read -p 'Puerto para Brandmeister=62031 puerto para DMR+=55555 : ' miid
+                          echo "   Valor actual del \33[1;37m$port\33[1;37m"
+                          read -p '   Puerto para Brandmeister=62031 puerto para DMR+=55555 : ' miid
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          letra1=c
-                          linea4=$linea3port$letra1
-                          sed -i "$linea4 Port=$miid" $usuario/MMDVMHost/$DIRECTORIO
+ad="DMR Network"          
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port $miid
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -656,23 +619,27 @@ done;;
 13) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $pas $buscar`
-                          echo "   Valor actual del Password: ${AMARILLO}${pas#*=}\33[1;37m"
-           	              read -p '   Introduce Password Personal de Brandmeister = ' pas1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $pas 1 2`
-                          else
-                          linea=`expr substr $pas 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor  actual  del Password: $pasword\33[1;37m"
+           	              read -p '   Password para DMR+=PASSWORD: ' pas1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-			                    pas1=`echo "$pas1" | tr -d '[[:space:]]'`
-                          sed -i "$linea Password=$pas1" $usuario/MMDVMHost/$DIRECTORIO
+ad="DMR Network"          
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password $pas1
+			                    break;;
+			                    [nN]* ) echo ""
+			                    break;;
+esac
+done;;
+R) echo ""
+while true
+do
+                          echo "   Valor  actual del  RXInvert: $rxinv1\33[1;37m"
+           	              read -p '   Valor óptimo para DVMEGA=1 : ' rxinv1
+                          actualizar=S 
+                          case $actualizar in
+			                    [sS]* ) echo ""
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem RXInvert $rxinv1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -681,22 +648,12 @@ done;;
 14) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $txinv $buscar`
-                          echo "Valor  actual del  TXInvert: ${AMARILLO}${txinv#*=}\33[1;37m"
-           	              read -p 'Valor óptimo para DVMEGA=1 : ' txinv1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $txinv 1 2`
-                          else
-                          linea=`expr substr $txinv 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor  actual del  TXInvert: ${AMARILLO}$txinv1\33[1;37m"
+           	              read -p '   Valor óptimo para DVMEGA=1 : ' txinv1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea TXInvert=$txinv1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert $txinv1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -705,22 +662,12 @@ done;;
 15) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $rx $buscar`
-                          echo "Valor  actual  del  RXLevel : ${AMARILLO}${rx#*=}\33[1;37m"
-                          read -p 'Valor óptimo (en mi caso) para DVMEGA=45, Low cost EA4AOJ=45, NANO BLAS=60 : ' var2
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $rx 1 2`
-                          else
-                          linea=`expr substr $rx 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor  actual  del  RXLevel : $rx1\33[1;37m"
+                          read -p '   Valor óptimo (en mi caso) para DVMEGA=45, Low cost EA4AOJ=45, NANO BLAS=60 : ' var2
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea RXLevel=$var2" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem RXLevel $var2
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -729,22 +676,12 @@ done;;
 16) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $tx $buscar`
-                          echo "Valor  actual  del  TXLevel : ${AMARILLO}${tx#*=}\33[1;37m"
-           	              read -p 'Valor óptimo=50 : ' var2
-                          letra=c
-                          if [ $largo = 3 ]3
-                          then
-                          linea=`expr substr $tx 1 2`
-                          else
-                          linea=`expr substr $tx 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor  actual  del  TXLevel : $tx1\33[1;37m"
+           	              read -p '   Valor óptimo=50 : ' vartx
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea TXLevel=$var2" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel $vartx
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -753,22 +690,12 @@ done;;
 17) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $dup $buscar`
-                          echo "Valor actual del Duplex: ${AMARILLO}${dup#*=}\33[1;37m"
-           	              read -p 'Para un repetidor Duplex=1 Para un DVMEGA Duplex=0: ' dup1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $dup 1 1`
-                          else
-                          linea=`expr substr $dup 1 1`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor actual del Duplex: $dup1\33[1;37m"
+           	              read -p '   Para un repetidor Duplex=1 Para un DVMEGA Duplex=0: ' dup1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea Duplex=$dup1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Duplex $dup1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -777,22 +704,12 @@ done;;
 18) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $txh $buscar`
-                          echo "Valor actual del TXHang: ${AMARILLO}${txh#*=}\33[1;37m"
-           	              read -p 'Para un repetidor TXHang=4 Para un DVMEGA TXHang=0: ' txh1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $txh 1 2`
-                          else
-                          linea=`expr substr $txh 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor actual del TXHang: $txh1\33[1;37m"
+           	              read -p '   Para un repetidor TXHang=4 Para un DVMEGA TXHang=0: ' txh1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea TXHang=$txh1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO DMR TXHang $txh1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -801,22 +718,12 @@ done;;
 19) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $lg $buscar`
-                          echo "Valor actual del DisplayLevel: ${AMARILLO}${lg#*=}\33[1;37m"
-           	              read -p 'Para visualizar tramas seguidas introduce 1, para una sola trama introduce 2:' lg1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $lg 1 2`
-                          else
-                          linea=`expr substr $lg 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor actual del DisplayLevel: $lg1\33[1;37m"
+           	              read -p '   Para visualizar tramas seguidas introduce 1, para una sola trama introduce 2:' lg1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea DisplayLevel=$lg1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Log DisplayLevel $lg1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -825,31 +732,13 @@ done;;
 20) echo ""
 while true
 do
-                          sl=`grep -n -m 1 -c '\<Slot1\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          if [ $sl = 0 ]; then
-                          echo "no existe este comando"
-                          else
-                          sl=`grep -n -m 1 '\<Slot1\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          sl1=`expr substr $sl 5 30`
-                          echo "$sl1"
-                          fi
-                          buscar=":"
-                          largo=`expr index $sl $buscar`
-                          echo "Valor actual del Slot1=: ${AMARILLO}${sl#*=}\33[1;37m"
-           	              read -p 'Para DVMEGA Modificar el valor del Slot1=0: ' V
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $sl 1 2`
-                          else
-                          linea=`expr substr $sl 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor actual del Slot1=: $sl1\33[1;37m"
+           	              read -p '   Para DVMEGA Modificar el valor del Slot1=0: ' slot
                           actualizar=S 
                           case $actualizar in                                            
 			                    [sS]* ) echo ""
-			                    V=`echo "$V" | tr -d '[[:space:]]'`			  
-                          sed -i "$linea Slot1=$V" $usuario/MMDVMHost/$DIRECTORIO             
+ad="DMR Network"          
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Slot1 $slot            
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -858,30 +747,12 @@ done;;
 21) echo ""
 while true
 do
-                          Display=`grep -n -m 1 -c '\<Display\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          if [ $Display = 0 ]; then
-                          echo "no existe este comando"
-                          else
-                          Display=`grep -n -m 1 '\<Display\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          Display1=`expr substr $Display 5 30`
-                          fi
-                          buscar=":"
-                          largo=`expr index $Display $buscar`
-                          echo "Valor actual del Display=: ${AMARILLO}${Display1#*=}\33[1;37m"
-                          read -p 'Introduce tipo de Display Ej. Nextion ó OLED: ' V
-                          letra=c
-                          if [ $largo = 2 ]
-                          then
-                          linea=`expr substr $Display 1 1`
-                          else
-                          linea=`expr substr $Display 1 2`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor actual del Display=: $Display1\33[1;37m"
+                          read -p '   Introduce tipo de Display Ej. Nextion ó OLED: ' Display
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`       
-                          sed -i "$linea Display=$V" $usuario/MMDVMHost/$DIRECTORIO             
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Display $Display             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -890,30 +761,12 @@ done;;
 22) echo ""
 while true
 do
-                          ScreenLayout=`grep -n -m 1 -c '\<ScreenLayout\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          if [ $ScreenLayout = 0 ]; then
-                          echo "no existe este comando"
-                          else
-                          ScreenLayout=`grep -n -m 1 '\<ScreenLayout\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          ScreenLayout1=`expr substr $ScreenLayout 5 30`
-                          fi
-                          buscar=":"
-                          largo=`expr index $ScreenLayout $buscar`
-                          echo "Valor actual del ScreenLayout=: ${AMARILLO}${ScreenLayout1#*=}\33[1;37m"
-                          read -p 'Este parametro debe ser 3: ' V
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $ScreenLayout 1 2`
-                          else
-                          linea=`expr substr $ScreenLayout 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor actual del ScreenLayout=: ${AMARILLO}${ScreenLayout1#*=}\33[1;37m"
+                          read -p '   Este parametro debe ser 3: ' V1
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`       
-                          sed -i "$linea ScreenLayout=$V" $usuario/MMDVMHost/$DIRECTORIO             
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion ScreenLayout $V1             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -922,53 +775,25 @@ done;;
 23) echo ""
 while true
 do
-                          read -p 'Introduce el brillo IdleBrightness: ' V
+                          read -p '   Introduce el brillo IdleBrightness: ' V
                           actualizar=S 
                           case $actualizar in                                            
-                          [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`      
-                          sed -i "$linea_sed_IdleBrightness IdleBrightness=$V" $usuario/MMDVMHost/$DIRECTORIO             
+                          [sS]* ) echo ""     
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion IdleBrightness $V            
                           break;;
                           [nN]* ) echo ""
                           break;;
 esac
 done;;
-26) echo ""
-while true
-do
-                          buscar=":"
-                          largo=`expr index $modu $buscar`
-                          echo "Valor  actual  del  Module: ${AMARILLO}${modu#*=}\33[1;37m"
-           	              read -p 'Valor óptimo para D-STAR=B: '  modu1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $modu 1 2`
-                          else
-                          linea=`expr substr $modu 1 3`
-                          fi
-                          linea=$linea$letra
-                          actualizar=S 
-                          case $actualizar in
-			                    [sS]* ) echo ""
-                          #Convierte indicativo si se introduce en minúsculas a Mayúsculas
-                          modu1=`echo "$modu1" | tr [:lower:] [:upper:]`
-                          sed -i "$linea Module=$modu1" $usuario/MMDVMHost/$DIRECTORIO
-			                    break;;
-			                    [nN]* ) echo ""
-			                    break;;
-esac
-done;;
 a) echo ""
 while true
 do
-                          echo -n "Valor actual D-STAR ${AMARILLO}${presentar_valor#*=}\33[1;37m"
-                          presenta_valor= sed -n $numero_linea_dstar_letrap  $usuario/MMDVMHost/$DIRECTORIO;
-                          read -p 'Desactivado=0 Activado=1:  '   dmrac1
+                          echo -n "   Valor actual D-STAR ${AMARILLO}$dstar_enable\33[1;37m"
+                          read -p '   Desactivado=0 Activado=1:  '   dmrac1
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$numero_linea_dstar_letrac Enable=$dmrac1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO D-Star Enable $dmrac1 
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -977,13 +802,12 @@ done;;
 b) echo ""
 while true
 do
-                          echo -n "Valor  actual  DMR ${AMARILLO}${presentar_valor#*=}\33[1;37m"
-                          presenta_valor= sed -n $numero_linea_dmr_letrap  $usuario/MMDVMHost/$DIRECTORIO;
-           	              read -p 'Desactivado=0 Activado=1: '   dmrac1
+                          echo -n "   Valor  actual  DMR ${AMARILLO}${presentar_valor#*=}\33[1;37m"
+           	              read -p '   Desactivado=0 Activado=1: '   dmr
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$numero_linea_dmr_letrac Enable=$dmrac1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO DMR Enable $dmr
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -992,13 +816,13 @@ done;;
 c) echo ""
 while true
 do
-                          echo -n "Valor actual FUSION ${AMARILLO}${presentar_valor#*=}\33[1;37m"
-                          presenta_valor= sed -n $numero_linea_fusion_letrap  $usuario/MMDVMHost/$DIRECTORIO;
-                          read -p 'Desactivado=0 Activado=1:  '   dmrac1
+                          echo -n "   Valor actual FUSION $Enable_fusion\33[1;37m"
+                          read -p '   Desactivado=0 Activado=1:  '   fusion
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$numero_linea_fusion_letrac Enable=$dmrac1" $usuario/MMDVMHost/$DIRECTORIO
+ad="System Fusion Network"                          
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $fusion
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -1007,13 +831,12 @@ done;;
 d) echo ""
 while true
 do
-                          echo -n "Valor  actual  P25 ${AMARILLO}${presentar_valor#*=}\33[1;37m"
-                          presenta_valor= sed -n $numero_linea_p25_letrap  $usuario/MMDVMHost/$DIRECTORIO;
-                          read -p 'Desactivado=0 Activado=1: '   dmrac1
+                          echo -n "   Valor  actual  P25 ${AMARILLO}$p25_enable\33[1;37m"
+                          read -p '   Desactivado=0 Activado=1: '   p25
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$numero_linea_p25_letrac Enable=$dmrac1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO P25 Enable $p25
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -1022,11 +845,12 @@ done;;
 e) echo ""
 while true
 do
-                          read -p 'Introduce el valor de la Baliza (Ej. 1-activada 0-desactivada) : ' baliza
+                          read -p '   Introduce el valor de la Baliza (Ej. 1-activada 0-desactivada) : ' baliza
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "31c Enable=$baliza" $usuario/MMDVMHost/$DIRECTORIO
+ad="CW Id"                         
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $baliza
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -1035,30 +859,12 @@ done;;
 f) echo ""
 while true
 do
-                          modehang=`grep -n -m 1 -c '\<RFModeHang\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          if [ $modehang = 0 ]; then
-                          echo "no existe este comando"
-                          else
-                          modehang=`grep -n -m 1 '\<RFModeHang\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          modehang1=`expr substr $modehang 5 30`
-                          fi
-                          buscar=":"
-                          largo=`expr index $modehang $buscar`
-                          echo "Valor actual del RFModeHang = : ${AMARILLO}${modehang1#*=}\33[1;37m"
-                          read -p 'Introduce el valor para RFModeHang (optimo=5): ' V
-                          letra=c
-                          if [ $largo = 2 ]
-                          then
-                          linea=`expr substr $modehang 1 1`
-                          else
-                          linea=`expr substr $modehang 1 2`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor actual del RFModeHang = : $modehang1\33[1;37m"
+                          read -p '   Introduce el valor para RFModeHang (optimo=5): ' modeh 
                           actualizar=S 
-                          case $actualizar in                                            
-                          [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`       
-                          sed -i "$linea RFModeHang=$V" $usuario/MMDVMHost/$DIRECTORIO             
+                          case $actualizar in        
+                          [sS]* ) echo ""       
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -1067,30 +873,12 @@ done;;
 g) echo ""
 while true
 do
-                          timeo=`grep -n -m 1 -c '\<Timeout\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          if [ $timeo = 0 ]; then
-                          echo "no existe este comando"
-                          else
-                          timeo=`grep -n -m 1 '\<Timeout\>' $usuario/MMDVMHost/$DIRECTORIO`
-                          timeo1=`expr substr $timeo 5 30`
-                          fi
-                          buscar=":"
-                          largo=`expr index $timeo $buscar`
-                          echo "Valor actual del Timeout = : ${AMARILLO}${timeo1#*=}\33[1;37m"
-                          read -p 'Introduce el valor para Timeout (valor optimo=0): ' V
-                          letra=c
-                          if [ $largo = 2 ]
-                          then
-                          linea=`expr substr $timeo 1 1`
-                          else
-                          linea=`expr substr $timeo 1 2`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor actual del Timeout = : $timeo1\33[1;37m"
+                          read -p '   Introduce el valor para Timeout (valor optimo=0): ' timut
                           actualizar=S 
                           case $actualizar in                                            
-                          [sS]* ) echo ""
-                          V=`echo "$V" | tr -d '[[:space:]]'`       
-                          sed -i "$linea Timeout=$V" $usuario/MMDVMHost/$DIRECTORIO             
+                          [sS]* ) echo ""       
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timut             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -1099,12 +887,12 @@ done;;
 h) echo ""
 while true
 do
-                          echo "Valor del Port: ${AMARILLO}$MODEMNEXTION"
-                          read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' lat1
+                          echo "   Valor del Port: ${AMARILLO}$port_nextion"
+                          read -p '   Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' portn
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_MN Port=$lat1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion Port $portn
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -1113,12 +901,12 @@ done;;
 i) echo ""
 while true
 do
-                          echo "Valor actual NXDN: ${AMARILLO}$NXDN"
-                          read -p 'Desactivado=0 Activado=1: '   NXDN1
+                          echo "   Valor actual NXDN: ${AMARILLO}$Enable_nxdn"
+                          read -p '   Desactivado=0 Activado=1: '   NXDN1
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_NXDN Enable=$NXDN1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO NXDN Enable $NXDN1
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -1127,12 +915,27 @@ done;;
 j) echo ""
 while true
 do
-                          echo "Valor actual POCSAG: ${AMARILLO}$POCSAG"
-                          read -p 'Desactivado=0 Activado=1: '   POCSAG1
+                          echo "   Valor actual POCSAG: ${AMARILLO}$pocsag"
+                          read -p '   Desactivado=0 Activado=1: '   POCSAG1
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_POCSAG Enable=$POCSAG1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable $POCSAG1
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+k) echo ""
+while true
+do                         
+                          echo "   Valor actual  del Jitter: ${AMARILLO}$Jitter"
+                          read -p '   Introduce valor entre 360 a 600: '   JITTER
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+ad="DMR Network"
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter $JITTER
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -1141,12 +944,12 @@ done;;
 l) echo ""
 while true
 do                         
-                          echo "   Valor  actual  FM: ${AMARILLO}$FM"
+                          echo "   Valor  actual  FM: ${AMARILLO}$Enable_fm"
                           read -p '   Desactivado=0 Activado=1: '   fm
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_FM Enable=$fm" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO FM Enable $fm
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -1160,21 +963,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_oled Type=$oled" $usuario/MMDVMHost/$DIRECTORIO
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
-k) echo ""
-while true
-do                         
-                          echo "Valor actual  del Jitter: ${AMARILLO}$Jitter"
-                          read -p 'Introduce valor entre 360 a 600: '   JITTER
-                          actualizar=S 
-                          case $actualizar in
-                          [sS]* ) echo ""
-                          sed -i "$numero_linea_jiter_letrac Jitter=$JITTER" $usuario/MMDVMHost/$DIRECTORIO
+  sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -1183,47 +972,42 @@ done;;
 24) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $lat $buscar`
-                          echo "Valor de la Latitud: ${AMARILLO}${lat#*=}\33[1;37m"
-           	              read -p 'Introduce la Latitud ' lat1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $lat 1 2`
-                          else
-                          linea=`expr substr $lat 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor de la Latitud: $lat1\33[1;37m"
+           	              read -p '   Introduce la Latitud ' lat1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea Latitude=$lat1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info Latitude $lat1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
 esac
 done;;
-
 25) echo ""
 while true
 do
-                          buscar=":"
-                          largo=`expr index $long $buscar`
-                          echo "Valor de la Longitud: ${AMARILLO}${long#*=}\33[1;37m"
-           	              read -p 'Introduce la Longitud ' long1
-                          letra=c
-                          if [ $largo = 3 ]
-                          then
-                          linea=`expr substr $long 1 2`
-                          else
-                          linea=`expr substr $long 1 3`
-                          fi
-                          linea=$linea$letra
+                          echo "   Valor de la Longitud: $long1\33[1;37m"
+           	              read -p '   Introduce la Longitud ' long1
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-                          sed -i "$linea Longitude=$long1" $usuario/MMDVMHost/$DIRECTORIO
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info Longitude $long1
+			                    break;;
+			                    [nN]* ) echo ""
+			                    break;;
+esac
+done;;
+26) echo ""
+while true
+do
+                          echo "   Valor  actual  del  Module: ${AMARILLO}$modu1\33[1;37m"
+           	              read -p '   Valor óptimo para D-STAR=B: '  modu1
+                          actualizar=S 
+                          case $actualizar in
+			                    [sS]* ) echo ""
+                          #Convierte minúsculas a Mayúsculas
+                          modu1=`echo "$modu1" | tr [:lower:] [:upper:]`
+                          sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO D-Star Module $modu1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -1232,10 +1016,10 @@ done;;
 27) echo ""
 while true
 do
-                          read -p 'Estas en DMR+ ? S/N ' actualizar                                          
+                          read -p '   Estas en DMR+ ? S/N ' actualizar                                          
                           case $actualizar in
                           [sS]* ) echo ""
-                          read -p 'Intruduce reflector DMR+ al que se conectara (ej:4370) ' opcion
+                          read -p '   Intruduce reflector DMR+ al que se conectara (ej:4370) ' opcion
                           letra1=c
                           linea4=$linea33port$letra1
                           if [ $opcion = 21465 ]
@@ -1271,13 +1055,13 @@ do
                         case $actualizar in
 			                  [sS]* ) echo ""
                         clear
-                        echo "Introduce nombre memoria máximo 10 caracteres"
+                        echo "   Introduce nombre memoria máximo 10 caracteres"
                         read memoria1
                         echo "<<<<<< Haciendo copia de seguridad de la M1 >>>>>"
                         sleep 3
                         echo "$linea_info_memoria $usuario $DIRECTORIO $memoria1"
                         sed -i "$primer $memoria1" $usuario/info_panel_control.ini
-                        sed -i "$linea_info_memoria $memoria1" $usuario/MMDVMHost/$DIRECTORIO
+                        sed -i "4c $memoria1" $usuario/info_memorias
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia
 			                  break;;
 			                  [nN]* ) echo ""
@@ -1294,6 +1078,7 @@ do
                         echo "<<<<<< Restaurando copia de seguridad de la M1 >>>>>"
                         sleep 3
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO_copia $usuario/MMDVMHost/$DIRECTORIO
+                        sed -i "4c $memoria1" $usuario/info_memorias
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
@@ -1306,12 +1091,12 @@ do
                         case $actualizar in
 			                  [sS]* ) echo ""
                         clear
-                        echo "Introduce nombre memoria máximo 10 caracteres"
+                        echo "   Introduce nombre memoria máximo 10 caracteres"
                         read memoria2
                         echo "<<<<<< Haciendo copia de seguridad de la M2 >>>>>"
                         sleep 3
                         sed -i "$segun $memoria2" $usuario/info_panel_control.ini
-                        sed -i "$linea_info_memoria $memoria2" $usuario/MMDVMHost/$DIRECTORIO
+                        sed -i "4c $memoria2" $usuario/info_memorias
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia2
 			                  break;;
 			                  [nN]* ) echo ""
@@ -1328,6 +1113,7 @@ do
                         echo "<<<<<< Restaurando copia de seguridad  de la M2 >>>>>"
                         sleep 3
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO_copia2 $usuario/MMDVMHost/$DIRECTORIO
+                        sed -i "4c $memoria2" $usuario/info_memorias
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
@@ -1340,12 +1126,12 @@ do
                         case $actualizar in
 			                  [sS]* ) echo ""
                         clear
-                        echo "Introduce nombre memoria máximo 10 caracteres"
+                        echo "   Introduce nombre memoria máximo 10 caracteres"
                         read memoria3
                         echo "<<<<<< Haciendo copia de seguridad de la M3 >>>>>"
                         sleep 3
                         sed -i "$tercer $memoria3" $usuario/info_panel_control.ini
-                        sed -i "$linea_info_memoria $memoria3" $usuario/MMDVMHost/$DIRECTORIO
+                        sed -i "4c $memoria3" $usuario/info_memorias
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia3
 			                  break;;
 			                  [nN]* ) echo ""
@@ -1362,6 +1148,7 @@ do
                         echo "<<<<<< Restaurando copia de seguridad de la M3 >>>>>"
                         sleep 3
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO_copia3 $usuario/MMDVMHost/$DIRECTORIO
+                        sed -i "4c $memoria3" $usuario/info_memorias
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
@@ -1371,7 +1158,7 @@ done;;
 while true
 do
           	        
-           	            read -p 'Quieres restaurar el fichero original MMDVM.ini ? S/N ' restaurar1   
+           	            read -p '   Quieres restaurar el fichero original MMDVM.ini ? S/N ' restaurar1   
                         case $restaurar1 in
 			                  [sS]* ) echo ""
                         clear
