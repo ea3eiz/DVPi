@@ -341,7 +341,7 @@ while true
 do
                           echo "   Valor actual del TXFrequency: $contenido_txf ${VERDE} Enter (Volver sin modificar)${BLANCO}"
                           read -p '   Introduce TXFrequency:        ' txfre
-                          if [ $txfre="" ]
+                          if [ $txfre=" " ]
                           then
                           actualizar=N
                           else
