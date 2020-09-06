@@ -48,7 +48,7 @@ MARRON="\33[38;5;138m"
 
                     HOY=$(date +%Y%m%d)
                     FIJA="const char* VERSION = "\"
-                    PI="ADER105"\"
+                    PI="ADER_PI"\"
                     HOY1=$HOY$PI
                     PUNTO=";"   
                     
