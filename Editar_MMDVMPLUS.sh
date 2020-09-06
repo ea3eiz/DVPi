@@ -28,6 +28,7 @@ tercer="33c"
 primer1="31c"
 segun1="32c"
 tercer1="33c"
+info_memoria="4c"
 # **********************************************************************************************
 
 # **********************************************************************************************
@@ -49,6 +50,7 @@ tercer1="33c"
 # primer1="34c"
 # segun1="35c"
 # tercer1="36c"
+# info_memoria="1c"
 # **********************************************************************************************
 
 # **********************************************************************************************
@@ -70,6 +72,7 @@ tercer1="33c"
 # primer1="37c"
 # segun1="38c"
 # tercer1="39c"
+# info_memoria="2c"
 # **********************************************************************************************
 
 # **********************************************************************************************
@@ -86,6 +89,7 @@ tercer1="33c"
 # primer1="15c"
 # segun1="16c"
 # tercer1="17c"
+# info_memoria="3c"
 # **********************************************************************************************
 
 # **********************************************************************************************
@@ -107,6 +111,7 @@ tercer1="33c"
 # primer1="41c"
 # segun1="42c"
 # tercer1="43c"
+# info_memoria="5c"
 # **********************************************************************************************
 
 # **********************************************************************************************
@@ -123,6 +128,7 @@ tercer1="33c"
 # primer1="18c"
 # segun1="19c"
 # tercer1="20c"
+# info_memoria="6c"
 # **********************************************************************************************
 
 # Recoge datos para leer desde el panel de control
@@ -1061,7 +1067,7 @@ do
                         sleep 3
                         echo "$linea_info_memoria $usuario $DIRECTORIO $memoria1"
                         sed -i "$primer $memoria1" $usuario/info_panel_control.ini
-                        sed -i "4c $memoria1" $usuario/info_memorias
+                        sed -i "$info_memoria $memoria1" $usuario/info_memorias
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia
 			                  break;;
 			                  [nN]* ) echo ""
@@ -1078,7 +1084,7 @@ do
                         echo "<<<<<< Restaurando copia de seguridad de la M1 >>>>>"
                         sleep 3
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO_copia $usuario/MMDVMHost/$DIRECTORIO
-                        sed -i "4c $memoria1" $usuario/info_memorias
+                        sed -i "$info_memoria $memoria1" $usuario/info_memorias
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
@@ -1096,7 +1102,7 @@ do
                         echo "<<<<<< Haciendo copia de seguridad de la M2 >>>>>"
                         sleep 3
                         sed -i "$segun $memoria2" $usuario/info_panel_control.ini
-                        sed -i "4c $memoria2" $usuario/info_memorias
+                        sed -i "$info_memoria $memoria2" $usuario/info_memorias
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia2
 			                  break;;
 			                  [nN]* ) echo ""
@@ -1113,7 +1119,7 @@ do
                         echo "<<<<<< Restaurando copia de seguridad  de la M2 >>>>>"
                         sleep 3
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO_copia2 $usuario/MMDVMHost/$DIRECTORIO
-                        sed -i "4c $memoria2" $usuario/info_memorias
+                        sed -i "$info_memoria $memoria2" $usuario/info_memorias
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
@@ -1131,7 +1137,7 @@ do
                         echo "<<<<<< Haciendo copia de seguridad de la M3 >>>>>"
                         sleep 3
                         sed -i "$tercer $memoria3" $usuario/info_panel_control.ini
-                        sed -i "4c $memoria3" $usuario/info_memorias
+                        sed -i "$info_memoria $memoria3" $usuario/info_memorias
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia3
 			                  break;;
 			                  [nN]* ) echo ""
@@ -1148,7 +1154,7 @@ do
                         echo "<<<<<< Restaurando copia de seguridad de la M3 >>>>>"
                         sleep 3
                         sudo cp -f $usuario/MMDVMHost/$DIRECTORIO_copia3 $usuario/MMDVMHost/$DIRECTORIO
-                        sed -i "4c $memoria3" $usuario/info_memorias
+                        sed -i "$info_memoria $memoria3" $usuario/info_memorias
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
