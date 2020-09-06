@@ -279,19 +279,7 @@ echo "${CIAN}  29)\33[1;37m Guardar  fichero de Configuración en M1 ${CIAN}"
 
 #30) Utilizar fichero de Configuración de M1
 echo -n "${CIAN}  30)\33[1;32m Utilizar fichero de Configuración de M1: ${CIAN}"
-# master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia`
-# buscar=":"
-# largo=`expr index $master $buscar`
-# largo=`expr $largo + 9`
-# copia1=`expr substr $master $largo 40`
-# echo -n "$copia1"
- memoria1=$(awk "NR==$primer1" $usuario/info_panel_control.ini)
-# echo " - $memoria1"
-
-
-
-
-
+memoria1=$(awk "NR==$primer1" $usuario/info_panel_control.ini)
 ad="DMR Network"          
 master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia "${ad}" Address)
 copia1=$master
@@ -311,13 +299,11 @@ echo "${CIAN}  31)\33[1;37m Guardar  fichero de Configuración en M2: ${CIAN}"
 
 #32) Utilizar fichero de Configuración en M2
 echo -n "${CIAN}  32)\33[1;32m Utilizar fichero de Configuración en M2: ${CIAN}"
-master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia2`
-buscar=":"
-largo=`expr index $master $buscar`
-largo=`expr $largo + 9`
-copia2=`expr substr $master $largo 40`
+memoria2=$(awk "NR==$primer2" $usuario/info_panel_control.ini)
+ad="DMR Network"          
+master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia2 "${ad}" Address)
+copia2=$master
 echo -n "$copia2"
-memoria2=$(awk "NR==$segun1" $usuario/info_panel_control.ini)
 echo " - $memoria2"
 
 #33) Guardar  fichero de Configuración en M3
@@ -325,13 +311,11 @@ echo "${CIAN}  33)\33[1;37m Guardar  fichero de Configuración en M3: ${CIAN}"
 
 #34) Utilizar fichero de Configuración en M3
 echo -n "${CIAN}  34)\33[1;32m Utilizar fichero de Configuración en M3: ${CIAN}"
-master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia3`
-buscar=":"
-largo=`expr index $master $buscar`
-largo=`expr $largo + 9`
-copia3=`expr substr $master $largo 40`
+memoria3=$(awk "NR==$primer3" $usuario/info_panel_control.ini)
+ad="DMR Network"          
+master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia3 "${ad}" Address)
+copia1=$master
 echo -n "$copia3"
-memoria3=$(awk "NR==$tercer1" $usuario/info_panel_control.ini)
 echo " - $memoria3"
 
 #35) Recuperar el fichero original MMDVM.ini
