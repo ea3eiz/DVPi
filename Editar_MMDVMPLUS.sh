@@ -314,7 +314,7 @@ echo -n "${CIAN}  34)\33[1;32m Utilizar fichero de Configuración en M3: ${CIAN}
 memoria3=$(awk "NR==$tercer1" $usuario/info_panel_control.ini)
 ad="DMR Network"          
 master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia3 "${ad}" Address)
-copia1=$master
+copia3=$master
 echo -n "$copia3"
 echo " - $memoria3"
 
