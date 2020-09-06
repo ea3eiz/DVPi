@@ -109,6 +109,7 @@ echo -n "${CIAN}  10)${GRIS} Modificar Id          - ${AMARILLO}"
 idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Id)
 echo "$idd1"
 
+#11) Modificar Address
 echo -n "${CIAN}  11)${GRIS} Modificar Address     - ${AMARILLO}"
 ad="DMR Network"          
 master1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
@@ -278,14 +279,31 @@ echo "${CIAN}  29)\33[1;37m Guardar  fichero de Configuración en M1 ${CIAN}"
 
 #30) Utilizar fichero de Configuración de M1
 echo -n "${CIAN}  30)\33[1;32m Utilizar fichero de Configuración de M1: ${CIAN}"
-master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia`
-buscar=":"
-largo=`expr index $master $buscar`
-largo=`expr $largo + 9`
-copia1=`expr substr $master $largo 40`
-echo -n "$copia1"
-memoria1=$(awk "NR==$primer1" $usuario/info_panel_control.ini)
+# master=`grep -n -m 1 "^Address=" $usuario/MMDVMHost/$DIRECTORIO_copia`
+# buscar=":"
+# largo=`expr index $master $buscar`
+# largo=`expr $largo + 9`
+# copia1=`expr substr $master $largo 40`
+# echo -n "$copia1"
+ memoria1=$(awk "NR==$primer1" $usuario/info_panel_control.ini)
+# echo " - $memoria1"
+
+
+
+
+
+ad="DMR Network"          
+master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
+copia1=$master
 echo " - $memoria1"
+
+
+
+
+
+
+
+
 
 #31) Guardar  fichero de Configuración en M2
 echo "${CIAN}  31)\33[1;37m Guardar  fichero de Configuración en M2: ${CIAN}"
