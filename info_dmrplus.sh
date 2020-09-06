@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIRECTORIO="MMDVMPLUS.ini"
-linea_info_memoria="313" #Linea del MMDVM donde guardamos el nombre de la memoria
+#linea_info_memoria="313" #Linea del MMDVM donde guardamos el nombre de la memoria
 
 mode=`grep -n -m 1 "^Port=" /home/pi/MMDVMHost/$DIRECTORIO`
 buscar=":"
@@ -37,7 +37,7 @@ mode=$(awk "NR==$numero_linea_address" /home/pi/MMDVMHost/$DIRECTORIO)
 address=`expr substr $address 13 35`
 address="  "$address
 
-memoria=$(awk "NR==$linea_info_memoria" /home/pi/MMDVMHost/$DIRECTORIO)
+memoria=$(awk "NR==4" /home/pi/info_memorias)
 
 #Colores
 ROJO="\033[1;31m"
