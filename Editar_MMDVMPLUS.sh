@@ -299,7 +299,7 @@ echo "${CIAN}  31)\33[1;37m Guardar  fichero de Configuración en M2: ${CIAN}"
 
 #32) Utilizar fichero de Configuración en M2
 echo -n "${CIAN}  32)\33[1;32m Utilizar fichero de Configuración en M2: ${CIAN}"
-memoria2=$(awk "NR==$primer2" $usuario/info_panel_control.ini)
+memoria2=$(awk "NR==$segun1" $usuario/info_panel_control.ini)
 ad="DMR Network"          
 master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia2 "${ad}" Address)
 copia2=$master
@@ -311,7 +311,7 @@ echo "${CIAN}  33)\33[1;37m Guardar  fichero de Configuración en M3: ${CIAN}"
 
 #34) Utilizar fichero de Configuración en M3
 echo -n "${CIAN}  34)\33[1;32m Utilizar fichero de Configuración en M3: ${CIAN}"
-memoria3=$(awk "NR==$primer3" $usuario/info_panel_control.ini)
+memoria3=$(awk "NR==$tercer1" $usuario/info_panel_control.ini)
 ad="DMR Network"          
 master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia3 "${ad}" Address)
 copia1=$master
