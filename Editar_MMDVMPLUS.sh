@@ -55,7 +55,7 @@ CIAN="\033[1;36m"
 GRIS="\033[0m"
 MARRON="\33[38;5;138m"
 
-linea_info_memoria="313c" #Linea del MMDVM donde guardamos el nombre de la memoria
+#linea_info_memoria="313c" #Linea del MMDVM donde guardamos el nombre de la memoria
 
 echo "${VERDE}"
 echo "   ***************************************************************************************"
@@ -937,8 +937,8 @@ do
                         sleep 3
                         echo "$linea_info_memoria $usuario $DIRECTORIO $memoria1"
                         sed -i "$primer $memoria1" $usuario/info_panel_control.ini
-                        sed -i "$linea_info_memoria $memoria1" $usuario/MMDVMHost/$DIRECTORIO
-                        sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia
+                        #sed -i "$linea_info_memoria $memoria1" $usuario/MMDVMHost/$DIRECTORIO
+                        #sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
@@ -971,8 +971,8 @@ do
                         echo "<<<<<< Haciendo copia de seguridad de la M2 >>>>>"
                         sleep 3
                         sed -i "$segun $memoria2" $usuario/info_panel_control.ini
-                        sed -i "$linea_info_memoria $memoria2" $usuario/MMDVMHost/$DIRECTORIO
-                        sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia2
+                        #sed -i "$linea_info_memoria $memoria2" $usuario/MMDVMHost/$DIRECTORIO
+                        #sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia2
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
@@ -1005,8 +1005,8 @@ do
                         echo "<<<<<< Haciendo copia de seguridad de la M3 >>>>>"
                         sleep 3
                         sed -i "$tercer $memoria3" $usuario/info_panel_control.ini
-                        sed -i "$linea_info_memoria $memoria3" $usuario/MMDVMHost/$DIRECTORIO
-                        sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia3
+                        #sed -i "$linea_info_memoria $memoria3" $usuario/MMDVMHost/$DIRECTORIO
+                        #sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia3
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
