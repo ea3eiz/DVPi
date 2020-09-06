@@ -293,7 +293,7 @@ echo -n "${CIAN}  30)\33[1;32m Utilizar fichero de Configuración de M1: ${CIAN}
 
 
 ad="DMR Network"          
-master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
+master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia "${ad}" Address)
 copia1=$master
 echo -n "$copia1"
 echo " - $memoria1"
