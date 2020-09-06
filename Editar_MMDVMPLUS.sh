@@ -938,7 +938,7 @@ do
                         echo "$linea_info_memoria $usuario $DIRECTORIO $memoria1"
                         sed -i "$primer $memoria1" $usuario/info_panel_control.ini
                         sed -i "4c $memoria1" $usuario/info_memorias
-                        #sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia
+                        sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
@@ -973,7 +973,7 @@ do
                         sleep 3
                         sed -i "$segun $memoria2" $usuario/info_panel_control.ini
                         sed -i "4c $memoria2" $usuario/info_memorias
-                        #sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia2
+                        sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia2
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
@@ -1008,7 +1008,7 @@ do
                         sleep 3
                         sed -i "$tercer $memoria3" $usuario/info_panel_control.ini
                         sed -i "4c $memoria3" $usuario/info_memorias
-                        #sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia3
+                        sudo cp -f $usuario/MMDVMHost/$DIRECTORIO $usuario/MMDVMHost/$DIRECTORIO_copia3
 			                  break;;
 			                  [nN]* ) echo ""
 			                  break;;
