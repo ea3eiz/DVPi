@@ -5,7 +5,6 @@ SCRIPTS_version=$(awk "NR==1" /home/pi/.config/autostart/version)
 
 cd $usuario/Desktop
 sudo cp Abrir_DVPi.desktop /home/pi
-sed -i "4c DV4mini=ON" $usuario/status.ini
 sed -i "4c Exec=sh -c 'cd /home/pi/$SCRIPTS_version; sudo sh Abrir_DVPi.sh'" $usuario/Abrir_DVPi.desktop
 sed -i "5c Icon=/home/pi/$SCRIPTS_version/ICONO_DVPI_OFF.png" $usuario/Abrir_DVPi.desktop
 sed -i "10c Name[es_ES]=Abrir DVPi" $usuario/Abrir_DVPi.desktop
