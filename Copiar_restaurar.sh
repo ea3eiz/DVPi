@@ -135,7 +135,7 @@ indicativo=`expr substr $indicativo 10 6`
 
 address_especial=$(awk "NR==70" /opt/MMDVM_Bridge/especial.ini)
 
-id=$(awk "NR==38" /opt/Analog_Bridge/Analog_Bridge.ini)
+id=$(awk "NR==37" /opt/Analog_Bridge/Analog_Bridge.ini)
 id=`echo "$id" | tr -d '[[:space:]]'`
 id=`expr substr $id 14 7`
 
@@ -148,9 +148,13 @@ Latitude=`expr substr $Latitude 10 10`
 Longitude=$(awk "NR==12" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 Longitude=`expr substr $Longitude 11 10`
 
-port=$(awk "NR==56" /opt/Analog_Bridge/Analog_Bridge.ini)
-port=`echo "$port" | tr -d '[[:space:]]'`
-port=`expr substr $port 8 5`
+txport=$(awk "NR==53" /opt/Analog_Bridge/Analog_Bridge.ini)
+txport=`echo "$txport" | tr -d '[[:space:]]'`
+txport=`expr substr $txport 8 5`
+
+rxport=$(awk "NR==54" /opt/Analog_Bridge/Analog_Bridge.ini)
+rxport=`echo "$rxport" | tr -d '[[:space:]]'`
+rxport=`expr substr $rxport 8 5`
 
 location=$(awk "NR==14" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 
@@ -171,14 +175,14 @@ selfcare=$(awk "NR==74" /opt/MMDVM_Bridge/brandmeister_esp.ini)
 
 reflector_dstar=$(awk "NR==18" /etc/ircddbgateway)
 
-# Copia todos los datos de Dvswitch /home/pi/.local/COPIA_SEGURIDAD/Downloads
 sed -i "1c $indicativo" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "2c $address_especial" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "3c $id" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "4c $id2" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "5c $Latitude" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "6c $Longitude" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
-sed -i "7c $port" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
+sed -i "7c $txport" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
+sed -i "16c $rxport" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "8c $location" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "9c $url" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "10c $password_especial" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
@@ -305,29 +309,29 @@ id=$(awk "NR==3" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch)
 id_nxdn=`expr substr $id 3 5`
 sudo sed -i "30c ID = $id" /opt/MMDVM_Bridge/DVSwitch.ini
 sudo sed -i "40c FallbackID = $id" /opt/MMDVM_Bridge/DVSwitch.ini
-sudo sed -i "38c gatewayDmrId = $id" /opt/Analog_Bridge/Analog_Bridge.ini
-sudo sed -i "38c gatewayDmrId = $id" /opt/Analog_Bridge/dmr.ini
-sudo sed -i "38c gatewayDmrId = $id" /opt/Analog_Bridge/dstar.ini
-sudo sed -i "38c gatewayDmrId = $id" /opt/Analog_Bridge/especial.ini
-sudo sed -i "38c gatewayDmrId = $id" /opt/Analog_Bridge/nxdn.ini
+sudo sed -i "37c gatewayDmrId = $id" /opt/Analog_Bridge/Analog_Bridge.ini
+sudo sed -i "37c gatewayDmrId = $id" /opt/Analog_Bridge/dmr.ini
+sudo sed -i "37c gatewayDmrId = $id" /opt/Analog_Bridge/dstar.ini
+sudo sed -i "37c gatewayDmrId = $id" /opt/Analog_Bridge/especial.ini
+sudo sed -i "37c gatewayDmrId = $id" /opt/Analog_Bridge/nxdn.ini
 sudo sed -i "43c ;; FallbackID = $id_nxdn" /opt/Analog_Bridge/nxdn.ini
 sudo sed -i "44c ;; NXDNFallbackID = $id_nxdn" /opt/Analog_Bridge/nxdn.ini
-sudo sed -i "38c gatewayDmrId = $id" /opt/Analog_Bridge/ysf.ini
+sudo sed -i "37c gatewayDmrId = $id" /opt/Analog_Bridge/ysf.ini
 sudo sed -i "43c ;; FallbackID = $id" /opt/Analog_Bridge/ysf.ini
-sudo sed -i "38c gatewayDmrId = $id" /opt/Analog_Bridge/FCS.ini
+sudo sed -i "37c gatewayDmrId = $id" /opt/Analog_Bridge/FCS.ini
 
 id2=$(awk "NR==4" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch)
 sudo sed -i "3c Id=$id2" /opt/MMDVM_Bridge/MMDVM_Bridge.ini
 sudo sed -i "3c Id=$id2" /opt/MMDVM_Bridge/brandmeister_esp.ini
 sudo sed -i "3c Id=$id2" /opt/MMDVM_Bridge/dmrplus.ini
 sudo sed -i "3c Id=$id2" /opt/MMDVM_Bridge/especial.ini
-sudo sed -i "39c repeaterID = $id2" /opt/Analog_Bridge/Analog_Bridge.ini
-sudo sed -i "39c repeaterID = $id2" /opt/Analog_Bridge/dmr.ini
-sudo sed -i "39c repeaterID = $id2" /opt/Analog_Bridge/dstar.ini
-sudo sed -i "39c repeaterID = $id2" /opt/Analog_Bridge/especial.ini
-sudo sed -i "39c repeaterID = $id2" /opt/Analog_Bridge/nxdn.ini
-sudo sed -i "39c repeaterID = $id2" /opt/Analog_Bridge/ysf.ini
-sudo sed -i "39c repeaterID = $id2" /opt/Analog_Bridge/FCS.ini
+sudo sed -i "38c repeaterID = $id2" /opt/Analog_Bridge/Analog_Bridge.ini
+sudo sed -i "38c repeaterID = $id2" /opt/Analog_Bridge/dmr.ini
+sudo sed -i "38c repeaterID = $id2" /opt/Analog_Bridge/dstar.ini
+sudo sed -i "38c repeaterID = $id2" /opt/Analog_Bridge/especial.ini
+sudo sed -i "38c repeaterID = $id2" /opt/Analog_Bridge/nxdn.ini
+sudo sed -i "38c repeaterID = $id2" /opt/Analog_Bridge/ysf.ini
+sudo sed -i "38c repeaterID = $id2" /opt/Analog_Bridge/FCS.ini
 sudo sed -i "3c Id=$id2" /opt/MMDVM_Bridge/MMDVM_Bridge_FCS.ini
 
 Latitude=$(awk "NR==5" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch)
@@ -344,19 +348,20 @@ sudo sed -i "12c Longitude=$Longitude" /opt/MMDVM_Bridge/dmrplus.ini
 sudo sed -i "12c Longitude=$Longitude" /opt/MMDVM_Bridge/especial.ini
 sudo sed -i "12c Longitude=$Longitude" /opt/MMDVM_Bridge/MMDVM_Bridge_FCS.ini
 
-port=$(awk "NR==7" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch)
-sudo sed -i "55c txPort = $port" /opt/Analog_Bridge/Analog_Bridge.ini
-sudo sed -i "55c txPort = $port" /opt/Analog_Bridge/dmr.ini
-sudo sed -i "55c txPort = $port" /opt/Analog_Bridge/dstar.ini
-sudo sed -i "55c txPort = $port" /opt/Analog_Bridge/especial.ini
-sudo sed -i "55c txPort = $port" /opt/Analog_Bridge/nxdn.ini
-sudo sed -i "55c txPort = $port" /opt/Analog_Bridge/ysf.ini
-sudo sed -i "56c rxPort = $port" /opt/Analog_Bridge/Analog_Bridge.ini
-sudo sed -i "56c rxPort = $port" /opt/Analog_Bridge/dmr.ini
-sudo sed -i "56c rxPort = $port" /opt/Analog_Bridge/dstar.ini
-sudo sed -i "56c rxPort = $port" /opt/Analog_Bridge/especial.ini
-sudo sed -i "56c rxPort = $port" /opt/Analog_Bridge/nxdn.ini
-sudo sed -i "56c rxPort = $port" /opt/Analog_Bridge/ysf.ini
+txport=$(awk "NR==7" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch)
+rxport=$(awk "NR==16" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch)
+sudo sed -i "53c txPort = $txport" /opt/Analog_Bridge/Analog_Bridge.ini
+sudo sed -i "53c txPort = $txport" /opt/Analog_Bridge/dmr.ini
+sudo sed -i "53c txPort = $txport" /opt/Analog_Bridge/dstar.ini
+sudo sed -i "53c txPort = $txport" /opt/Analog_Bridge/especial.ini
+sudo sed -i "53c txPort = $txport" /opt/Analog_Bridge/nxdn.ini
+sudo sed -i "53c txPort = $txport" /opt/Analog_Bridge/ysf.ini
+sudo sed -i "54c rxPort = $rxport" /opt/Analog_Bridge/Analog_Bridge.ini
+sudo sed -i "54c rxPort = $rxport" /opt/Analog_Bridge/dmr.ini
+sudo sed -i "54c rxPort = $rxport" /opt/Analog_Bridge/dstar.ini
+sudo sed -i "54c rxPort = $rxport" /opt/Analog_Bridge/especial.ini
+sudo sed -i "54c rxPort = $rxport" /opt/Analog_Bridge/nxdn.ini
+sudo sed -i "54c rxPort = $rxport" /opt/Analog_Bridge/ysf.ini
 
 
 location=$(awk "NR==8" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch)
