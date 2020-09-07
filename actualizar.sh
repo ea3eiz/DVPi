@@ -47,7 +47,7 @@ sed -i "16c DMR2NXDN=OFF" $usuario/status.ini
 sed -i "17c NXDN=OFF" $usuario/status.ini
 #sed -i "18c DVSWITCH=OFF" $usuario/status.ini
 sed -i "19c DMRGateway=OFF" $usuario/status.ini
-
+sed -i "22c DVPi=OFF" $usuario/status.ini
 #Actualiza Imagen
 cd $usuario/$SCRIPTS_version
 git pull
