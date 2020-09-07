@@ -26,7 +26,7 @@ then
 DIRECTORIO="DMRPLUS"
 echo "${VERDE}"
 echo "  ***************************************************************************"
-echo "                          ${BLANCO}    Sistema $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
+echo "                          xxx${BLANCO}    Sistema $DIRECTORIO             \33[1;31m by EA3EIZ\33[1;32m   "
 echo "  ***************************************************************************"
 else
 DIRECTORIO="BRANDMEISTER"
