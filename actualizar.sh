@@ -1,24 +1,4 @@
 ﻿#!/bin/bash
-
-# Coloca bien los iconos en el escritorio
-sudo cp /home/pi/icons.screen0-1904x1023.rc /home/pi/.config/xfce4/desktop
-sleep 2
-xfdesktop --reload
-
-# Comprueba si DVSWITCH está activado
-estado_dvswitch=$(awk "NR==18" /home/pi/status.ini)
-if [ "$estado_dvswitch" = 'DVSWITCH=OFF' ];then
-# sudo systemctl stop ysfgateway.service
-# sudo systemctl stop dmr2ysf.service
-# sudo systemctl stop analog_bridge.service
-# sudo systemctl stop ircddbgateway.service
-# sudo systemctl stop md380-emu.service
-# sudo systemctl stop mmdvm_bridge.service
-# sudo systemctl stop nxdngateway.service
-else
-echo ""
-fi
-
 # path usuario
 usuario="/home/pi"
 usuario="$usuario"
@@ -54,16 +34,9 @@ cd $usuario/$SCRIPTS_version
 git pull
 sleep 2
 
-#Actualiza todos los iconos y Quita todos los iconos verdes que se quedan al cerrar la imagen
-#sudo cp $usuario/Desktop/Activar_dvswitch.desktop $usuario/.local #deja el icono en el estado que se reinició
-#sudo cp $usuario/Desktop/Activar_NextionDriver.desktop $usuario/.local #deja el icono en el estado que se reinició
-
 cd $usuario/$SCRIPTS_version/Desktop
 cp *.* $usuario/Desktop
 sudo chmod 777 -R $usuario/Desktop
-
-#sudo cp $usuario/.local/Activar_dvswitch.desktop $usuario/Desktop #deja el icono en el estado que se reinició
-#sudo cp $usuario/.local/Activar_NextionDriver.desktop $usuario/Desktop #deja el icono en el estado que se reinició
 
 #pone todos los datos de DMR+ , Brandameiter, svxlink etc en panel_control.ini
 bm=`sed -n '2p'  $usuario/MMDVMHost/MMDVMBM.ini`
@@ -257,19 +230,6 @@ rm $usuario/RXF_NXDN.desktop
 sudo chmod 777 -R $usuario/Desktop
 sleep 2
 
-# Comprueba si DVSWITCH está activado
-estado_dvswitch=$(awk "NR==18" /home/pi/status.ini)
-if [ "$estado_dvswitch" = 'DVSWITCH=OFF' ];then
-# sudo systemctl stop ysfgateway.service
-# sudo systemctl stop dmr2ysf.service
-# sudo systemctl stop analog_bridge.service
-# sudo systemctl stop ircddbgateway.service
-# sudo systemctl stop md380-emu.service
-# sudo systemctl stop mmdvm_bridge.service
-# sudo systemctl stop nxdngateway.service
-else
-echo ""
-fi
 sudo rm -R /home/pi/$SCRIPTS_version/associacioader.com
 sudo rm -R /home/pi/$SCRIPTS_version/Desktop/associacioader.com
 sudo rm /home/pi/$SCRIPTS_version/Desktop/st-data
