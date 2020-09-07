@@ -80,7 +80,7 @@ indicativo=`expr substr $indicativo 10 6`
 
 address_especial=$(awk "NR==70" /opt/MMDVM_Bridge/especial.ini)
 
-id=$(awk "NR==38" /opt/Analog_Bridge/Analog_Bridge.ini)
+id=$(awk "NR==37" /opt/Analog_Bridge/Analog_Bridge.ini)
 id=`echo "$id" | tr -d '[[:space:]]'`
 id=`expr substr $id 14 7`
 
@@ -93,9 +93,13 @@ Latitude=`expr substr $Latitude 10 10`
 Longitude=$(awk "NR==12" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 Longitude=`expr substr $Longitude 11 10`
 
-port=$(awk "NR==56" /opt/Analog_Bridge/Analog_Bridge.ini)
-port=`echo "$port" | tr -d '[[:space:]]'`
-port=`expr substr $port 8 5`
+txport=$(awk "NR==53" /opt/Analog_Bridge/Analog_Bridge.ini)
+txport=`echo "$txport" | tr -d '[[:space:]]'`
+txport=`expr substr $txport 8 5`
+
+rxport=$(awk "NR==54" /opt/Analog_Bridge/Analog_Bridge.ini)
+rxport=`echo "$rxport" | tr -d '[[:space:]]'`
+rxport=`expr substr $rxport 8 5`
 
 location=$(awk "NR==14" /opt/MMDVM_Bridge/MMDVM_Bridge.ini)
 
@@ -122,7 +126,8 @@ sed -i "3c $id" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "4c $id2" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "5c $Latitude" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "6c $Longitude" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
-sed -i "7c $port" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
+sed -i "7c $txport" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
+sed -i "16c $rxport" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "8c $location" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "9c $url" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
 sed -i "10c $password_especial" /home/pi/.local/COPIA_SEGURIDAD/Downloads/datos_dvswitch
