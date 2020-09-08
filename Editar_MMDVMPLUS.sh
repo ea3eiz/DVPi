@@ -170,15 +170,15 @@ echo -n "${VERDE}"
 echo "   ***************************************************************************************"
 
 echo -n "${CIAN}   1)${GRIS} Modificar Callsign    - ${AMARILLO}"
-contenido_indicativo=$(crudini --get $usuario/MMDVMHost/$DIRECTORIO General Callsign)
+contenido_indicativo=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Callsign)
 echo "$contenido_indicativo"
 
 echo -n "${CIAN}   2)${GRIS} Modificar RXFrequency - ${AMARILLO}"
-contenido_rxf=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Info RXFrequency)
+contenido_rxf=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info RXFrequency)
 echo "$contenido_rxf"
 
 echo -n "${CIAN}   3)${GRIS} Modificar TXFrequency - ${AMARILLO}"
-contenido_txf=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Info TXFrequency)
+contenido_txf=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info TXFrequency)
 echo "$contenido_txf"
 
 echo -n "${CIAN}   4)${GRIS} Modificar Location    - ${AMARILLO}"
@@ -194,7 +194,7 @@ contenido_location=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
 echo "${contenido_location#*=}"
 
 echo -n "${CIAN}   5)${GRIS} Modificar URL         - ${AMARILLO}"
-url1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Info URL)
+url1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info URL)
 echo "$url1"
 
 echo "${CIAN}   6)${GRIS} Puerto para DVMEGA pinchado en GPIO (ttyAMA0)${AMARILLO}"
@@ -204,163 +204,163 @@ echo "${CIAN}   9)${VERDE} Menú elegir Puerto  ${CIAN}"
 
 echo -n "                            - "
 
-idd1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
+idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
 echo "$idd1"
 
 
 echo -n "${CIAN}  10)${GRIS} Modificar Id          - ${AMARILLO}"
-idd1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO General Id)
+idd1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Id)
 echo "$idd1"
 
 #11) Modificar Address
 echo -n "${CIAN}  11)${GRIS} Modificar Address     - ${AMARILLO}"
 ad="DMR Network"          
-master1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
+master1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address)
 echo "$master1"
 
 echo -n "${CIAN}  12)${GRIS} Modificar Port        - ${AMARILLO}"
 ad="DMR Network"          
-port=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port)
+port=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port)
 echo "$port"
 
 echo -n "${CIAN}  13)${GRIS} Modificar Password    - ${AMARILLO}"
 ad="DMR Network"          
-password=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password)
+password=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password)
 echo "$password"
 
 echo -n "${CIAN}   R)${GRIS} Modificar RXInvert    - ${AMARILLO}"          
-rxinv1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Modem RXInvert)
+rxinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem RXInvert)
 echo "$rxinv1"
 
 echo -n "${CIAN}  14)${GRIS} Modificar TXInvert    - ${AMARILLO}"
-txinv1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
+txinv1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert)
 echo -n "$txinv1"
 
 echo -n "${CIAN}        \t\t\ta)${GRIS} D-STAR      - ${AMARILLO}"
-dstar_enable=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO D-Star Enable)
+dstar_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-Star Enable)
 echo "$dstar_enable"
 
 echo -n "${CIAN}  15)${GRIS} Modificar RXLevel     - ${AMARILLO}"
-rx1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Modem RXLevel)
+rx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem RXLevel)
 echo -n "$rx1"
 
 echo -n "${CIAN}        \t\tb)${GRIS} DMR         - ${AMARILLO}"
-dmr_enable=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO DMR Enable)
+dmr_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR Enable)
 echo "$dmr_enable"
 
 #16) TXLevel
 echo -n "${CIAN}  16)${GRIS} Modificar TXLevel     - ${AMARILLO}"
-tx1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel)
+tx1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel)
 echo -n "$tx1"
 
 #c) Fusion Enable=
 echo -n "${CIAN}        \t\tc)${GRIS} FUSION      - ${AMARILLO}"
 ad="System Fusion Network"          
-Enable_fusion=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
+Enable_fusion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
 echo "$Enable_fusion"
 
 #17) Duplex
 echo -n "${CIAN}  17)${GRIS} Modificar Duplex      - ${AMARILLO}"
-dup1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO General Duplex)
+dup1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Duplex)
 echo -n "$dup1"
 
 
 #d) P25 Enable=
 echo -n "${CIAN}          \t\td)${GRIS} P25         - ${AMARILLO}"
-p25_enable=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO P25 Enable)
+p25_enable=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO P25 Enable)
 echo "$p25_enable"
 
 #18) TXHang
 echo -n "${CIAN}  18)${GRIS} Modificar TXHang      - ${AMARILLO}"
-txh1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO DMR TXHang)
+txh1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO DMR TXHang)
 echo -n "$txh1"
 
 #e) Baliza
 echo -n "${CIAN}          \t\te)${GRIS} Baliza      - ${AMARILLO}"
 ad="CW Id"          
-Enable_baliza=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
+Enable_baliza=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable)
 echo "$Enable_baliza"
 
 #19) DisplayLevel
 echo -n "${CIAN}  19)${GRIS} Modificar DisplayLevel- ${AMARILLO}"          
-lg1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Log DisplayLevel)
+lg1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Log DisplayLevel)
 echo -n "$lg1"
 
 #f) RFModeHang
 echo -n "${CIAN}    \t\t\tf)${GRIS} RFModeHang  - ${AMARILLO}"
-modehang1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO General RFModeHang)
+modehang1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General RFModeHang)
 echo "$modehang1"
 
 #20) Slot 1
 echo -n "${CIAN}  20)${GRIS} Modificar Slot1       - ${AMARILLO}"
 ad="DMR Network"          
-sl1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Slot1)
+sl1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Slot1)
 echo -n "$sl1"
 
 #g) Timeout
 echo -n "${CIAN}           \t\tg)${GRIS} Timeout     - ${AMARILLO}"
-timeo1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO General Timeout)
+timeo1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Timeout)
 echo "$timeo1"
 
 #21) Display
 echo -n "${CIAN}  21)${GRIS} Tipo Pantalla Display - ${AMARILLO}"
-Display1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO General Display)
+Display1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Display)
 echo -n "$Display1"
 
 #h) Nextion Port
 echo -n " ${CIAN}\t\t\th) ${GRIS}Port Nextion- ${AMARILLO}$MODEMNEXTION"
-port_nextion=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Nextion Port)
+port_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion Port)
 echo "$port_nextion"
 
 #22) Versión Display
 echo -n "${CIAN}  22)${GRIS} Version Display       - ${AMARILLO}"
-ScreenLayout1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Nextion ScreenLayout)
+ScreenLayout1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion ScreenLayout)
 echo -n "$ScreenLayout1"
 
 # i) NXDN Enable=
 echo -n "  ${CIAN}  \t\t\ti) ${GRIS}NXDN        - ${AMARILLO}$NXDN"
-Enable_nxdn=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO NXDN Enable)
+Enable_nxdn=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO NXDN Enable)
 echo "$Enable_nxdn"
 
 # 23) IdleBrightness=
 echo -n "  ${CIAN}23) ${GRIS}Brillo reposo Nextion - ${AMARILLO}$IdleBrightness_CORTO"
-brillo_nextion=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Nextion IdleBrightness)
+brillo_nextion=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Nextion IdleBrightness)
 echo -n "$brillo_nextion"
 
 # j) POCSAG Enable=
 echo -n "${CIAN}   \t\t\tj) ${GRIS}POCSAG      - ${AMARILLO}$POCSAG"
-pocsag=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable)
+pocsag=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable)
 echo "$pocsag"
 
 # 24) Latitude=
 echo -n "${CIAN}  24)${GRIS} Coordenada Latitude   - ${AMARILLO}"
-lat1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Info Latitude)
+lat1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Latitude)
 echo -n "$lat1"
 
 # k) Jitter=
 echo -n "  ${CIAN}     \t\tk) ${GRIS}Jitter      - ${AMARILLO}$Jitter"
 ad="DMR Network"          
-jitter=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter)
+jitter=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter)
 echo "$jitter"
 
 # 25) Longitude=
 echo -n "${CIAN}  25)${GRIS} Coordenada Longitude  - ${AMARILLO}"
-long1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Info Longitude)
+long1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Info Longitude)
 echo -n "$long1"
 
 # l) FM Enable=
 echo -n "${CIAN}     \t\tl) ${GRIS}FM          - ${AMARILLO}$FM"
-Enable_fm=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO FM Enable)
+Enable_fm=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO FM Enable)
 echo "$Enable_fm"
 
 # 26) Modulo D-STAR=
 echo -n "${CIAN}  26)${GRIS} Modulo D-STAR         - ${AMARILLO}"
-modu1=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO D-Star Module)
+modu1=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO D-Star Module)
 echo -n "$modu1"
 
 # M) OLED Type=
 echo -n "${CIAN}     \t\t\tm) ${GRIS}Tipo OLED   - ${AMARILLO}"
-tipo_oled=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO OLED Type)
+tipo_oled=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO OLED Type)
 echo "$tipo_oled"
 
 #27)Options DMR+=
@@ -384,7 +384,7 @@ echo "${CIAN}  29)\33[1;37m Guardar  fichero de Configuración en M1 ${CIAN}"
 echo -n "${CIAN}  30)\33[1;32m Utilizar fichero de Configuración de M1: ${CIAN}"
 memoria1=$(awk "NR==$primer1" $usuario/info_panel_control.ini)
 ad="DMR Network"          
-master=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO_copia "${ad}" Address)
+master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia "${ad}" Address)
 copia1=$master
 echo -n "$copia1"
 echo " - $memoria1"
@@ -404,7 +404,7 @@ echo "${CIAN}  31)\33[1;37m Guardar  fichero de Configuración en M2: ${CIAN}"
 echo -n "${CIAN}  32)\33[1;32m Utilizar fichero de Configuración en M2: ${CIAN}"
 memoria2=$(awk "NR==$segun1" $usuario/info_panel_control.ini)
 ad="DMR Network"          
-master=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO_copia2 "${ad}" Address)
+master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia2 "${ad}" Address)
 copia2=$master
 echo -n "$copia2"
 echo " - $memoria2"
@@ -416,7 +416,7 @@ echo "${CIAN}  33)\33[1;37m Guardar  fichero de Configuración en M3: ${CIAN}"
 echo -n "${CIAN}  34)\33[1;32m Utilizar fichero de Configuración en M3: ${CIAN}"
 memoria3=$(awk "NR==$tercer1" $usuario/info_panel_control.ini)
 ad="DMR Network"          
-master=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO_copia3 "${ad}" Address)
+master=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO_copia3 "${ad}" Address)
 copia3=$master
 echo -n "$copia3"
 echo " - $memoria3"
@@ -444,7 +444,7 @@ do
                           indicativo=`echo "$indicativo" | tr [:lower:] [:upper:]`
 			                    indicativo=`echo "$indicativo" | tr -d '[[:space:]]'`
                       
-                          sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO General Callsign $indicativo
+                          sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Callsign $indicativo
                           #sed -i "$numero_linea_indi Callsign=$indicativo" $usuario/MMDVMHost/$DIRECTORIO
                           sed -i "$primero $contenido_indicativo" $usuario/info_panel_control.ini
 			                    break;;
@@ -460,7 +460,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Info RXFrequency $rxfre
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info RXFrequency $rxfre
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -479,7 +479,7 @@ do
                           fi
                           case $actualizar in
                           [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Info TXFrequency $txfre
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info TXFrequency $txfre
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -507,7 +507,7 @@ do
                           case $actualizar in
 			                    [sS]* ) echo ""
 			                    ur1=`echo "$ur1" | tr -d '[[:space:]]'`
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Info URL $ur1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info URL $ur1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -519,7 +519,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA0
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA0
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -531,7 +531,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM0
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM0
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -543,7 +543,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB0
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB0
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -566,13 +566,13 @@ while true
 do
                           
 
-port_modem=$(sed -i "1c $memoria --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
+port_modem=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO Modem Port)
                           echo "Valor del Port: ${AMARILLO}$port_modem"
                           read -p 'Ej. /dev/ttyAMA1  /dev/ttyACM1  /dev/ttyUSB1  : ' port
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Modem Port $port
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port $port
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -586,7 +586,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO General Id $miid
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Id $miid
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -601,7 +601,7 @@ do
                       case $actualizar in
                       [sS]* ) echo ""
 ad="DMR Network"          
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address $master1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Address $master1
                       break;;
                       [nN]* ) echo ""
                       break;;
@@ -616,7 +616,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
 ad="DMR Network"          
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port $miid
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Port $miid
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -631,7 +631,7 @@ do
                           case $actualizar in
 			                    [sS]* ) echo ""
 ad="DMR Network"          
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password $pas1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Password $pas1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -645,7 +645,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Modem RXInvert $rxinv1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem RXInvert $rxinv1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -659,7 +659,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert $txinv1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem TXInvert $txinv1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -673,7 +673,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Modem RXLevel $var2
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem RXLevel $var2
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -687,7 +687,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel $vartx
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem TXLevel $vartx
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -701,7 +701,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO General Duplex $dup1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Duplex $dup1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -715,7 +715,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO DMR TXHang $txh1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO DMR TXHang $txh1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -729,7 +729,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Log DisplayLevel $lg1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Log DisplayLevel $lg1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -744,7 +744,7 @@ do
                           case $actualizar in                                            
 			                    [sS]* ) echo ""
 ad="DMR Network"          
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Slot1 $slot            
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Slot1 $slot            
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -758,7 +758,7 @@ do
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO General Display $Display             
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Display $Display             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -772,7 +772,7 @@ do
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Nextion ScreenLayout $V1             
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion ScreenLayout $V1             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -785,7 +785,7 @@ do
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""     
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Nextion IdleBrightness $V            
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion IdleBrightness $V            
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -799,7 +799,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO D-Star Enable $dmrac1 
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO D-Star Enable $dmrac1 
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -813,7 +813,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO DMR Enable $dmr
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO DMR Enable $dmr
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -828,7 +828,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
 ad="System Fusion Network"                          
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $fusion
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $fusion
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -842,7 +842,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO P25 Enable $p25
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO P25 Enable $p25
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -856,7 +856,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
 ad="CW Id"                         
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $baliza
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Enable $baliza
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -870,7 +870,7 @@ do
                           actualizar=S 
                           case $actualizar in        
                           [sS]* ) echo ""       
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh             
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General RFModeHang $modeh             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -884,7 +884,7 @@ do
                           actualizar=S 
                           case $actualizar in                                            
                           [sS]* ) echo ""       
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timut             
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO General Timeout $timut             
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -898,7 +898,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Nextion Port $portn
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Nextion Port $portn
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -912,7 +912,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO NXDN Enable $NXDN1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO NXDN Enable $NXDN1
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -926,7 +926,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable $POCSAG1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO POCSAG Enable $POCSAG1
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -941,7 +941,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
 ad="DMR Network"
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter $JITTER
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO "${ad}" Jitter $JITTER
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -955,7 +955,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO FM Enable $fm
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO FM Enable $fm
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -969,7 +969,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-  sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
+  sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO OLED Type $oled
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -983,7 +983,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Info Latitude $lat1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info Latitude $lat1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -997,7 +997,7 @@ do
                           actualizar=S 
                           case $actualizar in
 			                    [sS]* ) echo ""
-sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO Info Longitude $long1
+sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Info Longitude $long1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
@@ -1013,7 +1013,7 @@ do
 			                    [sS]* ) echo ""
                           #Convierte minúsculas a Mayúsculas
                           modu1=`echo "$modu1" | tr [:lower:] [:upper:]`
-                          sed -i "1c $memoria --set $usuario/MMDVMHost/$DIRECTORIO D-Star Module $modu1
+                          sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO D-Star Module $modu1
 			                    break;;
 			                    [nN]* ) echo ""
 			                    break;;
