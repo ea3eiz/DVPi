@@ -170,7 +170,7 @@ echo -n "${VERDE}"
 echo "   ***************************************************************************************"
 
 echo -n "${CIAN}   1)${GRIS} Modificar Callsign    - ${AMARILLO}"
-contenido_indicativo=$(sudo crudini --get $usuario/MMDVMHost/$DIRECTORIO General Callsign)
+contenido_indicativo=$(crudini --get $usuario/MMDVMHost/$DIRECTORIO General Callsign)
 echo "$contenido_indicativo"
 
 echo -n "${CIAN}   2)${GRIS} Modificar RXFrequency - ${AMARILLO}"
