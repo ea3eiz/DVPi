@@ -685,26 +685,7 @@ do
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-sh Puertos_MMDVMPLUS.sh
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
-esac
-done;;
-9borrar) echo ""
-while true
-do
-                          
-
-                          port_modem=$(awk "NR==$numero_linea_port" $usuario/MMDVMHost/$DIRECTORIO)
-                          echo "Valor del Port: ${AMARILLO}$port_modem"
-                          read -p 'Ej. /dev/ttyAMA1  /dev/ttyACM1  /dev/ttyUSB1  : ' port
-                          actualizar=S 
-                          case $actualizar in
-                          [sS]* ) echo ""
-                          letra=c
-                          numero_linea_port=$numero_linea_port$letra
-                          sed -i "$numero_linea_port Port=$port" $usuario/MMDVMHost/$DIRECTORIO
+sh Puertos_MMDVMBM.sh
                           break;;
                           [nN]* ) echo ""
                           break;;

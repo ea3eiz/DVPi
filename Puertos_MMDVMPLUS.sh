@@ -12,6 +12,9 @@ SCRIPTS_version=$(awk "NR==1" $usuario/.config/autostart/version)
 #Editor MMDVMPLUS.ini
 DIRECTORIO="MMDVMPLUS.ini"
 
+# #Editor MMDVMBM.ini
+# DIRECTORIO="MMDVMBM.ini"
+
 #Colores
 ROJO="\033[1;31m"
 VERDE="\033[1;32m"
