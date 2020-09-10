@@ -682,6 +682,18 @@ done;;
 9) echo ""
 while true
 do
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+sh Puertos_MMDVMPLUS.sh
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
+esac
+done;;
+9borrar) echo ""
+while true
+do
                           
 
                           port_modem=$(awk "NR==$numero_linea_port" $usuario/MMDVMHost/$DIRECTORIO)
