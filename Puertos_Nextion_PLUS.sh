@@ -78,6 +78,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
                           sed -i "$linea_sed_MN Port=modem" $usuario/MMDVMHost/$DIRECTORIO
+                          exit
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -90,6 +91,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
                           sed -i "$linea_sed_MN Port=/dev/rfcomm0" $usuario/MMDVMHost/$DIRECTORIO
+                          exit
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -102,6 +104,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
                           sed -i "$linea_sed_MN Port=/dev/rfcomm1" $usuario/MMDVMHost/$DIRECTORIO
+                          exit
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -114,6 +117,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
                           sed -i "$linea_sed_MN Port=/dev/ttyUSB0" $usuario/MMDVMHost/$DIRECTORIO
+                          exit
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -126,6 +130,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
                           sed -i "$linea_sed_MN Port=/dev/ttyUSB1" $usuario/MMDVMHost/$DIRECTORIO
+                          exit
                           break;;
                           [nN]* ) echo ""
                           break;;
