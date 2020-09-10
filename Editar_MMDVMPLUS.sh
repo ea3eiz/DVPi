@@ -387,6 +387,7 @@ Display1=`expr substr $Display 3 30`
 echo -n "$Display1"
 fi
 
+# h Puerto Nextion
 var=`grep -n -m 1 "\[Nextion\]" $usuario/MMDVMHost/$DIRECTORIO`
 buscar=":"
 largo_linea=`expr index $var $buscar`

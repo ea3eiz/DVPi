@@ -24,6 +24,25 @@ CIAN="\033[1;36m"
 GRIS="\033[0m"
 MARRON="\33[38;5;138m"
 
+
+# h Puerto Nextion
+var=`grep -n -m 1 "\[Nextion\]" $usuario/MMDVMHost/$DIRECTORIO`
+buscar=":"
+largo_linea=`expr index $var $buscar`
+largo_linea=`expr $largo_linea - 1`
+numero_linea=`expr substr $var 1 $largo_linea`
+numero_linea=`expr $numero_linea + 2`
+MODEMNEXTION=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
+letra=c
+linea_sed_MN=$numero_linea$letra
+echo " ${CIAN}\t\th) ${GRIS}Port Display- ${AMARILLO}$MODEMNEXTION"
+
+echo "$MODEMNEXTION"
+read a
+
+
+
+
 echo "${VERDE}"
 echo "   ************************************************************"
 echo -n "${CIAN}"
@@ -46,19 +65,21 @@ echo -n "${CIAN}   Elige una opción: "
 read escoger_menu
 
 case $escoger_menu in
-1) echo ""
+h1 echo ""
 while true
 do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM0
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
+                          echo "Valor del Port: ${AMARILLO}$MODEMNEXTION"
+                          read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' lat1
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+                          sed -i "$linea_sed_MN Port=$lat1" $usuario/MMDVMHost/$DIRECTORIO
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
 esac
 done;;
+i) echo ""
 2) echo ""
 while true
 do
