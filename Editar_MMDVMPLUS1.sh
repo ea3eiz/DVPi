@@ -3,18 +3,18 @@ clear
 while true
 do
 clear
-# path usuario
+# path usuario 
 usuario=$(awk "NR==1" /home/pi/.config/autostart/usuario)
 
 # path Versión
 SCRIPTS_version=$(awk "NR==1" $usuario/.config/autostart/version)
 
+# **********************************************************************************************
 #Editor MMDVMPLUS.ini
 DIRECTORIO="MMDVMPLUS.ini"
 DIRECTORIO_copia="MMDVMPLUS.ini_copia"
 DIRECTORIO_copia2="MMDVMPLUS.ini_copia2"
 DIRECTORIO_copia3="MMDVMPLUS.ini_copia3"
-
 #Escribe datos en el fichero $usuario/info_panel_control.ini para leer desde el panel de control
 primero="11c"
 segundo="12c"
@@ -28,6 +28,109 @@ tercer="33c"
 primer1="31c"
 segun1="32c"
 tercer1="33c"
+info_memoria="4c"
+# **********************************************************************************************
+
+# **********************************************************************************************
+# #Editor MMDVMBM.ini
+# DIRECTORIO="MMDVMBM.ini"
+# DIRECTORIO_copia="MMDVMBM.ini_copia"
+# DIRECTORIO_copia2="MMDVMBM.ini_copia2"
+# DIRECTORIO_copia3="MMDVMBM.ini_copia3"
+# #Escribe datos en el fichero $usuario/info_panel_control.ini para leer desde el panel de control
+# primero="1c"
+# segundo="2c"
+# tercero="3c"
+# cuarto="4c"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer="34c"
+# segun="35c"
+# tercer="36c"
+#   #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer1="34c"
+# segun1="35c"
+# tercer1="36c"
+# info_memoria="1c"
+# **********************************************************************************************
+
+# **********************************************************************************************
+# #Editor MMDVM.ini
+# DIRECTORIO="MMDVM.ini"
+# DIRECTORIO_copia="MMDVM.ini_copia"
+# DIRECTORIO_copia2="MMDVM.ini_copia2"
+# DIRECTORIO_copia3="MMDVM.ini_copia3"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para leer desde el panel de control
+# primero="6c"
+# segundo="7c"
+# tercero="8c"
+# cuarto="9c"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer="37c"
+# segun="38c"
+# tercer="39c"
+#   #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer1="37c"
+# segun1="38c"
+# tercer1="39c"
+# info_memoria="2c"
+# **********************************************************************************************
+
+# **********************************************************************************************
+# #MMDVMDSTAR.ini
+# DIRECTORIO="MMDVMDSTAR.ini"
+# DIRECTORIO_copia="MMDVMDSTAR.ini_copia"
+# DIRECTORIO_copia2="MMDVMDSTAR.ini_copia2"
+# DIRECTORIO_copia3="MMDVMDSTAR.ini_copia3"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer="15c"
+# segun="16c"
+# tercer="17c"
+#   #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer1="15c"
+# segun1="16c"
+# tercer1="17c"
+# info_memoria="3c"
+# **********************************************************************************************
+
+# **********************************************************************************************
+# #Editor MMDVMESPECIAL.ini
+# DIRECTORIO="MMDVMESPECIAL.ini"
+# DIRECTORIO_copia="MMDVMESPECIAL.ini_copia"
+# DIRECTORIO_copia2="MMDVMESPECIAL.ini_copia2"
+# DIRECTORIO_copia3="MMDVMESPECIAL.ini_copia3"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para leer desde el panel de control
+# primero="11c"
+# segundo="12c"
+# tercero="13c"
+# cuarto="14c"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer="41c"
+# segun="42c"
+# tercer="43c"
+#   #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3 
+# primer1="41c"
+# segun1="42c"
+# tercer1="43c"
+# info_memoria="5c"
+# **********************************************************************************************
+
+# **********************************************************************************************
+# #Editor MMDVMFUSION.ini
+# DIRECTORIO="MMDVMFUSION.ini"
+# DIRECTORIO_copia="MMDVMFUSION.ini_copia"
+# DIRECTORIO_copia2="MMDVMFUSION.ini_copia2"
+# DIRECTORIO_copia3="MMDVMFUSION.ini_copia3"
+#   #Escribe datos en el fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer="18c"
+# segun="19c"
+# tercer="20c"
+#   #Lee los datos del fichero $usuario/info_panel_control.ini para las memorias M1, M2 y M3
+# primer1="18c"
+# segun1="19c"
+# tercer1="20c"
+# info_memoria="6c"
+# **********************************************************************************************
+
 # Recoge datos para leer desde el panel de control
 indi=$(awk "NR==2" $usuario/MMDVMHost/$DIRECTORIO)
 sed -i "$primero $indi" $usuario/info_panel_control.ini
@@ -55,7 +158,7 @@ CIAN="\033[1;36m"
 GRIS="\033[0m"
 MARRON="\33[38;5;138m"
 
-linea_info_memoria="313c" #Linea del MMDVM donde guardamos el nombre de la memoria
+#linea_info_memoria="313c" #Linea del MMDVM donde guardamos el nombre de la memoria
 
 echo "${VERDE}"
 echo "   ***************************************************************************************"
