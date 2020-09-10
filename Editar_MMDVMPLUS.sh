@@ -553,18 +553,6 @@ echo -n "${CIAN}   Elige una opción: "
 read escoger_menu
 
 case $escoger_menu in
-1000) echo ""
-while true
-do
-                          actualizar=S 
-                          case $actualizar in
-			                    [sS]* ) echo ""
-                          lxterminal --geometry=66x18 -e sudo sh Puertos_Nextion_PLUS.sh
-			                    break;;
-			                    [nN]* ) echo ""
-			                    break;;
-esac
-done;;
 1) echo ""
 while true
 do
@@ -1209,15 +1197,13 @@ done;;
 h) echo ""
 while true
 do
-                          echo "Valor del Port: ${AMARILLO}$MODEMNEXTION"
-                          read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' lat1
                           actualizar=S 
                           case $actualizar in
-                          [sS]* ) echo ""
-                          sed -i "$linea_sed_MN Port=$lat1" $usuario/MMDVMHost/$DIRECTORIO
-                          break;;
-                          [nN]* ) echo ""
-                          break;;
+			                    [sS]* ) echo ""
+                          lxterminal --geometry=66x18 -e sudo sh Puertos_Nextion_PLUS.sh
+			                    break;;
+			                    [nN]* ) echo ""
+			                    break;;
 esac
 done;;
 i) echo ""
