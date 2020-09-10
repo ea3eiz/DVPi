@@ -65,15 +65,13 @@ echo -n "${CIAN}   Elige una opción: "
 read escoger_menu
 
 case $escoger_menu in
-h) echo ""
+1) echo ""
 while true
 do
-                          echo "Valor del Port: ${AMARILLO}$MODEMNEXTION"
-                          read -p 'Ej. modem, /dev/ttyAMA0, /dev/rfcomm0, /dev/ttyUSB0 :' lat1
                           actualizar=S 
                           case $actualizar in
                           [sS]* ) echo ""
-                          sed -i "$linea_sed_MN Port=$lat1" $usuario/MMDVMHost/$DIRECTORIO
+                          sed -i "$linea_sed_MN Port=/dev/ttyAMA0" $usuario/MMDVMHost/$DIRECTORIO
                           break;;
                           [nN]* ) echo ""
                           break;;
@@ -82,144 +80,61 @@ done;;
 2) echo ""
 while true
 do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM1
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+                          sed -i "$linea_sed_MN Port=modem" $usuario/MMDVMHost/$DIRECTORIO
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
 esac
 done;;
 3) echo ""
 while true
 do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM2
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+                          sed -i "$linea_sed_MN Port=/dev/rfcomm0" $usuario/MMDVMHost/$DIRECTORIO
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
 esac
 done;;
 4) echo ""
 while true
 do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyACM3
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+                          sed -i "$linea_sed_MN Port=/dev/rfcomm1" $usuario/MMDVMHost/$DIRECTORIO
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
 esac
 done;;
 5) echo ""
 while true
 do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA0
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+                          sed -i "$linea_sed_MN Port=/dev/ttyUSB0" $usuario/MMDVMHost/$DIRECTORIO
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
 esac
 done;;
 6) echo ""
 while true
 do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA1
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
-esac
-done;;
-7) echo ""
-while true
-do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA2
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
-esac
-done;;
-8) echo ""
-while true
-do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyAMA3
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
-esac
-done;;
-9) echo ""
-while true
-do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB0
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
-esac
-done;;
-10) echo ""
-while true
-do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB1
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
-esac
-done;;
-11) echo ""
-while true
-do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB2
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
-esac
-done;;
-12) echo ""
-while true
-do
-                            actualizar=S 
-                            case $actualizar in
-			                [sS]* ) echo ""
-                            sudo crudini --set $usuario/MMDVMHost/$DIRECTORIO Modem Port /dev/ttyUSB3
-                            exit
-			                break;;
-			                [nN]* ) echo ""
-			                break;;
+                          actualizar=S 
+                          case $actualizar in
+                          [sS]* ) echo ""
+                          sed -i "$linea_sed_MN Port=/dev/ttyUSB1" $usuario/MMDVMHost/$DIRECTORIO
+                          break;;
+                          [nN]* ) echo ""
+                          break;;
 esac
 done;;
 0) echo ""
