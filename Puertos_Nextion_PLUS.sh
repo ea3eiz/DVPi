@@ -35,7 +35,6 @@ numero_linea=`expr $numero_linea + 2`
 MODEMNEXTION=$(awk "NR==$numero_linea" $usuario/MMDVMHost/$DIRECTORIO)
 letra=c
 linea_sed_MN=$numero_linea$letra
-echo " ${CIAN}\t\th) ${GRIS}Port Display- ${AMARILLO}$MODEMNEXTION"
 
 echo "${VERDE}"
 echo "   ************************************************************"
@@ -66,6 +65,7 @@ do
                           case $actualizar in
                           [sS]* ) echo ""
                           sed -i "$linea_sed_MN Port=/dev/ttyAMA0" $usuario/MMDVMHost/$DIRECTORIO
+                          exit;;
                           break;;
                           [nN]* ) echo ""
                           break;;
