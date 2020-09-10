@@ -65,7 +65,7 @@ echo -n "${CIAN}   Elige una opción: "
 read escoger_menu
 
 case $escoger_menu in
-h1 echo ""
+h) echo ""
 while true
 do
                           echo "Valor del Port: ${AMARILLO}$MODEMNEXTION"
@@ -79,7 +79,6 @@ do
                           break;;
 esac
 done;;
-i) echo ""
 2) echo ""
 while true
 do
