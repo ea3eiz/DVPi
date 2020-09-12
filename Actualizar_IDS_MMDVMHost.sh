@@ -14,7 +14,7 @@ echo -n "${AMARILLO}"
 echo "    ACTUALIZANDO IDS INDICATIVOS "
 echo -n "${VERDE}"
 #echo "ACTUALIZANDO DMRIds.dat para DVSWITCH"
-sleep 10
+sleep 3
 echo "${NEGRO}"
 var=`grep -n -m 1 '\<DMRIDPATH\>' /home/pi/MMDVMHost/linux/DMRIDUpdate.sh`
 buscar=":"
