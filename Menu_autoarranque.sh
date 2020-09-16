@@ -155,9 +155,9 @@ fi
 #=================================================================================
 
 #==================================================================================
-dvrptrq=$(awk "NR==12" /home/pi/.local/autoarranque.ini)
-dvrptrq=`expr substr $dvrptrq 8 3`
-if [ $dvrptrq = "ON" ]
+dvpi=$(awk "NR==12" /home/pi/.local/autoarranque.ini)
+dvpi=`expr substr $dvpi 8 3`
+if [ $dvpi = "ON" ]
 then
 echo "   ${CIAN}12) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DVPi"
 else
@@ -492,15 +492,15 @@ clear
 	                     	actualizar=S
 		                   	case $actualizar in
 			                [sS]* ) echo ""
-                            if [ $dvrptrq = "ON" ]
+                            if [ $dvpi = "ON" ]
                             then
                             cd /home/pi/.config/autostart
-                            sudo rm DVRPTR.desktop
-                            sed -i "12c DVRPTR=OFF" /home/pi/.local/autoarranque.ini
+                            sudo rm DVPi.desktop
+                            sed -i "12c DVPi=OFF" /home/pi/.local/autoarranque.ini
                             else
                             cd /home/pi/AUTOARRANQUEDVPi
-                            sudo cp DVRPTR.desktop /home/pi/.config/autostart
-                            sed -i "12c DVRPTR=ON" /home/pi/.local/autoarranque.ini
+                            sudo cp DVPi.desktop /home/pi/.config/autostart
+                            sed -i "12c DVPi=ON" /home/pi/.local/autoarranque.ini
                             fi
 			                break;;
 			                [nN]* ) echo ""
