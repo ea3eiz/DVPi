@@ -242,7 +242,7 @@ read escoger_menu
 echo ""
 
 case $escoger_menu in
-1) echo ""
+1bloqueado) echo ""
 while true
 do
 clear
@@ -265,7 +265,7 @@ clear
 esac
 done;;
 
-2) echo ""
+2bloqueado) echo ""
 while true
 do
 clear
@@ -287,7 +287,7 @@ clear
 			                break;;
 esac
 done;;
-3) echo ""
+3bloqueado) echo ""
 while true
 do
 clear
@@ -309,7 +309,7 @@ clear
 			                break;;
 esac
 done;;
-4) echo ""
+4bloqueado) echo ""
 while true
 do
 clear            
@@ -331,7 +331,7 @@ clear
 			                break;;
 esac
 done;;
-5) echo ""
+5bloqueado) echo ""
 while true
 do
 clear              
@@ -375,7 +375,7 @@ clear
 			                break;;
 esac
 done;;
-7) echo ""
+7bloqueado) echo ""
 while true
 do
 clear              
@@ -419,7 +419,7 @@ clear
 			                break;;
 esac
 done;;
-9) echo ""
+9bloqueado) echo ""
 while true
 do
 clear	        
@@ -441,7 +441,7 @@ clear
 			                break;;
 esac
 done;;
-10) echo ""
+10bloqueado) echo ""
 while true
 do
 clear
@@ -463,7 +463,7 @@ clear
 			                break;;
 esac
 done;;
-11) echo ""
+11bloqueado) echo ""
 while true
 do
 clear
@@ -507,7 +507,7 @@ clear
 			                break;;
 esac
 done;;
-14) echo ""
+14bloqueado) echo ""
 while true
 do
 clear
@@ -530,7 +530,7 @@ clear
 			                break;;
 esac
 done;;
-13) echo ""
+13bloqueado) echo ""
 while true
 do
 clear
@@ -552,7 +552,7 @@ clear
 			                break;;
 esac
 done;;
-15) echo ""
+15bloqueado) echo ""
 while true
 do
 clear
@@ -574,7 +574,7 @@ clear
 			                break;;
 esac
 done;;
-16) echo ""
+16bloqueado) echo ""
 while true
 do
 clear
@@ -596,7 +596,7 @@ clear
 			                break;;
 esac
 done;;
-17) echo ""
+17bloqueado) echo ""
 while true
 do
 clear
@@ -618,7 +618,7 @@ clear
 			                break;;
 esac
 done;;
-18) echo ""
+18bloqueado) echo ""
 while true
 do
 clear
@@ -640,7 +640,7 @@ clear
 			                break;;
 esac
 done;;
-19) echo ""
+19bloqueado) echo ""
 while true
 do
 clear
