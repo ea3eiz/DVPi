@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=lxterminal
-Exec=sh -c 'cd /home/pi/DVPi;lxterminal --geometry=45x10 -e sudo sh ejecutar_bm.sh'
+Exec=sh -c 'cd /home/pi/DVPi;lxterminal --geometry=80x12 -e sudo sh ejecutar_bm.sh'
 Icon=/home/pi/DVPi/ICONO_BM_OFF.png
 Type=Application
 StartupNotify=false
