@@ -137,9 +137,9 @@ solod=$(awk "NR==10" /home/pi/.local/autoarranque.ini)
 solod=`expr substr $solod 12 3`
 if [ $solod = "ON" ]
 then
-echo "   ${CIAN}10) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}SOLO_DSTAR"
+echo "   ${GRIS}10) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}SOLO_DSTAR"
 else
-echo "   ${CIAN}10) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}SOLO_DSTAR"
+echo "   ${GRIS}10) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}SOLO_DSTAR"
 fi
 #=================================================================================
 
@@ -148,9 +148,9 @@ solof=$(awk "NR==11" /home/pi/.local/autoarranque.ini)
 solof=`expr substr $solof 13 3`
 if [ $solof = "ON" ]
 then
-echo "   ${CIAN}11) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}SOLO_FUSION"
+echo "   ${GRIS}11) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}SOLO_FUSION"
 else
-echo "   ${CIAN}11) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}SOLO_FUSION"
+echo "   ${GRIS}11) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}SOLO_FUSION"
 fi
 #=================================================================================
 
@@ -170,9 +170,9 @@ ambeserver=$(awk "NR==13" /home/pi/.local/autoarranque.ini)
 ambeserver=`expr substr $ambeserver 13 3`
 if [ $ambeserver = "ON" ]
 then
-echo "   ${CIAN}13) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}AMBE SERVER"
+echo "   ${GRIS}13) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}AMBE SERVER"
 else
-echo "   ${CIAN}13) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}AMBE SERVER"
+echo "   ${GRIS}13) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}AMBE SERVER"
 fi
 #=================================================================================
 
@@ -181,9 +181,9 @@ ysfdmr=$(awk "NR==14" /home/pi/.local/autoarranque.ini)
 ysfdmr=`expr substr $ysfdmr 9 3`
 if [ $ysfdmr = "ON" ]
 then
-echo "   ${CIAN}14) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}YSF2DMR"
+echo "   ${GRIS}14) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}YSF2DMR"
 else
-echo "   ${CIAN}14) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}YSF2DMR"
+echo "   ${GRIS}14) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}YSF2DMR"
 fi
 #=================================================================================
 
@@ -192,9 +192,9 @@ dmrysf=$(awk "NR==15" /home/pi/.local/autoarranque.ini)
 dmrysf=`expr substr $dmrysf 9 3`
 if [ $dmrysf = "ON" ]
 then
-echo "   ${CIAN}15) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DMR2YSF"
+echo "   ${GRIS}15) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DMR2YSF"
 else
-echo "   ${CIAN}15) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}DMR2YSF"
+echo "   ${GRIS}15) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}DMR2YSF"
 fi
 #=================================================================================
 
@@ -204,9 +204,9 @@ dmrnxdn=`grep "DMR2NXDN" /home/pi/.local/autoarranque.ini`
 dmrnxdn=`expr substr $dmrnxdn 10 3`
 if [ $dmrnxdn = "ON" ]
 then
-echo "   ${CIAN}16) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DMR2NXDN"
+echo "   ${GRIS}16) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DMR2NXDN"
 else
-echo "   ${CIAN}16) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}DMR2NXDN"
+echo "   ${GRIS}16) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}DMR2NXDN"
 fi
 #=================================================================================
 
@@ -215,9 +215,9 @@ nxdn=$(awk "NR==17" /home/pi/.local/autoarranque.ini)
 nxdn=`expr substr $nxdn 6 3`
 if [ $nxdn = "ON" ]
 then
-echo "   ${CIAN}17) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}NXDN"
+echo "   ${GRIS}17) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}NXDN"
 else
-echo "   ${CIAN}17) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}NXDN"
+echo "   ${GRIS}17) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}NXDN"
 fi
 #=================================================================================
 
@@ -226,9 +226,9 @@ dmrgateway=$(awk "NR==18" /home/pi/.local/autoarranque.ini)
 dmrgateway=`expr substr $dmrgateway 12 3`
 if [ $dmrgateway = "ON" ]
 then
-echo "   ${CIAN}18) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DMRGateway"
+echo "   ${GRIS}18) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DMRGateway"
 else
-echo "   ${CIAN}18) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}DMRGateway"
+echo "   ${GRIS}18) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}DMRGateway"
 fi
 #=========================================================================*========
 
