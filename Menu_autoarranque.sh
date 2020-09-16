@@ -156,7 +156,7 @@ fi
 
 #==================================================================================
 dvpi=$(awk "NR==12" /home/pi/.local/autoarranque.ini)
-dvpi=`expr substr $dvpi 8 3`
+dvpi=`expr substr $dvpi 6 3`
 if [ $dvpi = "ON" ]
 then
 echo "   ${CIAN}12) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DVPi"
