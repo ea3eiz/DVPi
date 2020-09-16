@@ -234,9 +234,9 @@ fi
 
 echo ""
 
-echo "\33[1;36m   19)\33[1;32m *** $restablece"
+# echo "\33[1;36m   19)\33[1;32m *** $restablece"
 
-echo ""
+# echo ""
 echo -n "\33[1;36m   $elige: " 
 read escoger_menu
 echo ""
