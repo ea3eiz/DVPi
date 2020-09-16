@@ -27,10 +27,10 @@ sleep 2
                         sleep 1
 
                         # Actualiza AUTORRANQUEV105
-                        # cd $usuario/AUTOARRANQUEV105
+                        # cd $usuario/AUTOARRANQUEDVPi
                         # git pull
                         # sleep 1
-                        # sudo chmod 777 -R /home/pi/AUTOARRANQUEV105
+                        # sudo chmod 777 -R /home/pi/AUTOARRANQUEDVPi
 
                         # 14-08-2020 cambio actualizar para que salgan los indicativos en DVSWITCH:
                         # cd /var/lib/mmdvm
