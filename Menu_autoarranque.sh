@@ -159,9 +159,9 @@ dvrptrq=$(awk "NR==12" /home/pi/.local/autoarranque.ini)
 dvrptrq=`expr substr $dvrptrq 8 3`
 if [ $dvrptrq = "ON" ]
 then
-echo "   ${CIAN}12) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DVRPTR"
+echo "   ${CIAN}12) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DVPi"
 else
-echo "   ${CIAN}12) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}DVRPTR"
+echo "   ${CIAN}12) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}DVPi"
 fi
 #=================================================================================
 
