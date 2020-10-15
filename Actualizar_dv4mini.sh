@@ -21,7 +21,7 @@ echo -n "${VERDE}"
 echo "   *                                                                        *"
 echo "   **************************************************************************"
 echo ""
-echo  "\33[1;36m   1)${BLANCO} Actualizar para utilizar \33[1;32mDV4MINI 20190307 "
+echo  "\33[1;36m   1)${BLANCO} Actualizar para utilizar \33[1;32mDV4MINI 20170517 "
 echo  "\33[1;36m   2)${BLANCO} Actualizar para utilizar \33[1;32mDV4MINI 20190127   \33[1;33m"
 
 echo ""
@@ -43,7 +43,7 @@ clear
                         sudo rm /usr/bin/dv_serial
                         sudo mkdir /home/pi/dv4mini
                         sudo chmod 777 -R /home/pi/dv4mini
-                        cd /home/pi/$CRIPTS_version/DV4MINI/20190307new
+                        cd /home/pi/$CRIPTS_version/DV4MINI/20170517
                         cp dv_serial /home/pi/dv4mini
                         cp dv4mini.exe /home/pi/dv4mini
                         cp xref.ip /home/pi/dv4mini
