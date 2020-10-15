@@ -21,8 +21,8 @@ echo -n "${VERDE}"
 echo "   *                                                                        *"
 echo "   **************************************************************************"
 echo ""
-echo  "\33[1;36m   1)${BLANCO} Actualizar para utilizar \33[1;32mDV4MINI 20200303${AMARILLO} (NEW)   \33[1;33m"
-echo  "\33[1;36m   2)${BLANCO} Actualizar para utilizar \33[1;32mDV4MINI 20170517   \33[1;33m"
+echo  "\33[1;36m   1)${BLANCO} Actualizar para utilizar \33[1;32mDV4MINI 20200303 
+echo  "\33[1;36m   2)${BLANCO} Actualizar para utilizar \33[1;32mDV4MINI 20190127   \33[1;33m"
 
 echo ""
 echo -n "\33[1;36m   Elige una opción: " 
