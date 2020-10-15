@@ -28,7 +28,7 @@ echo ""
 echo -n "\33[1;36m   Elige una opción: " 
 read escoger_menu
 case $escoger_menu in
-1BLOQUEADO) echo ""
+1) echo ""
 while true
 do
 clear
@@ -63,7 +63,7 @@ clear
                         break;;
 esac
 done;;
-2BLOQUEADO) echo ""
+2) echo ""
 while true
 do
 clear
