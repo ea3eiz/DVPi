@@ -70,9 +70,9 @@ DV4mini=$(awk "NR==4" /home/pi/.local/autoarranque.ini)
 DV4mini=`expr substr $DV4mini 9 3`
 if [ $DV4mini = "ON" ]
 then
-echo "   ${GRIS} 4) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DV4mini"
+echo "   ${CIAN} 4) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}DV4mini"
 else
-echo "   ${GRIS} 4) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}DV4mini"
+echo "   ${CIAN} 4) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}DV4mini"
 fi
 #==================================================================================
 
@@ -309,7 +309,7 @@ clear
 			                break;;
 esac
 done;;
-4bloqueado) echo ""
+4) echo ""
 while true
 do
 clear            
