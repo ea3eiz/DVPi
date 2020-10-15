@@ -44,9 +44,9 @@ clear
                         sudo mkdir /home/pi/dv4mini
                         sudo chmod 777 -R /home/pi/dv4mini
                         cd /home/pi/$CRIPTS_version/DV4MINI/20200303
-                        cp dv_serial /home/pi/dv4mini
-                        cp dv4mini.exe /home/pi/dv4mini
-                        cp xref.ip /home/pi/dv4mini
+                        sudo cp dv_serial /home/pi/dv4mini
+                        sudo cp dv4mini.exe /home/pi/dv4mini
+                        sudo cp xref.ip /home/pi/dv4mini
                         sudo cp dv_serial /usr/bin/
                         cd /usr/bin/
                         sudo chmod 777 dv_serial
