@@ -27,8 +27,8 @@ MARRON="\33[38;5;138m"
                         git clone https://github.com/ea3eiz/YSFClients
                         cd YSFClients
                         cd YSFGateway
-                        sudo sed -i '209c std::string name = "IMAGEN ADER V105";' YSFGateway.cpp
-                        sudo sed -i '28c const char* YSF_VERSION = "ADER V105";' YSFNetwork.cpp
+                        sudo sed -i '209c std::string name = "IMAGEN ADER DVPi";' YSFGateway.cpp
+                        sudo sed -i '28c const char* YSF_VERSION = "ADER DVPi";' YSFNetwork.cpp
                         make
                         clear
                         echo "\v\v\v\v\v\v\v\v\v\v\v"
