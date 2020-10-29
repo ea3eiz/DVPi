@@ -148,9 +148,9 @@ solof=$(awk "NR==11" /home/pi/.local/autoarranque.ini)
 solof=`expr substr $solof 13 3`
 if [ $solof = "ON" ]
 then
-echo "   ${GRIS}11) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}SOLO_FUSION"
+echo "   ${CIAN}11) $desconectar  ${VERDE}\t$estado ON ${CIAN}    \t${VERDE}SOLO_FUSION"
 else
-echo "   ${GRIS}11) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}SOLO_FUSION"
+echo "   ${CIAN}11) $conectar  ${ROJO}\t$estado OFF ${CIAN}    \t${ROJO}SOLO_FUSION"
 fi
 #=================================================================================
 
@@ -463,7 +463,7 @@ clear
 			                break;;
 esac
 done;;
-11bloqueado) echo ""
+11) echo ""
 while true
 do
 clear
