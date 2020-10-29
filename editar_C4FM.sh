@@ -9,6 +9,9 @@ usuario=$(awk "NR==1" /home/pi/.config/autostart/usuario)
 SCRIPTS_version=$(awk "NR==1" $usuario/.config/autostart/version)
 DIRECTORIO="YSFGateway.ini "
 
+echo "usuario: $usuario"
+echo "versioó: $SCRIPTS_version"
+read a
 #Colores
 ROJO="\033[1;31m"
 VERDE="\033[1;32m"
