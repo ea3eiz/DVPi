@@ -17,3 +17,4 @@ sudo cp Abrir_MMDVMPLUS.desktop $usuario/Desktop
 
 sudo rm $usuario/Abrir_MMDVMPLUS.desktop
 
+
