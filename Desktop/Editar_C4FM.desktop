@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=sh -c "cd /home/pi/DVPi;lxterminal --geometry=80x25 -e sudo sh editar_C4FM.sh"
+Exec=sh -c "cd /home/pi/V107; ./qt_editor_ysf_fcs_ycs"
 Icon=/home/pi/DVPi/ICONO_EDITAR_YSF.png
 Type=Application
 StartupNotify=false
