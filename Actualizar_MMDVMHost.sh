@@ -1,5 +1,5 @@
-﻿E567U-   452#!/bin/bash
-# -*- ENCODING: UTF-8 -*-
+﻿#!/bin/bash
+
 clear
 SCRIPTS_version=$(awk "NR==1" /home/pi/.config/autostart/version)
 #Colores
@@ -10,26 +10,6 @@ AMARILLO="\033[1;33m"
 CIAN="\033[1;36m"
 GRIS="\033[0m"
 MARRON="\33[38;5;138m"
-
-                    echo "${ROJO}"
-                    echo " *********************************************************************"
-                    echo " * Si actualizas MMDVMhost desde esta opción, perderás todas las     *"
-                    echo " * configuraciones y tendrás que volver a configurar los .ini        *"
-                    echo " *********************************************************************"
-                    
-                    echo "${BLANCO}"
-                    echo " *********************************************************************"
-                    echo " * Haz antes una copia de seguridad desde el icono COPIAR RESTAURAR   *"
-                    echo " * O desde un navegador poniendo la ip de la raspberry pi y luego     *"
-                    echo " * utiLiza el icono HACER COPIA SEGURIDAD el cual te creará           *"
-                    echo " * el archivo [copia.tar.gz] en la carpeta Downloads de tu ordenador  *"
-                    echo " *********************************************************************"                    
-
-                    echo "${VERDE}"
-                    read -p '  Quieres hacer la actualización? S/N: ' ejecutar1
-                    case $ejecutar1 in
-                    [sS]* ) echo ""
-                    echo "ok >>>>>"
 
                     # guarda el fichero MMDVMDMRGateway.ini para recuperarlo después de la actualización
                     cp /home/pi/MMDVMHost/MMDVMDMRGateway.ini /home/pi
@@ -131,17 +111,4 @@ MARRON="\33[38;5;138m"
                     #=================================================
 
                     sudo chmod 777 -R /home/pi/MMDVMHost
-                    
-                    echo""
-                    clear
-                    exit;
-                    echo ""
-                    echo "Ok, se ha ejecutado correctamente"
-                    echo ""
-                    ;;
-                    [nN]* ) echo ""
-                    ;;
-                    esac
-                    sleep 1
-                    clear
                     exit;
