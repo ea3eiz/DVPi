@@ -37,11 +37,11 @@ MARRON="\33[38;5;138m"
                     sudo rm -r /home/pi/MMDVMHost
                     sudo apt-get install build-essential git-core libi2c-dev i2c-tools lm-sensors
                     git clone https://github.com/g4klx/MMDVMHost
-                    cd MMDVMHost
-                    git clone https://github.com/hallard/ArduiPi_OLED
-                    cd ArduiPi_OLED
-                    sudo make clean
-                    sudo make
+                    #cd MMDVMHost
+                    #git clone https://github.com/hallard/ArduiPi_OLED
+                    #cd ArduiPi_OLED
+                    #sudo make clean
+                    #sudo make
                                         
                     #git clone https://github.com/ea3eiz/MMDVMHost
                     cd /home/pi/MMDVMHost
