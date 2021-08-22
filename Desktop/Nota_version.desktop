@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=lxterminal
-Exec=sh -c "cd /home/pi/V107;./qt_notas_version"
+Exec=sh -c "cd /home/pi/DVPi;./qt_notas_version"
 Icon=/home/pi/DVPi/ICONO_NOTA_VERSION.png
 Type=Application
 StartupNotify=false
