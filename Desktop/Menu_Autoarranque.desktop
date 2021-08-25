@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=lxterminal
-Exec=sh -c "cd  /home/pi/DVPi; lxterminal --geometry=56x30 -e sudo sh Menu_autoarranque.sh"
+Exec=sh -c "cd  /home/pi/DVPi; ./qt_autoarranque"
 Icon=/home/pi/DVPi/ICONO_AUTOARRANQUE.png
 Type=Application
 StartupNotify=false
