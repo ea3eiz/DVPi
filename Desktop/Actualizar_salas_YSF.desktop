@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=lxterminal
-Exec=sh -c 'cd /home/pi/DVPi;qt_actualizar_ysf'
+Exec=sh -c 'cd /home/pi/DVPi;./qt_actualizar_ysf'
 Icon=/home/pi/DVPi/ICONO_ACTUALIZAR_YSF.png
 Type=Application
 StartupNotify=false
