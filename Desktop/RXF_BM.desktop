@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=lxterminal
-Exec=sh -c "cd /home/pi/DVPi;lxterminal --geometry=46x13 -e sudo sh info_bm.sh"
+Exec=sh -c "cd /home/pi/DVPi;./qt_info_bm"
 Icon=/home/pi/DVPi/ICONO_INFO.png
 Type=Application
 StartupNotify=false
