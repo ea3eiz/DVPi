@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=sh -c "cd /home/pi/V107; ./qt_editor_ysf_fcs_ycs"
+Exec=sh -c "cd /home/pi/DVPi;sh editar_C4FM.sh"
 Icon=/home/pi/DVPi/ICONO_EDITAR_YSF.png
 Type=Application
 StartupNotify=false
