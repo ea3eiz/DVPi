@@ -129,6 +129,20 @@ masterYSFGateway=$(awk "NR==$linea_YSFGateway" $usuario/YSFClients/YSFGateway/YS
 masterYSFGateway=`echo "$masterYSFGateway" | tr -d '[[:space:]]'`
 
 #ACTUALIZA EL  PANEL DE CONTROL"
+sudo echo 20 > /sys/class/gpio/export
+sudo echo 21 > /sys/class/gpio/export
+sudo echo out > /sys/class/gpio/gpio20/direction
+sudo echo out > /sys/class/gpio/gpio21/direction
+sudo sleep 0.5
+sudo echo 0 > /sys/class/gpio/gpio20/value
+sudo echo 0 > /sys/class/gpio/gpio21/value
+sudo echo 1 > /sys/class/gpio/gpio21/value
+sudo sleep 1
+sudo echo 0 > /sys/class/gpio/gpio20/value
+sudo echo 1 > /sys/class/gpio/gpio20/value
+sudo sleep 0.5
+sudo echo 20 > /sys/class/gpio/unexport
+sudo echo 21 > /sys/class/gpio/unexport
 cp $usuario/$SCRIPTS_version/panel_control.php /var/www/html/panel_control
 bm=`sed -n '2p'  $usuario/MMDVMHost/MMDVMBM.ini`
 plus=`sed -n '2p'  $usuario/MMDVMHost/MMDVMPLUS.ini`
