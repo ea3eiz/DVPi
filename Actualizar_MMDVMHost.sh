@@ -1,5 +1,5 @@
 ﻿#!/bin/bash
-
+exit;
 clear
 SCRIPTS_version=$(awk "NR==1" /home/pi/.config/autostart/version)
 #Colores
