@@ -14,3 +14,5 @@ sudo cp Abrir_MMDVMBM.desktop /home/pi/Desktop
 
 sudo rm /home/pi/Abrir_MMDVMBM.desktop
 
+
+
